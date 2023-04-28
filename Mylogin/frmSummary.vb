@@ -32,6 +32,11 @@ Public Class frmSummary
 
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        'TODO
+        '- insert sql command
+        '- calculate the salary amt
+
+
         frmReceipt.Show()
     End Sub
 
