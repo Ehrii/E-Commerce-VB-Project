@@ -118,24 +118,33 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="Guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>16, 8</value>
   </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
-  <metadata name="Product_ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PrintDocument1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>195, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EAAACxABrSO9dQAAA/hJREFUaEPtWDtrFFEUXhUUFJUkmLkzGyOKlYqKYCEiiDZa2PooTLBILPQXCGpr
+        6aOxsVHwkYBWBiKoZO9sjBLFIiiCQSSNGqIWiu7Oxuv57p5LNsk+ZmbnQWA/OMzcc+/5zvnmPmZ2MwtR
+        cm0VtXnSfqeebxCcIhlUKyQK81zxQbkbHU4TP0xibjaN1MTEJcST4r25JrLM4hKi8lYnXSdwn8jMmMTc
+        bBqVfImKqUwcBRbyJSZmYeJmUY0vETHVEjeDWnyxi6mVOCzq8cUqpl7iMGjEF5uYRomDwg9fLGL8JA4C
+        v3yRi/Gb2C+C8EUqJkhiPzB8YQxfzUwTHIaEm02jsrAwxjTB0TRBRGgJMWgJiRgtIQYtIRFjSQtRsrsN
+        hvslLaQk7fMlaZ3T90taiCtew/helqTI6Y4wSEtIIZfdaXIXXGc3u8MjLSH0tXvD5PakuM7u8EhDiBra
+        uoqKn6kQMgMfd4dDGkJKeeekzkt7gmy0XINzgrvDIRUhrnii8+bEabr26Xsphrk7HJIWosayXZ5rl2iP
+        /FDj9mo11r6OltZv+lE1q/JiEw8LjqSF0GxcRj4ScpVdGRJxp1yHuMSu4IhKCK37MziJyG4R3wCWChXm
+        0vUNzcAk2TeyXyZfQVrbOTTj5a1Dxo8xPHYSscxBXPYAuJEDuTh0DoaAm6GhxtvW05v6seGrZVSgt3A/
+        KJVZpgXT8qoWM88oB3Jx6BzMAG42BSpoOT2xK1TQP+YdKubs/YW8tQN7Q7kda3loTaBIJe1uvDA9aR2k
+        wl+BC5zgRg4eOh9RCjGg76fj2MC6AFfcxabmLt9Qo13tvKTA8Yfue7irOuIQAhRkdhc9xU9lfvFWjVib
+        uashdCz2CERIMVXMi73cVRtxCQH0H3B46aEgV0x7Oecwd9VEKWefMrOJWHBwV33EKQRQE9tW0tO9WRZj
+        e+pFp8Vdi1AYsfeY/YUYxHJXY8QtBFCyc0u5ODGNE4rdi6CGrTU0GwWMRQy7/SEJIbREzpaF2A/YVRNm
+        KdJp1c8uf0hGiD3IefrYhVMpS4fAI5qBe+ql08FuCLnIQgbZ5Q9xC1EDmRVUrP5kx8nFL78e44PRvvgK
+        H8YXXWef9rniO2I1iR8YMm5GDhydXOxHvVek/dTkpOKHtZm2Kx7qj0pp/0Tb17FrYEi4GTmI+wL46Ql/
+        pj2iv7X0bEjRy0OwnHrNDGEmSMgX3COWhzQGB0RsQjI99sezyj4q+H61Ixg+9FWORSx3N8a8wKiM/w3R
+        x6kr/sJHRU550jmmk9YBxmCsjqFYcHBXeqCCjuIFR0vqNr6d2N0Q/GPrGsXOejlxhN3pgZZGf9G1D3Az
+        MBALDm5WIJP5D7bY39SQ3pRCAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

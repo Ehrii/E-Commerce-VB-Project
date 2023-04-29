@@ -42,6 +42,11 @@ Partial Class frmViewInv
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DgvInventory = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Inventory_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Order_Date = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Category_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
@@ -49,11 +54,6 @@ Partial Class frmViewInv
         Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Inventory_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Order_Date = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Category_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2GroupBox1.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -298,6 +298,34 @@ Partial Class frmViewInv
         Me.DgvInventory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvInventory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'Inventory_ID
+        '
+        Me.Inventory_ID.HeaderText = "Inventory ID"
+        Me.Inventory_ID.Name = "Inventory_ID"
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Product Image"
+        Me.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.Column1.Name = "Column1"
+        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        'Order_Date
+        '
+        Me.Order_Date.HeaderText = "Product ID"
+        Me.Order_Date.Name = "Order_Date"
+        '
+        'Total
+        '
+        Me.Total.HeaderText = "Item Code"
+        Me.Total.Name = "Total"
+        '
+        'Category_ID
+        '
+        Me.Category_ID.HeaderText = "Product Name"
+        Me.Category_ID.Name = "Category_ID"
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -383,34 +411,6 @@ Partial Class frmViewInv
         Me.PictureBox2.Size = New System.Drawing.Size(74, 75)
         Me.PictureBox2.TabIndex = 0
         Me.PictureBox2.TabStop = False
-        '
-        'Inventory_ID
-        '
-        Me.Inventory_ID.HeaderText = "Inventory ID"
-        Me.Inventory_ID.Name = "Inventory_ID"
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Product Image"
-        Me.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.Column1.Name = "Column1"
-        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'Order_Date
-        '
-        Me.Order_Date.HeaderText = "Product ID"
-        Me.Order_Date.Name = "Order_Date"
-        '
-        'Total
-        '
-        Me.Total.HeaderText = "Item Code"
-        Me.Total.Name = "Total"
-        '
-        'Category_ID
-        '
-        Me.Category_ID.HeaderText = "Product Name"
-        Me.Category_ID.Name = "Category_ID"
         '
         'frmViewInv
         '

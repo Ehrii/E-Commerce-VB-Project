@@ -23,9 +23,9 @@ Partial Class frmOrderHis
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOrderHis))
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.Guna2BorderlessForm2 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
@@ -72,6 +72,7 @@ Partial Class frmOrderHis
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.lblNote = New System.Windows.Forms.Label()
         CType(Me.DgvOrders, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
@@ -99,29 +100,29 @@ Partial Class frmOrderHis
         '
         'DgvOrders
         '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.DgvOrders.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        Me.DgvOrders.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.DgvOrders.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvOrders.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvOrders.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DgvOrders.ColumnHeadersHeight = 40
         Me.DgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Yellow
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvOrders.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Yellow
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvOrders.DefaultCellStyle = DataGridViewCellStyle9
         Me.DgvOrders.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgvOrders.Location = New System.Drawing.Point(244, 114)
+        Me.DgvOrders.Location = New System.Drawing.Point(243, 104)
         Me.DgvOrders.Name = "DgvOrders"
         Me.DgvOrders.RowHeadersVisible = False
         Me.DgvOrders.Size = New System.Drawing.Size(937, 421)
@@ -238,16 +239,18 @@ Partial Class frmOrderHis
         '
         Me.Guna2GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2GroupBox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2GroupBox2.Controls.Add(Me.cmbCateg)
+        Me.Guna2GroupBox2.Controls.Add(Me.lblNote)
+        Me.Guna2GroupBox2.Controls.Add(Me.cmbOrderStat)
+        Me.Guna2GroupBox2.Controls.Add(Me.Label7)
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox2.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(1, 518)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(1, 452)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(231, 129)
+        Me.Guna2GroupBox2.Size = New System.Drawing.Size(231, 195)
         Me.Guna2GroupBox2.TabIndex = 192
-        Me.Guna2GroupBox2.Text = "Other Information"
+        Me.Guna2GroupBox2.Text = "Change Order Status"
         Me.Guna2GroupBox2.UseTransparentBackground = True
         '
         'cmbCateg
@@ -258,7 +261,7 @@ Partial Class frmOrderHis
         Me.cmbCateg.ForeColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
         Me.cmbCateg.FormattingEnabled = True
         Me.cmbCateg.Items.AddRange(New Object() {"All", "Pending", "Shipped", "Delivered", "Canceled"})
-        Me.cmbCateg.Location = New System.Drawing.Point(19, 62)
+        Me.cmbCateg.Location = New System.Drawing.Point(1013, 76)
         Me.cmbCateg.Name = "cmbCateg"
         Me.cmbCateg.Size = New System.Drawing.Size(168, 27)
         Me.cmbCateg.TabIndex = 56
@@ -268,10 +271,8 @@ Partial Class frmOrderHis
         '
         Me.Guna2GroupBox3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2GroupBox3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2GroupBox3.Controls.Add(Me.cmbOrderStat)
         Me.Guna2GroupBox3.Controls.Add(Me.txtCustomer)
         Me.Guna2GroupBox3.Controls.Add(Me.Label8)
-        Me.Guna2GroupBox3.Controls.Add(Me.Label7)
         Me.Guna2GroupBox3.Controls.Add(Me.txtQuantity)
         Me.Guna2GroupBox3.Controls.Add(Me.Label6)
         Me.Guna2GroupBox3.Controls.Add(Me.txtAmt)
@@ -294,13 +295,13 @@ Partial Class frmOrderHis
         '
         'cmbOrderStat
         '
-        Me.cmbOrderStat.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.cmbOrderStat.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.cmbOrderStat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmbOrderStat.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbOrderStat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
         Me.cmbOrderStat.FormattingEnabled = True
         Me.cmbOrderStat.Items.AddRange(New Object() {"All", "Pending", "Shipped", "Delivered", "Canceled"})
-        Me.cmbOrderStat.Location = New System.Drawing.Point(7, 400)
+        Me.cmbOrderStat.Location = New System.Drawing.Point(11, 94)
         Me.cmbOrderStat.Name = "cmbOrderStat"
         Me.cmbOrderStat.Size = New System.Drawing.Size(210, 27)
         Me.cmbOrderStat.TabIndex = 205
@@ -319,7 +320,7 @@ Partial Class frmOrderHis
         Me.txtCustomer.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCustomer.ForeColor = System.Drawing.Color.White
         Me.txtCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCustomer.Location = New System.Drawing.Point(7, 479)
+        Me.txtCustomer.Location = New System.Drawing.Point(7, 402)
         Me.txtCustomer.Multiline = True
         Me.txtCustomer.Name = "txtCustomer"
         Me.txtCustomer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -333,7 +334,7 @@ Partial Class frmOrderHis
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(8, 453)
+        Me.Label8.Location = New System.Drawing.Point(8, 376)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(103, 22)
         Me.Label8.TabIndex = 203
@@ -344,7 +345,7 @@ Partial Class frmOrderHis
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(8, 371)
+        Me.Label7.Location = New System.Drawing.Point(12, 69)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(110, 22)
         Me.Label7.TabIndex = 201
@@ -512,10 +513,10 @@ Partial Class frmOrderHis
         Me.Guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.Guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.Guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button3.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.Guna2Button3.FillColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Guna2Button3.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Guna2Button3.Location = New System.Drawing.Point(20, 133)
+        Me.Guna2Button3.Location = New System.Drawing.Point(19, 47)
         Me.Guna2Button3.Name = "Guna2Button3"
         Me.Guna2Button3.PressedColor = System.Drawing.Color.DimGray
         Me.Guna2Button3.Size = New System.Drawing.Size(168, 38)
@@ -533,7 +534,7 @@ Partial Class frmOrderHis
         Me.Guna2Button4.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2Button4.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Guna2Button4.Location = New System.Drawing.Point(19, 45)
+        Me.Guna2Button4.Location = New System.Drawing.Point(19, 91)
         Me.Guna2Button4.Name = "Guna2Button4"
         Me.Guna2Button4.PressedColor = System.Drawing.Color.DimGray
         Me.Guna2Button4.Size = New System.Drawing.Size(168, 38)
@@ -551,7 +552,7 @@ Partial Class frmOrderHis
         Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2Button1.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Guna2Button1.Location = New System.Drawing.Point(20, 89)
+        Me.Guna2Button1.Location = New System.Drawing.Point(19, 136)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.PressedColor = System.Drawing.Color.DimGray
         Me.Guna2Button1.Size = New System.Drawing.Size(168, 38)
@@ -650,7 +651,7 @@ Partial Class frmOrderHis
         Me.txtSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.txtSearch.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearch.ForeColor = System.Drawing.SystemColors.Window
-        Me.txtSearch.Location = New System.Drawing.Point(426, 76)
+        Me.txtSearch.Location = New System.Drawing.Point(407, 74)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(279, 26)
         Me.txtSearch.TabIndex = 200
@@ -658,7 +659,7 @@ Partial Class frmOrderHis
         'PictureBox8
         '
         Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
-        Me.PictureBox8.Location = New System.Drawing.Point(244, 75)
+        Me.PictureBox8.Location = New System.Drawing.Point(244, 70)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(35, 33)
         Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -773,12 +774,24 @@ Partial Class frmOrderHis
         Me.RadioButton1.Text = "Daily"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
+        'lblNote
+        '
+        Me.lblNote.AutoSize = True
+        Me.lblNote.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.lblNote.Location = New System.Drawing.Point(12, 125)
+        Me.lblNote.Name = "lblNote"
+        Me.lblNote.Size = New System.Drawing.Size(166, 76)
+        Me.lblNote.TabIndex = 206
+        Me.lblNote.Text = "* Changing the Delivery " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Status to ""Canceled"" will " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "update  the Sales Report" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "." &
+    ""
+        '
         'frmOrderHis
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1203, 748)
+        Me.Controls.Add(Me.cmbCateg)
         Me.Controls.Add(Me.Guna2GroupBox6)
         Me.Controls.Add(Me.Guna2GroupBox5)
         Me.Controls.Add(Me.txtSearch)
@@ -797,6 +810,7 @@ Partial Class frmOrderHis
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()
         Me.Guna2GroupBox2.ResumeLayout(False)
+        Me.Guna2GroupBox2.PerformLayout()
         Me.Guna2GroupBox3.ResumeLayout(False)
         Me.Guna2GroupBox3.PerformLayout()
         Me.Guna2GroupBox4.ResumeLayout(False)
@@ -858,4 +872,5 @@ Partial Class frmOrderHis
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents cmbOrderStat As ComboBox
+    Friend WithEvents lblNote As Label
 End Class

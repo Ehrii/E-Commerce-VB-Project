@@ -117,6 +117,12 @@
     <Compile Include="frmCart.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCustomMenu.Designer.vb">
+      <DependentUpon>frmCustomMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDashboard.Designer.vb">
       <DependentUpon>frmDashboard.vb</DependentUpon>
     </Compile>
@@ -213,6 +219,12 @@
     <Compile Include="frmProductDetails.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmReview.Designer.vb">
+      <DependentUpon>frmReview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReview.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRoles.Designer.vb">
       <DependentUpon>frmRoles.vb</DependentUpon>
     </Compile>
@@ -286,6 +298,9 @@
     <EmbeddedResource Include="frmAudit.resx">
       <DependentUpon>frmAudit.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomMenu.resx">
+      <DependentUpon>frmCustomMenu.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.vb</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReceipt.resx">
       <DependentUpon>frmReceipt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReview.resx">
+      <DependentUpon>frmReview.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRoles.resx">
       <DependentUpon>frmRoles.vb</DependentUpon>

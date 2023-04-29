@@ -36,7 +36,7 @@ Partial Class frmCreate
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblRole = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblAction = New System.Windows.Forms.Label()
         Me.Guna2Shapes1 = New Guna.UI2.WinForms.Guna2Shapes()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.btnBrowse = New System.Windows.Forms.Button()
@@ -58,18 +58,20 @@ Partial Class frmCreate
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtBarangay = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2GradientPanel2 = New Guna.UI2.WinForms.Guna2GradientPanel()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.txtConfirmPass = New Guna.UI2.WinForms.Guna2TextBox()
         Me.lblPass = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
+        Me.lblConfirm = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtPass = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Guna2ControlBox3 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnRegis = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GradientPanel1.SuspendLayout()
         Me.Guna2GroupBox4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -168,12 +170,12 @@ Partial Class frmCreate
         Me.Guna2GradientPanel1.Controls.Add(Me.Guna2GroupBox4)
         Me.Guna2GradientPanel1.Controls.Add(Me.PictureBox1)
         Me.Guna2GradientPanel1.Controls.Add(Me.lblRole)
-        Me.Guna2GradientPanel1.Controls.Add(Me.Label10)
+        Me.Guna2GradientPanel1.Controls.Add(Me.lblAction)
         Me.Guna2GradientPanel1.Controls.Add(Me.Guna2Shapes1)
         Me.Guna2GradientPanel1.Controls.Add(Me.Guna2GroupBox1)
         Me.Guna2GradientPanel1.Location = New System.Drawing.Point(17, 12)
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
-        Me.Guna2GradientPanel1.Size = New System.Drawing.Size(524, 747)
+        Me.Guna2GradientPanel1.Size = New System.Drawing.Size(524, 786)
         Me.Guna2GradientPanel1.TabIndex = 4
         '
         'Guna2GroupBox4
@@ -191,7 +193,7 @@ Partial Class frmCreate
         Me.Guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2GroupBox4.Location = New System.Drawing.Point(3, 521)
         Me.Guna2GroupBox4.Name = "Guna2GroupBox4"
-        Me.Guna2GroupBox4.Size = New System.Drawing.Size(521, 223)
+        Me.Guna2GroupBox4.Size = New System.Drawing.Size(521, 262)
         Me.Guna2GroupBox4.TabIndex = 28
         Me.Guna2GroupBox4.Text = "Customer Contact Information"
         '
@@ -273,16 +275,16 @@ Partial Class frmCreate
         Me.lblRole.TabIndex = 20
         Me.lblRole.Text = "CUSTOMER"
         '
-        'Label10
+        'lblAction
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(64, 5)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(190, 30)
-        Me.Label10.TabIndex = 18
-        Me.Label10.Text = "CREATE ACCOUNT"
+        Me.lblAction.AutoSize = True
+        Me.lblAction.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAction.ForeColor = System.Drawing.Color.White
+        Me.lblAction.Location = New System.Drawing.Point(64, 5)
+        Me.lblAction.Name = "lblAction"
+        Me.lblAction.Size = New System.Drawing.Size(190, 30)
+        Me.lblAction.TabIndex = 18
+        Me.lblAction.Text = "CREATE ACCOUNT"
         '
         'Guna2Shapes1
         '
@@ -366,7 +368,6 @@ Partial Class frmCreate
         'picCustomImage
         '
         Me.picCustomImage.BackColor = System.Drawing.Color.White
-        Me.picCustomImage.Image = CType(resources.GetObject("picCustomImage.Image"), System.Drawing.Image)
         Me.picCustomImage.Location = New System.Drawing.Point(139, 309)
         Me.picCustomImage.Name = "picCustomImage"
         Me.picCustomImage.Size = New System.Drawing.Size(134, 99)
@@ -594,46 +595,48 @@ Partial Class frmCreate
         '
         'Guna2GradientPanel2
         '
-        Me.Guna2GradientPanel2.Controls.Add(Me.Guna2Button2)
+        Me.Guna2GradientPanel2.Controls.Add(Me.btnUpdate)
+        Me.Guna2GradientPanel2.Controls.Add(Me.btnEdit)
+        Me.Guna2GradientPanel2.Controls.Add(Me.btnCancel)
         Me.Guna2GradientPanel2.Controls.Add(Me.Guna2GroupBox3)
         Me.Guna2GradientPanel2.Controls.Add(Me.Guna2GroupBox2)
         Me.Guna2GradientPanel2.Controls.Add(Me.Guna2ControlBox3)
         Me.Guna2GradientPanel2.Controls.Add(Me.Guna2ControlBox1)
-        Me.Guna2GradientPanel2.Controls.Add(Me.Guna2Button1)
+        Me.Guna2GradientPanel2.Controls.Add(Me.btnRegis)
         Me.Guna2GradientPanel2.Controls.Add(Me.Guna2PictureBox1)
         Me.Guna2GradientPanel2.Location = New System.Drawing.Point(544, 12)
         Me.Guna2GradientPanel2.Name = "Guna2GradientPanel2"
-        Me.Guna2GradientPanel2.Size = New System.Drawing.Size(535, 747)
+        Me.Guna2GradientPanel2.Size = New System.Drawing.Size(535, 786)
         Me.Guna2GradientPanel2.TabIndex = 16
         '
-        'Guna2Button2
+        'btnCancel
         '
-        Me.Guna2Button2.AutoRoundedCorners = True
-        Me.Guna2Button2.BorderRadius = 16
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button2.HoverState.FillColor = System.Drawing.Color.Black
-        Me.Guna2Button2.HoverState.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), System.Drawing.Image)
-        Me.Guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button2.ImageSize = New System.Drawing.Size(25, 25)
-        Me.Guna2Button2.Location = New System.Drawing.Point(19, 709)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(152, 35)
-        Me.Guna2Button2.TabIndex = 26
-        Me.Guna2Button2.Text = "Cancel"
+        Me.btnCancel.AutoRoundedCorners = True
+        Me.btnCancel.BorderRadius = 16
+        Me.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnCancel.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.btnCancel.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.btnCancel.ForeColor = System.Drawing.Color.Black
+        Me.btnCancel.HoverState.FillColor = System.Drawing.Color.Black
+        Me.btnCancel.HoverState.ForeColor = System.Drawing.Color.White
+        Me.btnCancel.Image = CType(resources.GetObject("btnCancel.Image"), System.Drawing.Image)
+        Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnCancel.ImageSize = New System.Drawing.Size(25, 25)
+        Me.btnCancel.Location = New System.Drawing.Point(7, 748)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(152, 35)
+        Me.btnCancel.TabIndex = 26
+        Me.btnCancel.Text = "Cancel"
         '
         'Guna2GroupBox3
         '
         Me.Guna2GroupBox3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox3.Controls.Add(Me.txtConfirmPass)
         Me.Guna2GroupBox3.Controls.Add(Me.lblPass)
-        Me.Guna2GroupBox3.Controls.Add(Me.Label14)
+        Me.Guna2GroupBox3.Controls.Add(Me.lblConfirm)
         Me.Guna2GroupBox3.Controls.Add(Me.Label12)
         Me.Guna2GroupBox3.Controls.Add(Me.txtPass)
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
@@ -683,16 +686,16 @@ Partial Class frmCreate
         Me.lblPass.TabIndex = 27
         Me.lblPass.Text = "*"
         '
-        'Label14
+        'lblConfirm
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(15, 112)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(130, 20)
-        Me.Label14.TabIndex = 6
-        Me.Label14.Text = "Confirm Password:"
+        Me.lblConfirm.AutoSize = True
+        Me.lblConfirm.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblConfirm.ForeColor = System.Drawing.Color.White
+        Me.lblConfirm.Location = New System.Drawing.Point(15, 112)
+        Me.lblConfirm.Name = "lblConfirm"
+        Me.lblConfirm.Size = New System.Drawing.Size(130, 20)
+        Me.lblConfirm.TabIndex = 6
+        Me.lblConfirm.Text = "Confirm Password:"
         '
         'Label12
         '
@@ -775,27 +778,27 @@ Partial Class frmCreate
         Me.Guna2ControlBox1.Size = New System.Drawing.Size(32, 23)
         Me.Guna2ControlBox1.TabIndex = 23
         '
-        'Guna2Button1
+        'btnRegis
         '
-        Me.Guna2Button1.AutoRoundedCorners = True
-        Me.Guna2Button1.BorderRadius = 16
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button1.HoverState.FillColor = System.Drawing.Color.Black
-        Me.Guna2Button1.HoverState.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Image = CType(resources.GetObject("Guna2Button1.Image"), System.Drawing.Image)
-        Me.Guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Guna2Button1.ImageSize = New System.Drawing.Size(25, 25)
-        Me.Guna2Button1.Location = New System.Drawing.Point(380, 709)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(152, 35)
-        Me.Guna2Button1.TabIndex = 12
-        Me.Guna2Button1.Text = "Register "
+        Me.btnRegis.AutoRoundedCorners = True
+        Me.btnRegis.BorderRadius = 16
+        Me.btnRegis.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnRegis.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnRegis.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnRegis.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnRegis.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.btnRegis.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegis.ForeColor = System.Drawing.Color.Black
+        Me.btnRegis.HoverState.FillColor = System.Drawing.Color.Black
+        Me.btnRegis.HoverState.ForeColor = System.Drawing.Color.White
+        Me.btnRegis.Image = CType(resources.GetObject("btnRegis.Image"), System.Drawing.Image)
+        Me.btnRegis.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnRegis.ImageSize = New System.Drawing.Size(25, 25)
+        Me.btnRegis.Location = New System.Drawing.Point(380, 748)
+        Me.btnRegis.Name = "btnRegis"
+        Me.btnRegis.Size = New System.Drawing.Size(152, 35)
+        Me.btnRegis.TabIndex = 12
+        Me.btnRegis.Text = "Register "
         '
         'Guna2PictureBox1
         '
@@ -805,20 +808,65 @@ Partial Class frmCreate
         Me.Guna2PictureBox1.ImageRotate = 0!
         Me.Guna2PictureBox1.Location = New System.Drawing.Point(7, 503)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(300, 208)
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(338, 223)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2PictureBox1.TabIndex = 27
         Me.Guna2PictureBox1.TabStop = False
+        '
+        'btnEdit
+        '
+        Me.btnEdit.AutoRoundedCorners = True
+        Me.btnEdit.BorderRadius = 16
+        Me.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEdit.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.btnEdit.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.btnEdit.ForeColor = System.Drawing.Color.Black
+        Me.btnEdit.HoverState.FillColor = System.Drawing.Color.Black
+        Me.btnEdit.HoverState.ForeColor = System.Drawing.Color.White
+        Me.btnEdit.Image = CType(resources.GetObject("btnEdit.Image"), System.Drawing.Image)
+        Me.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnEdit.ImageSize = New System.Drawing.Size(25, 25)
+        Me.btnEdit.Location = New System.Drawing.Point(7, 707)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(152, 35)
+        Me.btnEdit.TabIndex = 28
+        Me.btnEdit.Text = "Edit"
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.AutoRoundedCorners = True
+        Me.btnUpdate.BorderRadius = 16
+        Me.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnUpdate.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.btnUpdate.ForeColor = System.Drawing.Color.Black
+        Me.btnUpdate.HoverState.FillColor = System.Drawing.Color.Black
+        Me.btnUpdate.HoverState.ForeColor = System.Drawing.Color.White
+        Me.btnUpdate.Image = CType(resources.GetObject("btnUpdate.Image"), System.Drawing.Image)
+        Me.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnUpdate.ImageSize = New System.Drawing.Size(25, 25)
+        Me.btnUpdate.Location = New System.Drawing.Point(380, 707)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(152, 35)
+        Me.btnUpdate.TabIndex = 29
+        Me.btnUpdate.Text = "Update"
         '
         'frmCreate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1094, 799)
+        Me.ClientSize = New System.Drawing.Size(1094, 810)
         Me.Controls.Add(Me.Guna2GradientPanel2)
         Me.Controls.Add(Me.Guna2GradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Location = New System.Drawing.Point(150, 0)
         Me.Name = "frmCreate"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmCreate"
@@ -849,15 +897,15 @@ Partial Class frmCreate
     Friend WithEvents Guna2GradientPanel2 As Guna.UI2.WinForms.Guna2GradientPanel
     Friend WithEvents txtConfirmPass As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtPass As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnRegis As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents cmbGender As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents dtpDOB As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents Label12 As Label
-    Friend WithEvents Label14 As Label
+    Friend WithEvents lblConfirm As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Guna2Shapes1 As Guna.UI2.WinForms.Guna2Shapes
-    Friend WithEvents Label10 As Label
+    Friend WithEvents lblAction As Label
     Friend WithEvents cmbRegion As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
@@ -881,9 +929,11 @@ Partial Class frmCreate
     Friend WithEvents Guna2GroupBox2 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents Guna2GroupBox4 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents btnBrowse As Button
     Friend WithEvents picCustomImage As PictureBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
 End Class

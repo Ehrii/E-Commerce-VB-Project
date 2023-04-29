@@ -274,7 +274,6 @@ Public Class frmPayment
         Dim cm As New MySqlCommand
         conn.Close()
 
-
         Dim cm1 As New MySqlCommand
         conn.Close()
         cm1 = New MySqlCommand("Update delivery set Order_Status=@Status WHERE Delivery_ID ='" & frmDelivery.delivery & "'", conn)

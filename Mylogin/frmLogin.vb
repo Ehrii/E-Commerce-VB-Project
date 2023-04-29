@@ -60,7 +60,7 @@ Public Class frmLogin
 
                 customID = txtID.Text
                 frmShop.lblCustomId.Text = "Customer ID: " & customID
-                frmShop.Show()
+                frmCustomMenu.Show()
 
             ElseIf dt2.Rows.Count > 0 Then
                 MessageBox.Show("Log-In Successful..", "SUPPLIER DELAROTA Log-In Message", MessageBoxButtons.OK, MessageBoxIcon.Information)

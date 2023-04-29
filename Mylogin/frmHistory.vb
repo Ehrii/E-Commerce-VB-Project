@@ -8,6 +8,8 @@ Public Class frmHistory
 
 
     Sub loadrecord()
+        conn.Close()
+
         Dim cm As New MySqlCommand
         DgvHistory.Rows.Clear()
         'conn.Open()'

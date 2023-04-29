@@ -18,18 +18,27 @@ Public Class frmCart
         If colName = "Delete" Then
             stockvalidation()
             prodId = dgvCart.CurrentRow.Cells(0).Value.ToString()
-            cm = New MySqlCommand("DELETE FROM cart WHERE Product_ID = @Product_ID", conn)
-            cm.Parameters.Add("@Product_ID", MySqlDbType.Int64).Value = prodId
-            'conn.Close()
-            'conn.Open()
+            Dim cartid As Integer
+            Dim query As String
+            Dim reader As MySqlDataReader
+            query = "select * from cart where product_id='" & prodId & "'"
+            Dim cm1 As New MySqlCommand
+            cm1 = New MySqlCommand(query, conn)
+            conn.Open()
+            reader = cm1.ExecuteReader
+            While reader.Read
+                cartid = reader.GetString("Cart_ID")
+            End While
+            conn.Close()
+
+            cm = New MySqlCommand("DELETE FROM cart WHERE Cart_ID = @CartID", conn)
+            cm.Parameters.Add("@CartID", MySqlDbType.Int64).Value = cartid
+
             conn.Open()
             If cm.ExecuteNonQuery() = 1 Then
                 MessageBox.Show("Data Deleted")
                 loadRecord()
                 loadCart()
-
-
-                'verify()
                 frmShop.loadcartcount()
             Else
                 MessageBox.Show("Error")
@@ -37,7 +46,21 @@ Public Class frmCart
         End If
 
 
-        If dgvCart.DataSource = Nothing Then
+        Dim query2 As String
+        Dim reader2 As MySqlDataReader
+        Dim cm2 As New MySqlCommand
+
+
+        query2 = "select * from cart"
+        'table
+        Dim da = New MySqlDataAdapter(query2, conn)
+        'reader
+        cm2 = New MySqlCommand(query2, conn)
+
+        Dim dt = New DataTable()
+        da.Fill(dt)
+
+        If dt.Rows.Count <= 0 Then
             Me.Hide()
             frmShop.txtCart.Enabled = False
         End If
@@ -81,12 +104,7 @@ Public Class frmCart
 
     End Sub
 
-
-
-
-
     Private Sub frmCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         conn.Close()
         connect()
         loadRecord()
@@ -145,28 +163,22 @@ Public Class frmCart
         While reader2.Read
             shippingFee = reader2.GetString("Shipping_Fee")
         End While
-        'conn.Open()
         conn.Close()
 
-        ' conn.Open()
-        'Amount
 
         sum = 0.00
         For i = 0 To dgvCart.Rows.Count - 1
-            'sum += dgvCart.Rows(i).Cells(4).Value
             sum += dgvCart.Rows(i).Cells(4).Value * dgvCart.Rows(i).Cells(3).Value
 
         Next
 
         frmShop.lblPrice.Text = "TOTAL PRICE: " & FormatNumber(sum, 2)
         shopprice = FormatNumber(sum, 2)
-        'totalAmt = Val(totalSub) - Val(totaldisc)
-        'Quantity
+
         Dim totalQty As Integer = 0
         For i = 0 To dgvCart.Rows.Count - 1
             totalQty += dgvCart.Rows(i).Cells(3).Value
 
-            'Dim quan = dgvCart.Rows(i).Cells(3).Value * sum
         Next
         txtQty.Text = totalQty
         lblDiscount.Text = "None"
@@ -175,12 +187,9 @@ Public Class frmCart
 
         lblTotal.Text = sum + shippingFee
         totalAmt = lblTotal.Text
-        ' lblTotal.Text = "Total:    " & FormatNumber(lblTotal.Text, 2)
         lblTotal.Text = FormatNumber(lblTotal.Text, 2)
-
         verify()
-        'Dim doublenewbal As Double = txtSub.Text
-        'doublenewbal -= FormatNumber(totaldisc, 2)
+
     End Function
 
 
@@ -208,17 +217,7 @@ Public Class frmCart
 
 
     Sub addrecords()
-        'Dim query As String
-        'Dim reader As MySqlDataReader
-        'query = "select category_name from category where category_id ='" & cmbCateg.Text & "'"
-        'Dim cm As New MySqlCommand
-        'cm = New MySqlCommand(query, conn)
-        'conn.Open()
-        'reader = cm.ExecuteReader
-        'While reader.Read
-        '    categ = reader.GetString("category_name")
-        'End While
-        'conn.Close()
+
         Dim command As New MySqlCommand("INSERT INTO orderdetails VALUES(@Order_ID,@Order_Date,@Total,@Qty,@Status,@Customer_ID)", conn)
         Dim amt As Decimal = FormatNumber(lblTotal.Text, 2)
 
@@ -241,12 +240,10 @@ Public Class frmCart
             query = "select * from orderdetails"
             Dim cm As New MySqlCommand
             cm = New MySqlCommand(query, conn)
-            'conn.Open()
             reader = cm.ExecuteReader
             While reader.Read
                 orderID = reader.GetString("Order_ID")
             End While
-            'conn.Open()
             conn.Close()
             frmPayment.lblOrder.Text = "ORDER ID: " & orderID
             frmDelivery.Show()
@@ -276,9 +273,8 @@ Public Class frmCart
         Dim query As String
         Dim reader As MySqlDataReader
         Dim cm As New MySqlCommand
-        'conn.Close()
 
-        'conn.Open()
+
         query = "select * from coupon where Coupon_Code ='" & txtCoupon.Text & "'"
         'table
         Dim da = New MySqlDataAdapter(query, conn)

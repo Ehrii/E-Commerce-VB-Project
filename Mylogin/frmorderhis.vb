@@ -201,6 +201,13 @@ Public Class frmOrderHis
     End Sub
 
     Private Sub DgvOrders_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvOrders.CellContentClick
+        MessageBox.Show("Delivery Status shown, Click the Update button to save changes.", "DELAROTA DELIVERY STATUS", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+    End Sub
+
+    Private Sub cmbOrderStat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbOrderStat.SelectedIndexChanged
+        If cmbOrderStat.SelectedIndex = 4 Then
+
+        End If
     End Sub
 End Class

@@ -14,32 +14,7 @@ Public Class frmReceipt
         'PPD.Document = Doc
         'PPD.ShowDialog()
 
-        Dim cm2 As New MySqlCommand
-        cm2 = New MySqlCommand("UPDATE orderDetails SET Status=@Status where Order_ID='" & orderID & "'", conn)
 
-        With cm2
-            .Parameters.Clear()
-            .Parameters.AddWithValue("@Status", "Shipped")
-        End With
-        conn.Open()
-        If cm2.ExecuteNonQuery() = 1 Then
-            MessageBox.Show("Order Status Changed. Please check your order history..", "ORDER STATUS MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            'frmManage.loadRecord()
-            Me.Hide()
-        Else
-            MessageBox.Show("Record not Updated")
-        End If
-        conn.Close()
-
-
-
-        Dim cartcom As New MySqlCommand
-        conn.Close()
-        cartcom = New MySqlCommand("truncate table cart", conn)
-        conn.Open()
-        cartcom.ExecuteNonQuery()
-        conn.Close()
-        MessageBox.Show("Previous cart records deleted")
 
 
 
@@ -100,21 +75,21 @@ Public Class frmReceipt
         Dim y As Integer = 93
         Dim overallamt As Double
 
-        For i = 0 To frmSummary.dgvCart.Rows.Count - 1
+        For i = 0 To frmSummary.dgvSummary.Rows.Count - 1
             Dim rect8 As New Rectangle(5, y, 60, 23)
             Dim rect9 As New Rectangle(65, y, 60, 23)
             Dim rect10 As New Rectangle(125, y, 60, 23)
             Dim rect11 As New Rectangle(185, y, 60, 23)
-            Dim total As Double = frmSummary.dgvCart.Rows(i).Cells(2).Value * frmSummary.dgvCart.Rows(i).Cells(3).Value
+            Dim total As Double = frmSummary.dgvSummary.Rows(i).Cells(3).Value * frmSummary.dgvSummary.Rows(i).Cells(4).Value
 
             e.Graphics.DrawRectangle(Pens.Black, rect8)
             e.Graphics.DrawRectangle(Pens.Black, rect9)
             e.Graphics.DrawRectangle(Pens.Black, rect10)
             e.Graphics.DrawRectangle(Pens.Black, rect11)
 
-            e.Graphics.DrawString(frmSummary.dgvCart.Rows(i).Cells(1).Value, prodName, Brushes.Black, rect8, center)
-            e.Graphics.DrawString(FormatNumber(frmSummary.dgvCart.Rows(i).Cells(2).Value, 2), f8, Brushes.Black, rect9, center)
-            e.Graphics.DrawString(FormatNumber(frmSummary.dgvCart.Rows(i).Cells(3).Value, 2), f8, Brushes.Black, rect10, center)
+            e.Graphics.DrawString(frmSummary.dgvSummary.Rows(i).Cells(2).Value, prodName, Brushes.Black, rect8, center)
+            e.Graphics.DrawString(FormatNumber(frmSummary.dgvSummary.Rows(i).Cells(3).Value, 2), f8, Brushes.Black, rect9, center)
+            e.Graphics.DrawString(FormatNumber(frmSummary.dgvSummary.Rows(i).Cells(4).Value, 2), f8, Brushes.Black, rect10, center)
             e.Graphics.DrawString(total, f8, Brushes.Black, rect11, center)
             y += 23
             overallamt += total
@@ -171,7 +146,7 @@ Public Class frmReceipt
             .Parameters.AddWithValue("@Payment_Date", currdatetime)
             .Parameters.AddWithValue("@Amount_Due", CInt(frmPayment.txtAmtDue.Text))
         End With
-        conn.Open()
+        'conn.Open()
 
         If command.ExecuteNonQuery() = 1 Then
             MsgBox("Success")
@@ -180,6 +155,31 @@ Public Class frmReceipt
 
         End If
         conn.Close()
+
+        Dim cm2 As New MySqlCommand
+        cm2 = New MySqlCommand("UPDATE orderDetails SET Status=@Status where Order_ID='" & orderID & "'", conn)
+
+        With cm2
+            .Parameters.Clear()
+            .Parameters.AddWithValue("@Status", "Shipped")
+        End With
+        conn.Open()
+        If cm2.ExecuteNonQuery() = 1 Then
+            MessageBox.Show("Order Status Changed. Please check your order history..", "ORDER STATUS MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            'frmManage.loadRecord()
+            Me.Hide()
+        Else
+            MessageBox.Show("Record not Updated")
+        End If
+        conn.Close()
+
+        Dim cartcom As New MySqlCommand
+        conn.Close()
+        cartcom = New MySqlCommand("truncate table cart", conn)
+        conn.Open()
+        cartcom.ExecuteNonQuery()
+        conn.Close()
+        MessageBox.Show("Previous cart records deleted")
 
     End Sub
 End Class

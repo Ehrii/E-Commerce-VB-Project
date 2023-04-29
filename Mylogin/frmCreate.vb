@@ -10,7 +10,7 @@ Imports MySql.Data.MySqlClient
 Public Class frmCreate
     Dim newStr, msg As String
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btnRegis.Click
         Try
             If ValidatePassword(txtPass.Text) = False Then
                 MessageBox.Show("Password must have 8-10 characters long with at least one numeric character and uppercase, lowercase and special characters", "Invalid Password", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -20,13 +20,17 @@ Public Class frmCreate
 
             If isValidEmail(txtEmail.Text) = False Then
                 MessageBox.Show("Invalid Email.Please try again ", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Exit Sub
             End If
 
             If valPhoneNumber(txtPhoneNum.Text) = False Then
                 MessageBox.Show("Invalid Phone Number. Please try again ", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Exit Sub
             End If
+
+            If picCustomImage.Image Is Nothing Then
+                MessageBox.Show("Please add a profile picture.", "Invalid Profile Picture", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+
+
 
         Catch ex As Exception
             MessageBox.Show("ERROR: " & ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -119,6 +123,7 @@ Public Class frmCreate
 
                     MessageBox.Show("Account Creation Successful!", "DELAROTA Account Creation Message", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     clearAll()
+
                     Dim query As String
                     Dim Reader As MySqlDataReader
                     query = "Select Customer_ID from customer where Customer_ID =(select max(Customer_ID) from customer)"
@@ -138,30 +143,105 @@ Public Class frmCreate
 
             Catch ex As Exception
                 MessageBox.Show("ERROR: " & ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Me.Hide()
+
             End Try
         End If
         Me.Hide()
     End Sub
 
     Private Sub frmCreate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        connect()
-        'conn.ConnectionString = "server = localhost;user id=root; port = 3306;password=root;database=ecommercedb1"
-        'conn.Open()
+        loadrecord()
+    End Sub
+    '
 
+
+    Sub loadrecord()
+
+        If lblAction.Text = "UPDATE CUSTOMER ACCOUNT" Then
+            btnEdit.Enabled = True
+            btnUpdate.Enabled = True
+            btnCancel.Enabled = False
+            btnRegis.Enabled = False
+            disable()
+            connect()
+            Dim query2 As String
+            Dim reader2 As MySqlDataReader
+            query2 = "select * from customer where customer_id ='" & customID & "'"
+            Dim comm As New MySqlCommand(query2, conn)
+            'comm = New MySqlCommand
+            Dim adapter As New MySqlDataAdapter(query2, conn)
+            Dim table As New DataTable()
+            Dim imgByte() As Byte
+            adapter.Fill(table)
+            imgByte = table(0)(13)
+            Dim ms As New MemoryStream(imgByte)
+
+            txtConfirmPass.Visible = False
+            lblConfirm.Visible = False
+
+            reader2 = comm.ExecuteReader
+            While (reader2.Read())
+                Dim Fname = reader2.GetString("First_Name")
+                Dim Lname = reader2.GetString("Last_Name")
+                Dim Username = reader2.GetString("Customer_Username")
+                Dim Password = reader2.GetString("Customer_Password")
+                Dim Email = reader2.GetString("Email")
+                Dim Phone = reader2.GetString("Phone_Number")
+                Dim Street = reader2.GetString("Street_Address")
+                Dim Barangay = reader2.GetString("Barangay")
+                Dim City = reader2.GetString("City")
+                Dim Region = reader2.GetString("Region")
+                Dim Gender = reader2.GetString("Gender")
+                Dim DOB = reader2.GetString("Date_Of_Birth")
+
+                txtFName.Text = Fname
+                txtLName.Text = Lname
+                txtUsername.Text = Username
+                txtPass.Text = Password
+                txtEmail.Text = Email
+                txtPhoneNum.Text = Phone
+                txtStreetAdd.Text = Street
+                txtBarangay.Text = Barangay
+                cmbCity.Text = City
+                cmbGender.Text = Gender
+                cmbRegion.Text = Region
+                dtpDOB.Value = DOB
+                picCustomImage.Image = Image.FromStream(ms)
+                ' frmCreate.picCustomImage.Image = Image.FromStream(ms)
+            End While
+            reader2.Close()
+            conn.Close()
+
+            conn.Open()
+            loadRegion()
+
+        Else
+            btnEdit.Enabled = False
+            btnUpdate.Enabled = False
+            btnCancel.Enabled = True
+            btnRegis.Enabled = True
+            loadRegion()
+        End If
+    End Sub
+
+
+    Sub loadRegion()
         Dim query As String
         Dim reader As MySqlDataReader
         query = "select * from region"
         Dim cm As New MySqlCommand
         cm = New MySqlCommand(query, conn)
-
+        'conn.Open()
         reader = cm.ExecuteReader
         While reader.Read
             Dim reg = reader.GetString("Region_Name")
             cmbRegion.Items.Add(reg)
         End While
         conn.Close()
+
     End Sub
+
+
 
     Function isValidEmail(ByVal email As String) As Boolean
         Dim validEmail As Boolean = True
@@ -191,6 +271,7 @@ Public Class frmCreate
 
 
     Private Sub cmbRegion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRegion.SelectedIndexChanged
+        conn.Close()
 
         cmbCity.Items.Clear()
         If cmbRegion.Text = "Region 1 (Ilocos Region)" Then
@@ -362,7 +443,7 @@ Public Class frmCreate
 
     End Sub
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Hide()
     End Sub
 
@@ -373,6 +454,76 @@ Public Class frmCreate
         If opf.ShowDialog = Windows.Forms.DialogResult.OK Then
             picCustomImage.Image = Image.FromFile(opf.FileName)
         End If
+    End Sub
+
+    Sub enable()
+        txtBarangay.Enabled = True
+        txtEmail.Enabled = True
+        txtFName.Enabled = True
+        txtLName.Enabled = True
+        txtPass.Enabled = True
+        txtPhoneNum.Enabled = True
+        txtStreetAdd.Enabled = True
+        txtUsername.Enabled = True
+        cmbCity.Enabled = True
+        cmbGender.Enabled = True
+        cmbRegion.Enabled = True
+        dtpDOB.Enabled = True
+        btnBrowse.Enabled = True
+    End Sub
+    Sub disable()
+        txtBarangay.Enabled = False
+        txtEmail.Enabled = False
+        txtFName.Enabled = False
+        txtLName.Enabled = False
+        txtPass.Enabled = False
+        txtPhoneNum.Enabled = False
+        txtStreetAdd.Enabled = False
+        txtUsername.Enabled = False
+        cmbCity.Enabled = False
+        cmbGender.Enabled = False
+        cmbRegion.Enabled = False
+        dtpDOB.Enabled = False
+        btnBrowse.Enabled = False
+
+    End Sub
+
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        enable()
+
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        Dim ms As New MemoryStream
+
+        Dim command As New MySqlCommand("Update customer set First_Name=@Fname, Last_Name=@Lname, Customer_Username=@Username, Customer_Password =@Pass, Email=@Email,Phone_Number=@Phone, Street_Address=@Street, Barangay=@Barangay, City=@City, Region=@Region, Gender=@Gender,Date_Of_Birth =@DOB, Profile_Image=@ProfImage where customer_id='" & customID & "'", conn)
+        picCustomImage.Image.Save(ms, picCustomImage.Image.RawFormat)
+
+        With command
+            .Parameters.Clear()
+            .Parameters.AddWithValue("@Fname", txtFName.Text)
+            .Parameters.AddWithValue("@Lname", txtLName.Text)
+            .Parameters.AddWithValue("@Username", txtUsername.Text)
+            .Parameters.AddWithValue("@Pass", txtPass.Text)
+            .Parameters.AddWithValue("@Email", txtEmail.Text)
+            .Parameters.AddWithValue("@Phone", txtPhoneNum.Text)
+            .Parameters.AddWithValue("@Street", txtStreetAdd.Text)
+            .Parameters.AddWithValue("@Barangay", txtBarangay.Text)
+            .Parameters.AddWithValue("@City", cmbCity.Text)
+            .Parameters.AddWithValue("@Region", cmbRegion.Text)
+            .Parameters.AddWithValue("@Gender", cmbGender.Text)
+            .Parameters.AddWithValue("@DOB", dtpDOB.Value)
+            .Parameters.AddWithValue("@ProfImage", ms.ToArray())
+        End With
+        conn.Open()
+
+        If command.ExecuteNonQuery() = 1 Then
+            MessageBox.Show("Updated Records")
+            disable()
+        Else
+            MessageBox.Show("Record not Inserted")
+        End If
+        conn.Close()
     End Sub
 
     Function clearAll()

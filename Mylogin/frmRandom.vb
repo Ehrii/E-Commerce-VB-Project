@@ -44,74 +44,7 @@ Public Class frmShop
 
 
 
-    Sub login()
-        Dim command As New MySqlCommand("INSERT INTO audit VALUES(@Audit_No,@Username,@Action_Type,@Action_Date,@Action_Time,@Role)", conn)
-        With command
-            Dim username
-            Dim query As String
-            Dim reader As MySqlDataReader
-            query = "select * from customer where Customer_ID='" & customID & "'"
-            Dim cm As New MySqlCommand
-            cm = New MySqlCommand(query, conn)
-            conn.Open()
-            reader = cm.ExecuteReader
-            While reader.Read
-                username = reader.GetString("Customer_Username")
-            End While
-            conn.Close()
 
-            .Parameters.Clear()
-            .Parameters.AddWithValue("@Audit_No", 0)
-            .Parameters.AddWithValue("@Username", username)
-            .Parameters.AddWithValue("@Action_Type", "Logged-In")
-            .Parameters.AddWithValue("@Action_Date", currdate)
-            .Parameters.AddWithValue("@Action_Time", currtime)
-            .Parameters.AddWithValue("@Role", "Customer")
-            conn.Open()
-
-            If command.ExecuteNonQuery() = 1 Then
-                MessageBox.Show("Audit record Inserted")
-            Else
-                MessageBox.Show("Audit record not Inserted")
-            End If
-            conn.Close()
-        End With
-    End Sub
-
-    Sub logout()
-        Dim command As New MySqlCommand("INSERT INTO audit VALUES(@Audit_No,@Username,@Action_Type,@Action_Date,@Action_Time,@Role)", conn)
-        With command
-            Dim username
-            Dim query As String
-            Dim reader As MySqlDataReader
-            query = "select * from customer where Customer_ID='" & customID & "'"
-            Dim cm As New MySqlCommand
-            cm = New MySqlCommand(query, conn)
-            conn.Open()
-            reader = cm.ExecuteReader
-            While reader.Read
-                username = reader.GetString("Customer_Username")
-            End While
-            conn.Close()
-
-            .Parameters.Clear()
-            .Parameters.AddWithValue("@Audit_No", 0)
-            .Parameters.AddWithValue("@Username", username)
-            .Parameters.AddWithValue("@Action_Type", "Logged-Out")
-            .Parameters.AddWithValue("@Action_Date", currdate)
-            .Parameters.AddWithValue("@Action_Time", currtime)
-            .Parameters.AddWithValue("@Role", "Customer")
-            conn.Open()
-
-            If command.ExecuteNonQuery() = 1 Then
-                MessageBox.Show("Audit record Inserted")
-            Else
-                MessageBox.Show("Audit record not Inserted")
-            End If
-            conn.Close()
-        End With
-
-    End Sub
 
     Private Sub frmShop_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'conn.connectionstring = "server = localhost;user id=root; port = 3306;password=root;database=ecommercedb1"
@@ -120,7 +53,9 @@ Public Class frmShop
         loadRecord()
         prodOverview()
         loadcartcount()
-        login()
+
+
+
 
         If lblCartCount.Text = 0 Then
             txtCart.Enabled = False
@@ -184,6 +119,10 @@ Public Class frmShop
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles txtCart.Click
+
+
+
+
         frmCart.Show()
         frmCart.lblCartCount.Text = lblCartCount.Text
         conn.Open()
@@ -344,10 +283,11 @@ Public Class frmShop
         imagecolumn.ImageLayout = DataGridViewImageCellLayout.Zoom
     End Sub
 
-    Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs)
         Me.Hide()
-        logout()
     End Sub
 
+    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
 
+    End Sub
 End Class
