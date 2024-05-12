@@ -28,11 +28,12 @@ Public Class frmManage
 
 
     Sub loadRecord()
+        conn.Close()
         Dim cm As New MySqlCommand
         dgvProduct.Rows.Clear()
         'conn.Open()'
         cm = New MySqlCommand("Select * from product where Product_Name like '%" & txtSearch.Text & "%'", conn)
-
+        conn.Open()
         dr = cm.ExecuteReader
         While dr.Read
             dgvProduct.Rows.Add(dr.Item("Product_ID").ToString, dr.Item("Product_Image"), dr.Item("Item_Code").ToString, dr.Item("Product_Name").ToString, dr.Item("Description").ToString, dr.Item("Price"), dr.Item("Stock").ToString, dr.Item("Category_ID").ToString, dr.Item("Category_Name").ToString)
@@ -56,41 +57,45 @@ Public Class frmManage
 
     End Sub
 
-
-
     Private Sub dgvProduct_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProduct.CellContentClick
-        Dim cm As New MySqlCommand
-        Dim prodId As New Integer
-        Dim colName As String = dgvProduct.Columns(e.ColumnIndex).Name
-        If colName = "Delete" Then
-            prodId = dgvProduct.CurrentRow.Cells(0).Value.ToString()
-            cm = New MySqlCommand("DELETE FROM product WHERE Product_ID = @Product_ID", conn)
-            cm.Parameters.Add("@Product_ID", MySqlDbType.Int64).Value = prodId
+        Try
+            conn.Close()
+            Dim cm As New MySqlCommand
+            Dim prodId As New Integer
+            Dim colName As String = dgvProduct.Columns(e.ColumnIndex).Name
+            If colName = "Delete" Then
+                prodId = dgvProduct.CurrentRow.Cells(0).Value.ToString()
+                cm = New MySqlCommand("DELETE FROM product WHERE Product_ID = @Product_ID", conn)
+                cm.Parameters.Add("@Product_ID", MySqlDbType.Int64).Value = prodId
 
-            conn.Open()
-            If cm.ExecuteNonQuery() = 1 Then
-                MessageBox.Show("Data Deleted")
-                loadRecord()
-            Else
-                MessageBox.Show("Error")
+                conn.Open()
+                If cm.ExecuteNonQuery() = 1 Then
+                    MessageBox.Show("Product Deleted", "MANAGE ORDERS MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    loadRecord()
+                Else
+                    MessageBox.Show("Error")
+                End If
             End If
-        End If
-        If colName = "Update" Then
-            frmProductDetails.lblID.Visible = True
-            frmProductDetails.lblID.Text = "PRODUCT ID: " & dgvProduct.CurrentRow.Cells(0).Value.ToString()
-            Dim data As Byte() = DirectCast(dgvProduct.CurrentRow.Cells(1).Value, Byte())
-            Dim ms As New MemoryStream(data)
-            frmProductDetails.picProdImg.Image = Image.FromStream(ms)
-            frmProductDetails.txtItem.Text = dgvProduct.CurrentRow.Cells(2).Value.ToString()
-            frmProductDetails.txtProdName.Text = dgvProduct.CurrentRow.Cells(3).Value.ToString()
-            frmProductDetails.txtDesc.Text = dgvProduct.CurrentRow.Cells(4).Value.ToString()
-            frmProductDetails.txtPrice.Text = dgvProduct.CurrentRow.Cells(5).Value.ToString()
-            'frmProductDetails.txtStock.Text = dgvProduct.CurrentRow.Cells(6).Value.ToString()
-            frmProductDetails.cmbCateg.Text = dgvProduct.CurrentRow.Cells(7).Value.ToString()
-            frmProductDetails.lblCateg.Text = "CATEGORY: " & dgvProduct.CurrentRow.Cells(8).Value.ToString()
-            frmProductDetails.lblAction.Text = "UPDATE RECORDS"
-            frmProductDetails.Show()
-        End If
+            If colName = "Update" Then
+                frmProductDetails.lblID.Visible = True
+                frmProductDetails.lblID.Text = "PRODUCT ID: " & dgvProduct.CurrentRow.Cells(0).Value.ToString()
+                Dim data As Byte() = DirectCast(dgvProduct.CurrentRow.Cells(1).Value, Byte())
+                Dim ms As New MemoryStream(data)
+                frmProductDetails.picProdImg.Image = Image.FromStream(ms)
+                frmProductDetails.txtItem.Text = dgvProduct.CurrentRow.Cells(2).Value.ToString()
+                frmProductDetails.txtProdName.Text = dgvProduct.CurrentRow.Cells(3).Value.ToString()
+                frmProductDetails.txtDesc.Text = dgvProduct.CurrentRow.Cells(4).Value.ToString()
+                frmProductDetails.txtPrice.Text = dgvProduct.CurrentRow.Cells(5).Value.ToString()
+                'frmProductDetails.txtStock.Text = dgvProduct.CurrentRow.Cells(6).Value.ToString()
+                frmProductDetails.cmbCateg.Text = dgvProduct.CurrentRow.Cells(7).Value.ToString()
+                frmProductDetails.lblCateg.Text = "CATEGORY: " & dgvProduct.CurrentRow.Cells(8).Value.ToString()
+                frmProductDetails.lblAction.Text = "UPDATE RECORDS"
+                frmProductDetails.Show()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("ERROR: " & ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
 
@@ -109,7 +114,7 @@ Public Class frmManage
             cm.Parameters.Add("@Product_ID", MySqlDbType.Int64).Value = prodId
             conn.Open()
             If cm.ExecuteNonQuery() = 1 Then
-                MessageBox.Show("Data Deleted")
+                MessageBox.Show("Product Deleted", "MANAGE ORDERS MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 loadRecord()
             Else
                 MessageBox.Show("Error")
@@ -141,20 +146,18 @@ Public Class frmManage
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCateg.SelectedIndexChanged
-        connect()
-
+        conn.Close()
         dgvProduct.Rows.Clear()
+
         Dim cm As New MySqlCommand
-        If cmbCateg.Text = "All" Then
-            cm = New MySqlCommand("Select * from product", conn)
+        If cmbCateg.SelectedIndex = 0 Then
+            loadRecord()
+            Exit Sub
         Else
-            cm = New MySqlCommand("Select * from product where Category_Name like '%" & cmbCateg.Text & "%'", conn)
+            cm = New MySqlCommand("Select * from product where Item_Code like '" & cmbCateg.Text & "%'", conn)
         End If
-
-
+        conn.Open()
         dr = cm.ExecuteReader
-
-
         While dr.Read
             dgvProduct.Rows.Add(dr.Item("Product_ID").ToString, dr.Item("Product_Image"), dr.Item("Item_Code").ToString, dr.Item("Product_Name").ToString, dr.Item("Description").ToString, dr.Item("Price"), dr.Item("Stock").ToString, dr.Item("Category_ID").ToString, dr.Item("Category_Name").ToString)
         End While

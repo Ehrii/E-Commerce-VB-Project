@@ -23,9 +23,9 @@ Partial Class frmShop
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmShop))
         Me.dgvShop = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -86,12 +86,12 @@ Partial Class frmShop
         Me.Guna2GroupBox4 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.dgvShop, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -110,39 +110,40 @@ Partial Class frmShop
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgvShop
         '
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.dgvShop.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        Me.dgvShop.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvShop.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.dgvShop.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightYellow
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvShop.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightYellow
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvShop.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvShop.ColumnHeadersHeight = 24
         Me.dgvShop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgvShop.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column8, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column9, Me.Details})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Beige
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvShop.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.Beige
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvShop.DefaultCellStyle = DataGridViewCellStyle9
         Me.dgvShop.GridColor = System.Drawing.Color.Beige
-        Me.dgvShop.Location = New System.Drawing.Point(282, 169)
+        Me.dgvShop.Location = New System.Drawing.Point(329, -34)
         Me.dgvShop.Name = "dgvShop"
         Me.dgvShop.RowHeadersVisible = False
-        Me.dgvShop.Size = New System.Drawing.Size(837, 598)
+        Me.dgvShop.Size = New System.Drawing.Size(837, 649)
         Me.dgvShop.TabIndex = 74
         Me.dgvShop.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvShop.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -180,7 +181,7 @@ Partial Class frmShop
         '
         'Column8
         '
-        Me.Column8.HeaderText = "Item_Code"
+        Me.Column8.HeaderText = "Item Code"
         Me.Column8.Name = "Column8"
         '
         'Column3
@@ -210,7 +211,7 @@ Partial Class frmShop
         '
         'Column9
         '
-        Me.Column9.HeaderText = "Category_Name"
+        Me.Column9.HeaderText = "Category Name"
         Me.Column9.Name = "Column9"
         '
         'Details
@@ -246,11 +247,11 @@ Partial Class frmShop
         '
         Me.GunaLabel1.AutoSize = True
         Me.GunaLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel1.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel1.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.GunaLabel1.Location = New System.Drawing.Point(82, 121)
+        Me.GunaLabel1.Location = New System.Drawing.Point(82, 112)
         Me.GunaLabel1.Name = "GunaLabel1"
-        Me.GunaLabel1.Size = New System.Drawing.Size(106, 27)
+        Me.GunaLabel1.Size = New System.Drawing.Size(90, 21)
         Me.GunaLabel1.TabIndex = 63
         Me.GunaLabel1.Text = "PRODUCT"
         '
@@ -263,7 +264,6 @@ Partial Class frmShop
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.lblCustomId)
         Me.Panel1.Controls.Add(Me.lblClock)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -277,9 +277,9 @@ Partial Class frmShop
         Me.lblCustomId.AutoSize = True
         Me.lblCustomId.BackColor = System.Drawing.Color.Transparent
         Me.lblCustomId.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCustomId.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.lblCustomId.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.lblCustomId.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.lblCustomId.Location = New System.Drawing.Point(1117, 66)
+        Me.lblCustomId.Location = New System.Drawing.Point(939, 37)
         Me.lblCustomId.Name = "lblCustomId"
         Me.lblCustomId.Size = New System.Drawing.Size(103, 22)
         Me.lblCustomId.TabIndex = 53
@@ -298,6 +298,7 @@ Partial Class frmShop
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.lblCustomId)
         Me.Panel3.Controls.Add(Me.PictureBox9)
         Me.Panel3.Controls.Add(Me.lblPrice)
         Me.Panel3.Controls.Add(Me.Guna2ControlBox3)
@@ -316,10 +317,10 @@ Partial Class frmShop
         'PictureBox9
         '
         Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
-        Me.PictureBox9.Location = New System.Drawing.Point(897, 16)
+        Me.PictureBox9.Location = New System.Drawing.Point(887, 9)
         Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(35, 33)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox9.TabIndex = 79
         Me.PictureBox9.TabStop = False
         '
@@ -327,13 +328,13 @@ Partial Class frmShop
         '
         Me.lblPrice.AutoSize = True
         Me.lblPrice.BackColor = System.Drawing.Color.Transparent
-        Me.lblPrice.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrice.Font = New System.Drawing.Font("Yu Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrice.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.lblPrice.Location = New System.Drawing.Point(938, 16)
+        Me.lblPrice.Location = New System.Drawing.Point(938, 9)
         Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(144, 27)
+        Me.lblPrice.Size = New System.Drawing.Size(193, 25)
         Me.lblPrice.TabIndex = 46
-        Me.lblPrice.Text = "TOTAL PRICE:"
+        Me.lblPrice.Text = "SUB-TOTAL PRICE:"
         '
         'Guna2ControlBox3
         '
@@ -373,11 +374,11 @@ Partial Class frmShop
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(61, 41)
+        Me.Label11.Location = New System.Drawing.Point(61, 38)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(213, 20)
+        Me.Label11.Size = New System.Drawing.Size(262, 21)
         Me.Label11.TabIndex = 42
         Me.Label11.Text = "ELEVATE YOUR PERFORMANCE"
         '
@@ -385,11 +386,11 @@ Partial Class frmShop
         '
         Me.GunaLabel4.AutoSize = True
         Me.GunaLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel4.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel4.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel4.Location = New System.Drawing.Point(61, 8)
         Me.GunaLabel4.Name = "GunaLabel4"
-        Me.GunaLabel4.Size = New System.Drawing.Size(202, 27)
+        Me.GunaLabel4.Size = New System.Drawing.Size(175, 21)
         Me.GunaLabel4.TabIndex = 40
         Me.GunaLabel4.Text = "SPORTSWEAR SHOP"
         '
@@ -397,7 +398,8 @@ Partial Class frmShop
         '
         Me.Guna2Shapes2.BorderThickness = 1
         Me.Guna2Shapes2.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2Shapes2.Location = New System.Drawing.Point(40, 26)
+        Me.Guna2Shapes2.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Shapes2.Location = New System.Drawing.Point(40, 22)
         Me.Guna2Shapes2.Name = "Guna2Shapes2"
         Me.Guna2Shapes2.PolygonSkip = 1
         Me.Guna2Shapes2.Rotate = 0!
@@ -411,6 +413,7 @@ Partial Class frmShop
         '
         Me.Guna2Shapes1.BorderThickness = 1
         Me.Guna2Shapes1.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.Guna2Shapes1.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Shapes1.Location = New System.Drawing.Point(5, 24)
         Me.Guna2Shapes1.Name = "Guna2Shapes1"
         Me.Guna2Shapes1.PolygonSkip = 1
@@ -448,7 +451,7 @@ Partial Class frmShop
         '
         Me.txtProdName.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
         Me.txtProdName.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtProdName.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtProdName.Font = New System.Drawing.Font("Yu Gothic Medium", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtProdName.Location = New System.Drawing.Point(13, 46)
         Me.txtProdName.Name = "txtProdName"
         Me.txtProdName.Size = New System.Drawing.Size(244, 49)
@@ -480,12 +483,12 @@ Partial Class frmShop
         '
         Me.GunaLabel3.AutoSize = True
         Me.GunaLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel3.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel3.Font = New System.Drawing.Font("Yu Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.GunaLabel3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.GunaLabel3.Location = New System.Drawing.Point(45, 15)
+        Me.GunaLabel3.Location = New System.Drawing.Point(45, 12)
         Me.GunaLabel3.Name = "GunaLabel3"
-        Me.GunaLabel3.Size = New System.Drawing.Size(145, 22)
+        Me.GunaLabel3.Size = New System.Drawing.Size(174, 25)
         Me.GunaLabel3.TabIndex = 54
         Me.GunaLabel3.Text = "Product Overview"
         '
@@ -512,7 +515,7 @@ Partial Class frmShop
         Me.Guna2GroupBox3.Controls.Add(Me.txtProdDesc)
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox3.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox3.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox3.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2GroupBox3.Location = New System.Drawing.Point(0, 337)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
@@ -542,7 +545,7 @@ Partial Class frmShop
         Me.txtCart.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.txtCart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.txtCart.FillColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtCart.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCart.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCart.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.txtCart.HoverState.FillColor = System.Drawing.Color.Black
         Me.txtCart.HoverState.ForeColor = System.Drawing.Color.White
@@ -578,11 +581,11 @@ Partial Class frmShop
         Me.Guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.Guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2Button4.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button4.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Guna2Button4.HoverState.FillColor = System.Drawing.Color.Black
         Me.Guna2Button4.HoverState.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button4.Location = New System.Drawing.Point(856, 130)
+        Me.Guna2Button4.Location = New System.Drawing.Point(724, 128)
         Me.Guna2Button4.Name = "Guna2Button4"
         Me.Guna2Button4.Size = New System.Drawing.Size(101, 28)
         Me.Guna2Button4.TabIndex = 88
@@ -606,7 +609,7 @@ Partial Class frmShop
         Me.Guna2GroupBox1.Controls.Add(Me.cmbMen)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(12, 169)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
@@ -628,11 +631,11 @@ Partial Class frmShop
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(93, 250)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(92, 20)
+        Me.Label4.Size = New System.Drawing.Size(114, 21)
         Me.Label4.TabIndex = 98
         Me.Label4.Text = "Accessories: "
         '
@@ -693,33 +696,33 @@ Partial Class frmShop
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(93, 182)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(40, 20)
+        Me.Label3.Size = New System.Drawing.Size(50, 21)
         Me.Label3.TabIndex = 94
         Me.Label3.Text = "Kids:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(93, 114)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 20)
+        Me.Label2.Size = New System.Drawing.Size(73, 21)
         Me.Label2.TabIndex = 93
         Me.Label2.Text = "Women:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(93, 49)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(41, 20)
+        Me.Label1.Size = New System.Drawing.Size(49, 21)
         Me.Label1.TabIndex = 92
         Me.Label1.Text = "Men:"
         '
@@ -798,11 +801,11 @@ Partial Class frmShop
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(324, 133)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(132, 22)
+        Me.Label6.Size = New System.Drawing.Size(144, 21)
         Me.Label6.TabIndex = 175
         Me.Label6.Text = "Search Products:"
         '
@@ -816,7 +819,7 @@ Partial Class frmShop
         Me.Guna2GroupBox4.Controls.Add(Me.lblCartCount)
         Me.Guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox4.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox4.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox4.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2GroupBox4.Location = New System.Drawing.Point(1137, 625)
         Me.Guna2GroupBox4.Name = "Guna2GroupBox4"
@@ -835,7 +838,7 @@ Partial Class frmShop
         Me.Guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.Guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2Button3.FillColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.Guna2Button3.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2Button3.HoverState.FillColor = System.Drawing.Color.Black
         Me.Guna2Button3.HoverState.ForeColor = System.Drawing.Color.White
@@ -860,6 +863,16 @@ Partial Class frmShop
         Me.PictureBox10.TabIndex = 59
         Me.PictureBox10.TabStop = False
         '
+        'txtSearch
+        '
+        Me.txtSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.txtSearch.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.ForeColor = System.Drawing.Color.White
+        Me.txtSearch.Location = New System.Drawing.Point(474, 132)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(244, 26)
+        Me.txtSearch.TabIndex = 174
+        '
         'DataGridViewImageColumn1
         '
         Me.DataGridViewImageColumn1.HeaderText = ""
@@ -879,27 +892,6 @@ Partial Class frmShop
         Me.PictureBox8.TabIndex = 176
         Me.PictureBox8.TabStop = False
         '
-        'Guna2Button2
-        '
-        Me.Guna2Button2.AutoRoundedCorners = True
-        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.BorderRadius = 13
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Guna2Button2.HoverState.FillColor = System.Drawing.Color.Black
-        Me.Guna2Button2.HoverState.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), System.Drawing.Image)
-        Me.Guna2Button2.Location = New System.Drawing.Point(963, 129)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(156, 28)
-        Me.Guna2Button2.TabIndex = 90
-        Me.Guna2Button2.Text = "Add to Wishlist"
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
@@ -914,19 +906,22 @@ Partial Class frmShop
         '
         Me.Panel4.BackgroundImage = CType(resources.GetObject("Panel4.BackgroundImage"), System.Drawing.Image)
         Me.Panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Panel4.Controls.Add(Me.dgvShop)
         Me.Panel4.Location = New System.Drawing.Point(-47, 169)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1193, 637)
         Me.Panel4.TabIndex = 177
         '
-        'txtSearch
+        'Label5
         '
-        Me.txtSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.txtSearch.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(460, 130)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(244, 26)
-        Me.txtSearch.TabIndex = 174
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(82, 135)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(60, 21)
+        Me.Label5.TabIndex = 80
+        Me.Label5.Text = "MENU"
         '
         'frmShop
         '
@@ -934,15 +929,14 @@ Partial Class frmShop
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1412, 807)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Guna2GroupBox4)
         Me.Controls.Add(Me.PictureBox8)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Guna2GroupBox1)
-        Me.Controls.Add(Me.Guna2Button2)
         Me.Controls.Add(Me.Guna2Button4)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.dgvShop)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.GunaLabel1)
         Me.Controls.Add(Me.Panel1)
@@ -975,6 +969,7 @@ Partial Class frmShop
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1015,17 +1010,6 @@ Partial Class frmShop
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents lblCartCount As Label
     Friend WithEvents txtProdName As RichTextBox
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewImageColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents Details As DataGridViewImageColumn
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents Label4 As Label
@@ -1045,4 +1029,15 @@ Partial Class frmShop
     Friend WithEvents Guna2GroupBox4 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents txtSearch As TextBox
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewImageColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Details As DataGridViewImageColumn
+    Friend WithEvents Label5 As Label
 End Class

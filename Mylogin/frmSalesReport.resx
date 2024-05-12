@@ -118,13 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="Guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>27, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>27</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="picImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAA1hJREFUaEPtmLmq1VAYha+iNtZWTo2dha/hAE44FDba6GNo5/QQCo6FYCMi2PkO
+        DAAACwwBP0AiyAAAA1hJREFUaEPtmLmq1VAYha+iNtZWTo2dha/hAE44FDba6GNo5/QQCo6FYCMi2PkO
         ztcBpwdQwUJR14ITWCzWzXB2TsyRfPCh5q78e/83OzuJK2uwCZ6At+EL+H0m/85j/Bkz/wVH4Rv4p8FV
         eAQuLevhFZiaq/My5LlLx1WYGmrjJbhUcBmnRugDuBVugw9nx5KH4VLAzafunmWjFdthytDXcCMcPdxx
         UwOVTspUHoNDc2H2Z2vuwDT5SidlKm/CoeG4nfaQV9AnrjopU8nn9NBUY7du+ivUSbvOXZhylLWGRsdv
@@ -141,4 +144,7 @@
         UkZ1UkYtJhVVnZRRnZRRnZRRJyYmJiYmJkbJyspfT3KFQieal0AAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="GunaLineDataset1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>205, 17</value>
+  </metadata>
 </root>

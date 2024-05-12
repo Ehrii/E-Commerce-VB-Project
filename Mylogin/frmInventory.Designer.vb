@@ -23,14 +23,19 @@ Partial Class frmInventory
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInventory))
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Guna2AnimateWindow1 = New Guna.UI2.WinForms.Guna2AnimateWindow(Me.components)
         Me.DgvInventory = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.ProductImg = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Inventory_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Item_Code = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Customer_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.picImg = New System.Windows.Forms.PictureBox()
         Me.lblMenu = New System.Windows.Forms.Label()
@@ -52,11 +57,6 @@ Partial Class frmInventory
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.ProductImg = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Inventory_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Item_Code = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Customer_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DgvInventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.picImg, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,41 +74,44 @@ Partial Class frmInventory
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(343, 90)
+        Me.Label6.Location = New System.Drawing.Point(342, 90)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(132, 22)
+        Me.Label6.Size = New System.Drawing.Size(153, 21)
         Me.Label6.TabIndex = 80
         Me.Label6.Text = "Search Products:"
         '
         'DgvInventory
         '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.DgvInventory.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgvInventory.AllowUserToAddRows = False
+        Me.DgvInventory.AllowUserToDeleteRows = False
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.DgvInventory.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DgvInventory.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvInventory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvInventory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DgvInventory.ColumnHeadersHeight = 40
         Me.DgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DgvInventory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProductImg, Me.Inventory_ID, Me.Item_Code, Me.Total, Me.Customer_ID})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Yellow
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvInventory.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Yellow
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvInventory.DefaultCellStyle = DataGridViewCellStyle6
         Me.DgvInventory.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvInventory.Location = New System.Drawing.Point(301, 122)
         Me.DgvInventory.Name = "DgvInventory"
+        Me.DgvInventory.ReadOnly = True
         Me.DgvInventory.RowHeadersVisible = False
         Me.DgvInventory.Size = New System.Drawing.Size(836, 554)
         Me.DgvInventory.TabIndex = 82
@@ -125,7 +128,7 @@ Partial Class frmInventory
         Me.DgvInventory.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.DgvInventory.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DgvInventory.ThemeStyle.HeaderStyle.Height = 40
-        Me.DgvInventory.ThemeStyle.ReadOnly = False
+        Me.DgvInventory.ThemeStyle.ReadOnly = True
         Me.DgvInventory.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
         Me.DgvInventory.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DgvInventory.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -133,6 +136,39 @@ Partial Class frmInventory
         Me.DgvInventory.ThemeStyle.RowsStyle.Height = 22
         Me.DgvInventory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvInventory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'ProductImg
+        '
+        Me.ProductImg.HeaderText = "Product Image"
+        Me.ProductImg.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.ProductImg.Name = "ProductImg"
+        Me.ProductImg.ReadOnly = True
+        Me.ProductImg.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProductImg.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        'Inventory_ID
+        '
+        Me.Inventory_ID.HeaderText = "Inventory ID"
+        Me.Inventory_ID.Name = "Inventory_ID"
+        Me.Inventory_ID.ReadOnly = True
+        '
+        'Item_Code
+        '
+        Me.Item_Code.HeaderText = "Item Code"
+        Me.Item_Code.Name = "Item_Code"
+        Me.Item_Code.ReadOnly = True
+        '
+        'Total
+        '
+        Me.Total.HeaderText = "Product Name"
+        Me.Total.Name = "Total"
+        Me.Total.ReadOnly = True
+        '
+        'Customer_ID
+        '
+        Me.Customer_ID.HeaderText = "Stock"
+        Me.Customer_ID.Name = "Customer_ID"
+        Me.Customer_ID.ReadOnly = True
         '
         'Panel1
         '
@@ -151,7 +187,7 @@ Partial Class frmInventory
         'picImg
         '
         Me.picImg.Image = CType(resources.GetObject("picImg.Image"), System.Drawing.Image)
-        Me.picImg.Location = New System.Drawing.Point(5, 6)
+        Me.picImg.Location = New System.Drawing.Point(5, 5)
         Me.picImg.Name = "picImg"
         Me.picImg.Size = New System.Drawing.Size(62, 59)
         Me.picImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -161,11 +197,11 @@ Partial Class frmInventory
         'lblMenu
         '
         Me.lblMenu.AutoSize = True
-        Me.lblMenu.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMenu.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMenu.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.lblMenu.Location = New System.Drawing.Point(64, 41)
+        Me.lblMenu.Location = New System.Drawing.Point(66, 38)
         Me.lblMenu.Name = "lblMenu"
-        Me.lblMenu.Size = New System.Drawing.Size(206, 20)
+        Me.lblMenu.Size = New System.Drawing.Size(274, 21)
         Me.lblMenu.TabIndex = 52
         Me.lblMenu.Text = "STOCK ENTRY / VIEW STOCKS"
         '
@@ -173,11 +209,11 @@ Partial Class frmInventory
         '
         Me.GunaLabel4.AutoSize = True
         Me.GunaLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel4.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel4.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.GunaLabel4.Location = New System.Drawing.Point(64, 8)
+        Me.GunaLabel4.Location = New System.Drawing.Point(64, 11)
         Me.GunaLabel4.Name = "GunaLabel4"
-        Me.GunaLabel4.Size = New System.Drawing.Size(197, 27)
+        Me.GunaLabel4.Size = New System.Drawing.Size(178, 21)
         Me.GunaLabel4.TabIndex = 50
         Me.GunaLabel4.Text = "ORDER INVENTORY"
         '
@@ -186,7 +222,7 @@ Partial Class frmInventory
         Me.Guna2Shapes2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Shapes2.BorderThickness = 1
         Me.Guna2Shapes2.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2Shapes2.Location = New System.Drawing.Point(48, 26)
+        Me.Guna2Shapes2.Location = New System.Drawing.Point(48, 23)
         Me.Guna2Shapes2.Name = "Guna2Shapes2"
         Me.Guna2Shapes2.PolygonSkip = 1
         Me.Guna2Shapes2.Rotate = 0!
@@ -229,7 +265,7 @@ Partial Class frmInventory
         Me.grpEntry.Controls.Add(Me.btnAdd)
         Me.grpEntry.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.grpEntry.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.grpEntry.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grpEntry.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpEntry.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.grpEntry.Location = New System.Drawing.Point(12, 529)
         Me.grpEntry.Name = "grpEntry"
@@ -247,7 +283,7 @@ Partial Class frmInventory
         Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnDelete.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.btnDelete.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.Font = New System.Drawing.Font("Yu Gothic Medium", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.btnDelete.Location = New System.Drawing.Point(150, 48)
         Me.btnDelete.Name = "btnDelete"
@@ -265,7 +301,7 @@ Partial Class frmInventory
         Me.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnAdd.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.btnAdd.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Font = New System.Drawing.Font("Yu Gothic Medium", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.btnAdd.Location = New System.Drawing.Point(11, 48)
         Me.btnAdd.Name = "btnAdd"
@@ -288,7 +324,7 @@ Partial Class frmInventory
         Me.Guna2GroupBox2.Controls.Add(Me.Label1)
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox2.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox2.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2GroupBox2.Location = New System.Drawing.Point(12, 85)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
@@ -308,16 +344,16 @@ Partial Class frmInventory
         Me.txtStockQty.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtStockQty.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.txtStockQty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtStockQty.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStockQty.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtStockQty.ForeColor = System.Drawing.Color.White
         Me.txtStockQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtStockQty.Location = New System.Drawing.Point(14, 357)
+        Me.txtStockQty.Location = New System.Drawing.Point(14, 374)
         Me.txtStockQty.Multiline = True
         Me.txtStockQty.Name = "txtStockQty"
         Me.txtStockQty.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtStockQty.PlaceholderText = ""
         Me.txtStockQty.SelectedText = ""
-        Me.txtStockQty.Size = New System.Drawing.Size(256, 33)
+        Me.txtStockQty.Size = New System.Drawing.Size(256, 44)
         Me.txtStockQty.TabIndex = 188
         '
         'txtCode
@@ -331,16 +367,16 @@ Partial Class frmInventory
         Me.txtCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtCode.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.txtCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCode.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCode.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCode.ForeColor = System.Drawing.Color.White
         Me.txtCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCode.Location = New System.Drawing.Point(14, 141)
+        Me.txtCode.Location = New System.Drawing.Point(14, 147)
         Me.txtCode.Multiline = True
         Me.txtCode.Name = "txtCode"
         Me.txtCode.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCode.PlaceholderText = ""
         Me.txtCode.SelectedText = ""
-        Me.txtCode.Size = New System.Drawing.Size(256, 33)
+        Me.txtCode.Size = New System.Drawing.Size(256, 42)
         Me.txtCode.TabIndex = 187
         '
         'txtID
@@ -354,37 +390,37 @@ Partial Class frmInventory
         Me.txtID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtID.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.txtID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtID.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtID.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtID.ForeColor = System.Drawing.Color.White
         Me.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtID.Location = New System.Drawing.Point(14, 75)
+        Me.txtID.Location = New System.Drawing.Point(11, 74)
         Me.txtID.Multiline = True
         Me.txtID.Name = "txtID"
         Me.txtID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtID.PlaceholderText = ""
         Me.txtID.SelectedText = ""
-        Me.txtID.Size = New System.Drawing.Size(256, 33)
+        Me.txtID.Size = New System.Drawing.Size(256, 44)
         Me.txtID.TabIndex = 186
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(10, 332)
+        Me.Label7.Location = New System.Drawing.Point(10, 349)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(89, 22)
+        Me.Label7.Size = New System.Drawing.Size(98, 21)
         Me.Label7.TabIndex = 183
         Me.Label7.Text = "Stock Qty:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(10, 182)
+        Me.Label5.Location = New System.Drawing.Point(10, 195)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(121, 22)
+        Me.Label5.Size = New System.Drawing.Size(135, 21)
         Me.Label5.TabIndex = 181
         Me.Label5.Text = "Product Name:"
         '
@@ -399,10 +435,10 @@ Partial Class frmInventory
         Me.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtName.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtName.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtName.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtName.ForeColor = System.Drawing.Color.White
         Me.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtName.Location = New System.Drawing.Point(14, 207)
+        Me.txtName.Location = New System.Drawing.Point(14, 220)
         Me.txtName.Multiline = True
         Me.txtName.Name = "txtName"
         Me.txtName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -414,22 +450,22 @@ Partial Class frmInventory
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(10, 115)
+        Me.Label4.Location = New System.Drawing.Point(10, 121)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(92, 22)
+        Me.Label4.Size = New System.Drawing.Size(102, 21)
         Me.Label4.TabIndex = 180
         Me.Label4.Text = "Item Code:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(10, 50)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(103, 22)
+        Me.Label1.Size = New System.Drawing.Size(119, 21)
         Me.Label1.TabIndex = 178
         Me.Label1.Text = "Inventory ID:"
         '
@@ -438,7 +474,7 @@ Partial Class frmInventory
         Me.txtSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.txtSearch.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearch.ForeColor = System.Drawing.SystemColors.Window
-        Me.txtSearch.Location = New System.Drawing.Point(477, 89)
+        Me.txtSearch.Location = New System.Drawing.Point(501, 88)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(279, 26)
         Me.txtSearch.TabIndex = 178
@@ -452,34 +488,6 @@ Partial Class frmInventory
         Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox8.TabIndex = 81
         Me.PictureBox8.TabStop = False
-        '
-        'ProductImg
-        '
-        Me.ProductImg.HeaderText = "Product Image"
-        Me.ProductImg.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.ProductImg.Name = "ProductImg"
-        Me.ProductImg.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProductImg.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'Inventory_ID
-        '
-        Me.Inventory_ID.HeaderText = "Inventory ID"
-        Me.Inventory_ID.Name = "Inventory_ID"
-        '
-        'Item_Code
-        '
-        Me.Item_Code.HeaderText = "Item Code"
-        Me.Item_Code.Name = "Item_Code"
-        '
-        'Total
-        '
-        Me.Total.HeaderText = "Product Name"
-        Me.Total.Name = "Total"
-        '
-        'Customer_ID
-        '
-        Me.Customer_ID.HeaderText = "Stock"
-        Me.Customer_ID.Name = "Customer_ID"
         '
         'frmInventory
         '

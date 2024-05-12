@@ -59,17 +59,15 @@ Partial Class frmCart
         Me.GunaLabel2 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.Guna2Shapes1 = New Guna.UI2.WinForms.Guna2Shapes()
-        Me.Guna2ControlBox3 = New Guna.UI2.WinForms.Guna2ControlBox()
-        Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.Guna2GradientPanel2 = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GunaLabel4 = New Guna.UI.WinForms.GunaLabel()
         Me.l2 = New Guna.UI.WinForms.GunaLabel()
         Me.Guna2Shapes2 = New Guna.UI2.WinForms.Guna2Shapes()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Guna2GradientPanel1.SuspendLayout()
         CType(Me.dgvCart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GradientPanel3.SuspendLayout()
@@ -101,13 +99,13 @@ Partial Class frmCart
         Me.Guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.Guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2Button3.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2Button3.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button3.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button3.ForeColor = System.Drawing.Color.Black
         Me.Guna2Button3.HoverState.FillColor = System.Drawing.Color.Black
         Me.Guna2Button3.HoverState.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.Location = New System.Drawing.Point(713, 18)
+        Me.Guna2Button3.Location = New System.Drawing.Point(666, 18)
         Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.Size = New System.Drawing.Size(128, 28)
+        Me.Guna2Button3.Size = New System.Drawing.Size(175, 28)
         Me.Guna2Button3.TabIndex = 25
         Me.Guna2Button3.Text = "Update Cart"
         '
@@ -120,7 +118,7 @@ Partial Class frmCart
         Me.dgvCart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop
@@ -170,7 +168,7 @@ Partial Class frmCart
         Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column1.HeaderText = "Product ID"
         Me.Column1.Name = "Column1"
-        Me.Column1.Width = 99
+        Me.Column1.Width = 125
         '
         'Column2
         '
@@ -179,35 +177,35 @@ Partial Class frmCart
         Me.Column2.Name = "Column2"
         Me.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Column2.Width = 126
+        Me.Column2.Width = 157
         '
         'Column3
         '
         Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column3.HeaderText = "Product Name"
         Me.Column3.Name = "Column3"
-        Me.Column3.Width = 124
+        Me.Column3.Width = 154
         '
         'Column4
         '
         Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column4.HeaderText = "Quantity"
         Me.Column4.Name = "Column4"
-        Me.Column4.Width = 88
+        Me.Column4.Width = 106
         '
         'Column5
         '
         Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column5.HeaderText = "Amount"
         Me.Column5.Name = "Column5"
-        Me.Column5.Width = 81
+        Me.Column5.Width = 98
         '
         'Column6
         '
         Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column6.HeaderText = "Item Size"
         Me.Column6.Name = "Column6"
-        Me.Column6.Width = 91
+        Me.Column6.Width = 113
         '
         'Delete
         '
@@ -294,6 +292,7 @@ Partial Class frmCart
         Me.Guna2GradientPanel3.Controls.Add(Me.Guna2Shapes1)
         Me.Guna2GradientPanel3.FillColor = System.Drawing.Color.FromArgb(CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(111, Byte), Integer))
         Me.Guna2GradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.Guna2GradientPanel3.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GradientPanel3.Location = New System.Drawing.Point(861, 11)
         Me.Guna2GradientPanel3.Name = "Guna2GradientPanel3"
         Me.Guna2GradientPanel3.Size = New System.Drawing.Size(311, 522)
@@ -303,11 +302,11 @@ Partial Class frmCart
         '
         Me.GunaLabel6.AutoSize = True
         Me.GunaLabel6.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel6.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel6.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel6.Location = New System.Drawing.Point(76, 361)
         Me.GunaLabel6.Name = "GunaLabel6"
-        Me.GunaLabel6.Size = New System.Drawing.Size(51, 22)
+        Me.GunaLabel6.Size = New System.Drawing.Size(57, 21)
         Me.GunaLabel6.TabIndex = 134
         Me.GunaLabel6.Text = "Total:"
         '
@@ -332,13 +331,13 @@ Partial Class frmCart
         Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2Button1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button1.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button1.ForeColor = System.Drawing.Color.Black
         Me.Guna2Button1.HoverState.FillColor = System.Drawing.Color.Black
         Me.Guna2Button1.HoverState.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(108, 476)
+        Me.Guna2Button1.Location = New System.Drawing.Point(22, 476)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(194, 35)
+        Me.Guna2Button1.Size = New System.Drawing.Size(280, 35)
         Me.Guna2Button1.TabIndex = 13
         Me.Guna2Button1.Text = "Proceed to Delivery"
         '
@@ -346,11 +345,11 @@ Partial Class frmCart
         '
         Me.GunaLabel18.AutoSize = True
         Me.GunaLabel18.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel18.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel18.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel18.Location = New System.Drawing.Point(65, 308)
         Me.GunaLabel18.Name = "GunaLabel18"
-        Me.GunaLabel18.Size = New System.Drawing.Size(73, 22)
+        Me.GunaLabel18.Size = New System.Drawing.Size(89, 21)
         Me.GunaLabel18.TabIndex = 132
         Me.GunaLabel18.Text = "Discount:"
         '
@@ -378,11 +377,11 @@ Partial Class frmCart
         '
         Me.GunaLabel5.AutoSize = True
         Me.GunaLabel5.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel5.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel5.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel5.Location = New System.Drawing.Point(30, 181)
         Me.GunaLabel5.Name = "GunaLabel5"
-        Me.GunaLabel5.Size = New System.Drawing.Size(108, 22)
+        Me.GunaLabel5.Size = New System.Drawing.Size(123, 21)
         Me.GunaLabel5.TabIndex = 95
         Me.GunaLabel5.Text = "Shipping Fee:"
         '
@@ -397,9 +396,10 @@ Partial Class frmCart
         Me.txtShipping.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtShipping.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtShipping.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtShipping.Enabled = False
         Me.txtShipping.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.txtShipping.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtShipping.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtShipping.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtShipping.ForeColor = System.Drawing.Color.Black
         Me.txtShipping.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtShipping.Location = New System.Drawing.Point(156, 181)
@@ -411,17 +411,17 @@ Partial Class frmCart
         Me.txtShipping.SelectedText = ""
         Me.txtShipping.Size = New System.Drawing.Size(138, 30)
         Me.txtShipping.TabIndex = 94
-        Me.txtShipping.TextOffset = New System.Drawing.Point(0, -2)
+        Me.txtShipping.TextOffset = New System.Drawing.Point(0, 3)
         '
         'GunaLabel17
         '
         Me.GunaLabel17.AutoSize = True
         Me.GunaLabel17.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel17.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel17.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel17.Location = New System.Drawing.Point(18, 227)
         Me.GunaLabel17.Name = "GunaLabel17"
-        Me.GunaLabel17.Size = New System.Drawing.Size(117, 22)
+        Me.GunaLabel17.Size = New System.Drawing.Size(126, 21)
         Me.GunaLabel17.TabIndex = 129
         Me.GunaLabel17.Text = "Coupon Code:"
         '
@@ -437,7 +437,7 @@ Partial Class frmCart
         Me.txtCoupon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtCoupon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtCoupon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCoupon.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCoupon.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCoupon.ForeColor = System.Drawing.Color.DimGray
         Me.txtCoupon.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtCoupon.Location = New System.Drawing.Point(156, 227)
@@ -449,6 +449,7 @@ Partial Class frmCart
         Me.txtCoupon.SelectedText = ""
         Me.txtCoupon.Size = New System.Drawing.Size(138, 29)
         Me.txtCoupon.TabIndex = 130
+        Me.txtCoupon.TextOffset = New System.Drawing.Point(0, 3)
         '
         'PictureBox2
         '
@@ -488,11 +489,11 @@ Partial Class frmCart
         '
         Me.GunaLabel3.AutoSize = True
         Me.GunaLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel3.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel3.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel3.Location = New System.Drawing.Point(18, 21)
         Me.GunaLabel3.Name = "GunaLabel3"
-        Me.GunaLabel3.Size = New System.Drawing.Size(135, 24)
+        Me.GunaLabel3.Size = New System.Drawing.Size(128, 21)
         Me.GunaLabel3.TabIndex = 5
         Me.GunaLabel3.Text = "Shopping Cart"
         '
@@ -507,9 +508,10 @@ Partial Class frmCart
         Me.txtQty.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtQty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtQty.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtQty.Enabled = False
         Me.txtQty.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.txtQty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtQty.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQty.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtQty.ForeColor = System.Drawing.Color.Black
         Me.txtQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtQty.Location = New System.Drawing.Point(156, 131)
@@ -521,7 +523,7 @@ Partial Class frmCart
         Me.txtQty.SelectedText = ""
         Me.txtQty.Size = New System.Drawing.Size(138, 30)
         Me.txtQty.TabIndex = 40
-        Me.txtQty.TextOffset = New System.Drawing.Point(0, -2)
+        Me.txtQty.TextOffset = New System.Drawing.Point(0, 3)
         '
         'Guna2Shapes3
         '
@@ -550,9 +552,10 @@ Partial Class frmCart
         Me.txtSub.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtSub.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSub.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSub.Enabled = False
         Me.txtSub.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.txtSub.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSub.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSub.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSub.ForeColor = System.Drawing.Color.Black
         Me.txtSub.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSub.Location = New System.Drawing.Point(154, 83)
@@ -564,17 +567,17 @@ Partial Class frmCart
         Me.txtSub.SelectedText = ""
         Me.txtSub.Size = New System.Drawing.Size(138, 30)
         Me.txtSub.TabIndex = 39
-        Me.txtSub.TextOffset = New System.Drawing.Point(0, -2)
+        Me.txtSub.TextOffset = New System.Drawing.Point(0, 3)
         '
         'GunaLabel2
         '
         Me.GunaLabel2.AutoSize = True
         Me.GunaLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel2.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel2.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel2.Location = New System.Drawing.Point(53, 83)
         Me.GunaLabel2.Name = "GunaLabel2"
-        Me.GunaLabel2.Size = New System.Drawing.Size(85, 22)
+        Me.GunaLabel2.Size = New System.Drawing.Size(94, 21)
         Me.GunaLabel2.TabIndex = 28
         Me.GunaLabel2.Text = "Sub-Total:"
         '
@@ -582,11 +585,11 @@ Partial Class frmCart
         '
         Me.GunaLabel1.AutoSize = True
         Me.GunaLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel1.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel1.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel1.Location = New System.Drawing.Point(55, 131)
         Me.GunaLabel1.Name = "GunaLabel1"
-        Me.GunaLabel1.Size = New System.Drawing.Size(80, 22)
+        Me.GunaLabel1.Size = New System.Drawing.Size(92, 21)
         Me.GunaLabel1.TabIndex = 27
         Me.GunaLabel1.Text = "Total Qty:"
         '
@@ -605,31 +608,6 @@ Partial Class frmCart
         Me.Guna2Shapes1.TabIndex = 6
         Me.Guna2Shapes1.Text = "Guna2Shapes1"
         Me.Guna2Shapes1.Zoom = 80
-        '
-        'Guna2ControlBox3
-        '
-        Me.Guna2ControlBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2ControlBox3.BorderRadius = 10
-        Me.Guna2ControlBox3.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom
-        Me.Guna2ControlBox3.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2ControlBox3.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox3.Location = New System.Drawing.Point(1155, 5)
-        Me.Guna2ControlBox3.Name = "Guna2ControlBox3"
-        Me.Guna2ControlBox3.Size = New System.Drawing.Size(32, 23)
-        Me.Guna2ControlBox3.TabIndex = 71
-        '
-        'Guna2ControlBox1
-        '
-        Me.Guna2ControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2ControlBox1.BorderRadius = 10
-        Me.Guna2ControlBox1.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom
-        Me.Guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
-        Me.Guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2ControlBox1.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox1.Location = New System.Drawing.Point(1111, 4)
-        Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
-        Me.Guna2ControlBox1.Size = New System.Drawing.Size(32, 23)
-        Me.Guna2ControlBox1.TabIndex = 70
         '
         'Guna2BorderlessForm1
         '
@@ -652,35 +630,15 @@ Partial Class frmCart
         Me.Guna2Elipse1.BorderRadius = 20
         Me.Guna2Elipse1.TargetControl = Me.dgvCart
         '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Image = CType(resources.GetObject("DataGridViewImageColumn1.Image"), System.Drawing.Image)
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.DataGridViewImageColumn1.Width = 175
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 57)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 76
-        Me.PictureBox1.TabStop = False
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Yu Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(65, 38)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(102, 20)
+        Me.Label11.Size = New System.Drawing.Size(146, 25)
         Me.Label11.TabIndex = 75
         Me.Label11.Text = "ADD TO CART"
         '
@@ -688,11 +646,11 @@ Partial Class frmCart
         '
         Me.GunaLabel4.AutoSize = True
         Me.GunaLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel4.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel4.Font = New System.Drawing.Font("Yu Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel4.Location = New System.Drawing.Point(62, 5)
         Me.GunaLabel4.Name = "GunaLabel4"
-        Me.GunaLabel4.Size = New System.Drawing.Size(148, 27)
+        Me.GunaLabel4.Size = New System.Drawing.Size(153, 25)
         Me.GunaLabel4.TabIndex = 73
         Me.GunaLabel4.Text = "CART DETAILS"
         '
@@ -723,6 +681,26 @@ Partial Class frmCart
         Me.Guna2Shapes2.Text = "Guna2Shapes2"
         Me.Guna2Shapes2.Zoom = 80
         '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Image = CType(resources.GetObject("DataGridViewImageColumn1.Image"), System.Drawing.Image)
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 57)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 76
+        Me.PictureBox1.TabStop = False
+        '
         'frmCart
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -734,9 +712,7 @@ Partial Class frmCart
         Me.Controls.Add(Me.GunaLabel4)
         Me.Controls.Add(Me.l2)
         Me.Controls.Add(Me.Guna2Shapes2)
-        Me.Controls.Add(Me.Guna2ControlBox3)
         Me.Controls.Add(Me.Guna2GradientPanel2)
-        Me.Controls.Add(Me.Guna2ControlBox1)
         Me.Controls.Add(Me.Guna2GradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmCart"
@@ -769,8 +745,6 @@ Partial Class frmCart
     Friend WithEvents txtQty As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
-    Friend WithEvents Guna2ControlBox3 As Guna.UI2.WinForms.Guna2ControlBox
-    Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2GradientPanel3 As Guna.UI2.WinForms.Guna2GradientPanel
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents lblCartCount As Label

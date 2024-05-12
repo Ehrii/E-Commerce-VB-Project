@@ -3,16 +3,21 @@ Imports System.IO
 
 Public Class frmPassword
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        conn.Close()
+
         If txtEmail.Text Is Nothing And txtPass.Text Is Nothing And txtConfirmPass.Text Is Nothing Then
             MessageBox.Show("Please fill-up the following details!", "Invalid Log-in attempt", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
         End If
 
         If txtPass.Text <> txtConfirmPass.Text Then
             MessageBox.Show("Passwords do not match!. Please try again", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
         End If
 
         If ValidatePassword(txtConfirmPass.Text) = False Then
             MessageBox.Show("Invalid Password!. Please try again", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
         End If
 
         Dim prodId As New Integer
@@ -26,15 +31,14 @@ Public Class frmPassword
             .Parameters.AddWithValue("@Password", txtConfirmPass.Text)
             .Parameters.AddWithValue("@Email", txtEmail.Text)
         End With
-
+        conn.Open()
         If cm.ExecuteNonQuery() = 1 Then
-            MessageBox.Show("Record Updated")
+            MessageBox.Show("Password Successfully Changed", "DELAROTA FORGOT PASSWORD", MessageBoxButtons.OK, MessageBoxIcon.Information)
             frmManage.loadRecord()
         Else
-            MessageBox.Show("Wrong Email, Please enter a valid one...")
+            MessageBox.Show("Password Not Changed", "DELAROTA FORGOT PASSWORD", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            conn.Close()
         End If
-        conn.Close()
-
         Me.Hide()
 
     End Sub

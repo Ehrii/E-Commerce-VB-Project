@@ -23,9 +23,9 @@ Partial Class frmHistory
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHistory))
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.DgvHistory = New Guna.UI2.WinForms.Guna2DataGridView()
@@ -35,8 +35,8 @@ Partial Class frmHistory
         Me.Guna2Shapes1 = New Guna.UI2.WinForms.Guna2Shapes()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.Guna2DateTimePicker2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.Guna2DateTimePicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.dtp2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.dtp1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -47,12 +47,9 @@ Partial Class frmHistory
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.Order_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Order_Date = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Customer_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Doc = New System.Drawing.Printing.PrintDocument()
+        Me.PPD = New System.Windows.Forms.PrintPreviewDialog()
+        Me.Print = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Cancel = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.DgvHistory, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,33 +65,35 @@ Partial Class frmHistory
         '
         'DgvHistory
         '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.DgvHistory.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgvHistory.AllowUserToDeleteRows = False
+        Me.DgvHistory.AllowUserToOrderColumns = True
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.DgvHistory.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DgvHistory.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Yu Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DgvHistory.ColumnHeadersHeight = 40
         Me.DgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.DgvHistory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Order_ID, Me.Order_Date, Me.Total, Me.Quantity, Me.Status, Me.Customer_ID, Me.Cancel})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Yellow
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvHistory.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DgvHistory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cancel, Me.Print})
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Yellow
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvHistory.DefaultCellStyle = DataGridViewCellStyle6
         Me.DgvHistory.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgvHistory.Location = New System.Drawing.Point(269, 79)
         Me.DgvHistory.Name = "DgvHistory"
         Me.DgvHistory.RowHeadersVisible = False
-        Me.DgvHistory.Size = New System.Drawing.Size(858, 557)
+        Me.DgvHistory.Size = New System.Drawing.Size(896, 557)
         Me.DgvHistory.TabIndex = 0
         Me.DgvHistory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgvHistory.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -121,11 +120,11 @@ Partial Class frmHistory
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(65, 42)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(111, 20)
+        Me.Label11.Size = New System.Drawing.Size(126, 19)
         Me.Label11.TabIndex = 47
         Me.Label11.Text = "ORDER STATUS"
         '
@@ -133,11 +132,11 @@ Partial Class frmHistory
         '
         Me.GunaLabel4.AutoSize = True
         Me.GunaLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel4.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel4.Font = New System.Drawing.Font("Yu Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel4.Location = New System.Drawing.Point(65, 9)
         Me.GunaLabel4.Name = "GunaLabel4"
-        Me.GunaLabel4.Size = New System.Drawing.Size(168, 27)
+        Me.GunaLabel4.Size = New System.Drawing.Size(173, 25)
         Me.GunaLabel4.TabIndex = 45
         Me.GunaLabel4.Text = "ORDER HISTORY"
         '
@@ -145,6 +144,7 @@ Partial Class frmHistory
         '
         Me.Guna2Shapes2.BorderThickness = 1
         Me.Guna2Shapes2.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.Guna2Shapes2.Font = New System.Drawing.Font("Yu Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Shapes2.Location = New System.Drawing.Point(44, 27)
         Me.Guna2Shapes2.Name = "Guna2Shapes2"
         Me.Guna2Shapes2.PolygonSkip = 1
@@ -159,6 +159,7 @@ Partial Class frmHistory
         '
         Me.Guna2Shapes1.BorderThickness = 1
         Me.Guna2Shapes1.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.Guna2Shapes1.Font = New System.Drawing.Font("Yu Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Shapes1.Location = New System.Drawing.Point(9, 25)
         Me.Guna2Shapes1.Name = "Guna2Shapes1"
         Me.Guna2Shapes1.PolygonSkip = 1
@@ -183,14 +184,14 @@ Partial Class frmHistory
         '
         Me.Guna2GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2GroupBox1.Controls.Add(Me.Guna2DateTimePicker2)
-        Me.Guna2GroupBox1.Controls.Add(Me.Guna2DateTimePicker1)
+        Me.Guna2GroupBox1.Controls.Add(Me.dtp2)
+        Me.Guna2GroupBox1.Controls.Add(Me.dtp1)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button2)
         Me.Guna2GroupBox1.Controls.Add(Me.Label2)
         Me.Guna2GroupBox1.Controls.Add(Me.Label1)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(12, 79)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
@@ -199,33 +200,33 @@ Partial Class frmHistory
         Me.Guna2GroupBox1.Text = "Date Information"
         Me.Guna2GroupBox1.UseTransparentBackground = True
         '
-        'Guna2DateTimePicker2
+        'dtp2
         '
-        Me.Guna2DateTimePicker2.Checked = True
-        Me.Guna2DateTimePicker2.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2DateTimePicker2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Guna2DateTimePicker2.Location = New System.Drawing.Point(21, 121)
-        Me.Guna2DateTimePicker2.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Guna2DateTimePicker2.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Guna2DateTimePicker2.Name = "Guna2DateTimePicker2"
-        Me.Guna2DateTimePicker2.Size = New System.Drawing.Size(200, 27)
-        Me.Guna2DateTimePicker2.TabIndex = 179
-        Me.Guna2DateTimePicker2.Value = New Date(2023, 4, 25, 14, 34, 18, 207)
+        Me.dtp2.Checked = True
+        Me.dtp2.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.dtp2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.dtp2.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.dtp2.Location = New System.Drawing.Point(14, 121)
+        Me.dtp2.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.dtp2.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.dtp2.Name = "dtp2"
+        Me.dtp2.Size = New System.Drawing.Size(200, 27)
+        Me.dtp2.TabIndex = 179
+        Me.dtp2.Value = New Date(2023, 4, 25, 14, 34, 18, 207)
         '
-        'Guna2DateTimePicker1
+        'dtp1
         '
-        Me.Guna2DateTimePicker1.Checked = True
-        Me.Guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2DateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Guna2DateTimePicker1.Location = New System.Drawing.Point(21, 69)
-        Me.Guna2DateTimePicker1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Guna2DateTimePicker1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Guna2DateTimePicker1.Name = "Guna2DateTimePicker1"
-        Me.Guna2DateTimePicker1.Size = New System.Drawing.Size(200, 27)
-        Me.Guna2DateTimePicker1.TabIndex = 178
-        Me.Guna2DateTimePicker1.Value = New Date(2023, 4, 25, 14, 34, 18, 207)
+        Me.dtp1.Checked = True
+        Me.dtp1.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.dtp1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.dtp1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.dtp1.Location = New System.Drawing.Point(14, 69)
+        Me.dtp1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.dtp1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.dtp1.Name = "dtp1"
+        Me.dtp1.Size = New System.Drawing.Size(200, 27)
+        Me.dtp1.TabIndex = 178
+        Me.dtp1.Value = New Date(2023, 4, 25, 14, 34, 18, 207)
         '
         'Guna2Button2
         '
@@ -236,9 +237,9 @@ Partial Class frmHistory
         Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2Button2.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button2.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Guna2Button2.Location = New System.Drawing.Point(16, 158)
+        Me.Guna2Button2.Location = New System.Drawing.Point(10, 164)
         Me.Guna2Button2.Name = "Guna2Button2"
         Me.Guna2Button2.PressedColor = System.Drawing.Color.DimGray
         Me.Guna2Button2.Size = New System.Drawing.Size(120, 38)
@@ -249,9 +250,9 @@ Partial Class frmHistory
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(17, 99)
+        Me.Label2.Location = New System.Drawing.Point(10, 99)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(28, 19)
+        Me.Label2.Size = New System.Drawing.Size(31, 19)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "To:"
         '
@@ -259,9 +260,9 @@ Partial Class frmHistory
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(17, 47)
+        Me.Label1.Location = New System.Drawing.Point(10, 47)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 19)
+        Me.Label1.Size = New System.Drawing.Size(53, 19)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "From:"
         '
@@ -275,7 +276,7 @@ Partial Class frmHistory
         Me.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnBack.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.btnBack.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.Color.Black
         Me.btnBack.HoverState.FillColor = System.Drawing.Color.Black
         Me.btnBack.HoverState.ForeColor = System.Drawing.Color.White
@@ -289,13 +290,13 @@ Partial Class frmHistory
         '
         Me.cmbCateg.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.cmbCateg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmbCateg.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbCateg.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbCateg.ForeColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
         Me.cmbCateg.FormattingEnabled = True
         Me.cmbCateg.Items.AddRange(New Object() {"All", "Pending", "Shipped", "Delivered", "Canceled"})
-        Me.cmbCateg.Location = New System.Drawing.Point(959, 46)
+        Me.cmbCateg.Location = New System.Drawing.Point(982, 42)
         Me.cmbCateg.Name = "cmbCateg"
-        Me.cmbCateg.Size = New System.Drawing.Size(168, 27)
+        Me.cmbCateg.Size = New System.Drawing.Size(183, 29)
         Me.cmbCateg.TabIndex = 56
         Me.cmbCateg.Text = "     Delivery Status"
         '
@@ -309,7 +310,7 @@ Partial Class frmHistory
         Me.Guna2GroupBox6.Controls.Add(Me.RadioButton1)
         Me.Guna2GroupBox6.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox6.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox6.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox6.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2GroupBox6.Location = New System.Drawing.Point(12, 318)
         Me.Guna2GroupBox6.Name = "Guna2GroupBox6"
@@ -321,11 +322,11 @@ Partial Class frmHistory
         'RadioButton4
         '
         Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton4.Font = New System.Drawing.Font("Yu Gothic Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButton4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.RadioButton4.Location = New System.Drawing.Point(10, 144)
         Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(78, 26)
+        Me.RadioButton4.Size = New System.Drawing.Size(90, 29)
         Me.RadioButton4.TabIndex = 7
         Me.RadioButton4.TabStop = True
         Me.RadioButton4.Text = "Yearly"
@@ -334,11 +335,11 @@ Partial Class frmHistory
         'RadioButton3
         '
         Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton3.Font = New System.Drawing.Font("Yu Gothic Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButton3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.RadioButton3.Location = New System.Drawing.Point(10, 113)
         Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(88, 26)
+        Me.RadioButton3.Size = New System.Drawing.Size(108, 29)
         Me.RadioButton3.TabIndex = 6
         Me.RadioButton3.TabStop = True
         Me.RadioButton3.Text = "Monthly"
@@ -347,11 +348,11 @@ Partial Class frmHistory
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton2.Font = New System.Drawing.Font("Yu Gothic Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButton2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.RadioButton2.Location = New System.Drawing.Point(10, 81)
         Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(94, 26)
+        Me.RadioButton2.Size = New System.Drawing.Size(105, 29)
         Me.RadioButton2.TabIndex = 5
         Me.RadioButton2.TabStop = True
         Me.RadioButton2.Text = "Weekly "
@@ -360,49 +361,35 @@ Partial Class frmHistory
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton1.Font = New System.Drawing.Font("Yu Gothic Medium", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButton1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.RadioButton1.Location = New System.Drawing.Point(10, 49)
         Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(67, 26)
+        Me.RadioButton1.Size = New System.Drawing.Size(79, 29)
         Me.RadioButton1.TabIndex = 4
         Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "Daily"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
-        'Order_ID
+        'PPD
         '
-        Me.Order_ID.HeaderText = "Order ID"
-        Me.Order_ID.Name = "Order_ID"
+        Me.PPD.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PPD.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PPD.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PPD.Enabled = True
+        Me.PPD.Icon = CType(resources.GetObject("PPD.Icon"), System.Drawing.Icon)
+        Me.PPD.Name = "PPD"
+        Me.PPD.Visible = False
         '
-        'Order_Date
+        'Print
         '
-        Me.Order_Date.HeaderText = "Order Date"
-        Me.Order_Date.Name = "Order_Date"
-        '
-        'Total
-        '
-        Me.Total.HeaderText = "Order Amount"
-        Me.Total.Name = "Total"
-        '
-        'Quantity
-        '
-        Me.Quantity.HeaderText = "Order Quantity"
-        Me.Quantity.Name = "Quantity"
-        '
-        'Status
-        '
-        Me.Status.HeaderText = "Order Status"
-        Me.Status.Name = "Status"
-        '
-        'Customer_ID
-        '
-        Me.Customer_ID.HeaderText = "Customer ID"
-        Me.Customer_ID.Name = "Customer_ID"
+        Me.Print.HeaderText = "Print Receipt?"
+        Me.Print.Image = CType(resources.GetObject("Print.Image"), System.Drawing.Image)
+        Me.Print.Name = "Print"
         '
         'Cancel
         '
-        Me.Cancel.HeaderText = ""
+        Me.Cancel.HeaderText = "Delete Order?"
         Me.Cancel.Image = CType(resources.GetObject("Cancel.Image"), System.Drawing.Image)
         Me.Cancel.Name = "Cancel"
         '
@@ -411,7 +398,7 @@ Partial Class frmHistory
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1139, 648)
+        Me.ClientSize = New System.Drawing.Size(1177, 648)
         Me.Controls.Add(Me.Guna2GroupBox6)
         Me.Controls.Add(Me.cmbCateg)
         Me.Controls.Add(Me.btnBack)
@@ -444,8 +431,8 @@ Partial Class frmHistory
     Friend WithEvents Guna2Shapes2 As Guna.UI2.WinForms.Guna2Shapes
     Friend WithEvents Guna2Shapes1 As Guna.UI2.WinForms.Guna2Shapes
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
-    Friend WithEvents Guna2DateTimePicker2 As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents Guna2DateTimePicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents dtp2 As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents dtp1 As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
@@ -456,11 +443,8 @@ Partial Class frmHistory
     Friend WithEvents RadioButton3 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents Order_ID As DataGridViewTextBoxColumn
-    Friend WithEvents Order_Date As DataGridViewTextBoxColumn
-    Friend WithEvents Total As DataGridViewTextBoxColumn
-    Friend WithEvents Quantity As DataGridViewTextBoxColumn
-    Friend WithEvents Status As DataGridViewTextBoxColumn
-    Friend WithEvents Customer_ID As DataGridViewTextBoxColumn
+    Friend WithEvents Doc As Printing.PrintDocument
+    Friend WithEvents PPD As PrintPreviewDialog
     Friend WithEvents Cancel As DataGridViewImageColumn
+    Friend WithEvents Print As DataGridViewImageColumn
 End Class

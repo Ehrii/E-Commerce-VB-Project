@@ -18,65 +18,34 @@ Public Class frmShop
         conn.Close()
         lblCartCount.Text = cartcount
         frmCart.lblCartCount.Text = lblCartCount.Text
-    End Function
-
-
-    'Function loadCart()
-    '    conn.Open()
-    '    frmCart.loadRecord()
-    '    Dim query, cartcount As String
-    '    query = "select count(*) from cart where Customer_ID='" & customID & "'"
-    '    Dim cm As New MySqlCommand
-    '    Dim cm2 As New MySqlCommand
-    '    cm = New MySqlCommand(query, conn)
-    '    conn.Open()
-    '    cartcount = cm.ExecuteScalar()
-    '    conn.Close()
-    '    lblCartCount.Text = cartcount
-
-
-    '    Dim sum As Decimal = 0
-    '    For i = 0 To frmCart.dgvCart.Rows.Count - 1
-    '        sum += frmCart.dgvCart.Rows(i).Cells(4).Value
-    '    Next
-    '    lblPrice.Text = FormatNumber(sum, 2)
-    'End Function
-
-
-
-
-
-    Private Sub frmShop_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'conn.connectionstring = "server = localhost;user id=root; port = 3306;password=root;database=ecommercedb1"
-        'conn.open()
-        connect()
-        loadRecord()
-        prodOverview()
-        loadcartcount()
-
-
-
-
         If lblCartCount.Text = 0 Then
             txtCart.Enabled = False
         Else
             txtCart.Enabled = True
         End If
+    End Function
 
-        'loadCart()
 
-        ''
 
-        '''
+    Private Sub frmShop_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conn.Open()
+        loadRecord()
+        prodOverview()
+        loadcartcount()
+        If lblCartCount.Text = 0 Then
+            txtCart.Enabled = False
+        Else
+            txtCart.Enabled = True
+        End If
     End Sub
 
 
     Sub loadRecord()
         Dim cm As New MySqlCommand
         dgvShop.Rows.Clear()
-        'conn.Open() '
         cm = New MySqlCommand("Select * from product where Product_Name like '%" & txtSearch.Text & "%'", conn)
         dr = cm.ExecuteReader
+
         While dr.Read
             dgvShop.Rows.Add(dr.Item("Product_ID").ToString, dr.Item("Product_Image"), dr.Item("Item_Code").ToString, dr.Item("Product_Name").ToString, dr.Item("Description").ToString, dr.Item("Price"), dr.Item("Stock").ToString, dr.Item("Category_ID").ToString, dr.Item("Category_Name").ToString)
         End While
@@ -97,32 +66,31 @@ Public Class frmShop
 
     Private Sub dgvShop_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvShop.CellContentClick
         Dim colName As String = dgvShop.Columns(e.ColumnIndex).Name
+        Try
+            If colName = "Details" Then
+                MessageBox.Show("Product Details is clicked!", "DELAROTA PRODUCT INFO", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                frmProduct.txtProdId.Text = dgvShop.CurrentRow.Cells(0).Value.ToString()
+                'retrieving the image from the datagrid'
+                Dim data As Byte() = DirectCast(dgvShop.CurrentRow.Cells(1).Value, Byte())
+                Dim ms As New MemoryStream(data)
+                frmProduct.picProdImg.Image = Image.FromStream(ms)
+                frmProduct.lblCode.Text = "ITEM CODE: " & dgvShop.CurrentRow.Cells(2).Value.ToString()
+                frmProduct.lblProdName.Text = dgvShop.CurrentRow.Cells(3).Value.ToString()
+                frmProduct.txtDesc.Text = dgvShop.CurrentRow.Cells(4).Value.ToString()
+                frmProduct.txtPrice.Text = dgvShop.CurrentRow.Cells(5).Value.ToString()
+                frmProduct.txtStock.Text = dgvShop.CurrentRow.Cells(6).Value.ToString()
+                frmProduct.lblCategory.Text = dgvShop.CurrentRow.Cells(7).Value.ToString()
+                frmProduct.lblCateg.Text = "CATEGORY NAME: " & dgvShop.CurrentRow.Cells(8).Value.ToString()
+                frmProduct.Show()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("VIEWING PRODUCT ERROR: " & ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
-        If colName = "Details" Then
-            MessageBox.Show("Product Details is clicked!", "DELAROTA PRODUCT INFO", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            frmProduct.txtProdId.Text = dgvShop.CurrentRow.Cells(0).Value.ToString()
-            'retrieving the image from the datagrid'
-            Dim data As Byte() = DirectCast(dgvShop.CurrentRow.Cells(1).Value, Byte())
-            Dim ms As New MemoryStream(data)
-            frmProduct.picProdImg.Image = Image.FromStream(ms)
-            frmProduct.lblCode.Text = "ITEM CODE: " & dgvShop.CurrentRow.Cells(2).Value.ToString()
-            frmProduct.lblProdName.Text = dgvShop.CurrentRow.Cells(3).Value.ToString()
-            frmProduct.t.Text = dgvShop.CurrentRow.Cells(4).Value.ToString()
-            frmProduct.txtPrice.Text = dgvShop.CurrentRow.Cells(5).Value.ToString()
-            frmProduct.txtStock.Text = dgvShop.CurrentRow.Cells(6).Value.ToString()
-            frmProduct.lblCategory.Text = dgvShop.CurrentRow.Cells(7).Value.ToString()
-            frmProduct.lblCateg.Text = "CATEGORY NAME: " & dgvShop.CurrentRow.Cells(8).Value.ToString()
-
-            frmProduct.Show()
-        End If
 
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles txtCart.Click
-
-
-
-
         frmCart.Show()
         frmCart.lblCartCount.Text = lblCartCount.Text
         conn.Open()
@@ -160,20 +128,25 @@ Public Class frmShop
     End Function
 
     Private Sub dgvShop_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvShop.CellContentDoubleClick
-        MessageBox.Show("Product Details is clicked!", "DELAROTA PRODUCT INFO", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        frmProduct.txtProdId.Text = dgvShop.CurrentRow.Cells(0).Value.ToString()
-        'retrieving the image from the datagrid'
-        Dim data As Byte() = DirectCast(dgvShop.CurrentRow.Cells(1).Value, Byte())
-        Dim ms As New MemoryStream(data)
-        frmProduct.picProdImg.Image = Image.FromStream(ms)
-        frmProduct.lblCode.Text = "ITEM CODE: " & dgvShop.CurrentRow.Cells(2).Value.ToString()
-        frmProduct.lblProdName.Text = dgvShop.CurrentRow.Cells(3).Value.ToString()
-        frmProduct.t.Text = dgvShop.CurrentRow.Cells(4).Value.ToString()
-        frmProduct.txtPrice.Text = dgvShop.CurrentRow.Cells(5).Value.ToString()
-        frmProduct.txtStock.Text = dgvShop.CurrentRow.Cells(6).Value.ToString()
-        frmProduct.lblCategory.Text = dgvShop.CurrentRow.Cells(7).Value.ToString()
-        frmProduct.lblCateg.Text = "CATEGORY NAME: " & dgvShop.CurrentRow.Cells(8).Value.ToString()
-        frmProduct.Show()
+        Try
+            MessageBox.Show("Product Details is clicked!", "DELAROTA PRODUCT INFO", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            frmProduct.txtProdId.Text = dgvShop.CurrentRow.Cells(0).Value.ToString()
+            'retrieving the image from the datagrid'
+            Dim data As Byte() = DirectCast(dgvShop.CurrentRow.Cells(1).Value, Byte())
+            Dim ms As New MemoryStream(data)
+            frmProduct.picProdImg.Image = Image.FromStream(ms)
+            frmProduct.lblCode.Text = "ITEM CODE: " & dgvShop.CurrentRow.Cells(2).Value.ToString()
+            frmProduct.lblProdName.Text = dgvShop.CurrentRow.Cells(3).Value.ToString()
+            frmProduct.txtDesc.Text = dgvShop.CurrentRow.Cells(4).Value.ToString()
+            frmProduct.txtPrice.Text = dgvShop.CurrentRow.Cells(5).Value.ToString()
+            frmProduct.txtStock.Text = dgvShop.CurrentRow.Cells(6).Value.ToString()
+            frmProduct.lblCategory.Text = dgvShop.CurrentRow.Cells(7).Value.ToString()
+            frmProduct.lblCateg.Text = "CATEGORY NAME: " & dgvShop.CurrentRow.Cells(8).Value.ToString()
+            frmProduct.Show()
+        Catch ex As Exception
+            MessageBox.Show("VIEWING PRODUCT ERROR: " & ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
@@ -287,7 +260,5 @@ Public Class frmShop
         Me.Hide()
     End Sub
 
-    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
 
-    End Sub
 End Class

@@ -11,11 +11,6 @@ Public Class frmReceipt
         PPD.Document = Doc
         PPD.ShowDialog()
 
-        'PPD.Document = Doc
-        'PPD.ShowDialog()
-
-
-
 
 
     End Sub
@@ -93,6 +88,7 @@ Public Class frmReceipt
             e.Graphics.DrawString(total, f8, Brushes.Black, rect11, center)
             y += 23
             overallamt += total
+            Doc.DefaultPageSettings.PaperSize = New PaperSize("Mysize", 250, 350 + 10)
         Next
         Dim rect12 As New Rectangle(5, y, 240, 12)
         e.Graphics.DrawRectangle(Pens.Black, rect12)
@@ -136,50 +132,122 @@ Public Class frmReceipt
     End Sub
 
     Private Sub frmReceipt_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim command As New MySqlCommand("INSERT INTO payment VALUES(@Payment_ID,@Order_ID,@Payment_Method,@Payment_Amount,@Payment_Date,@Amount_Due)", conn)
-        With command
-            .Parameters.Clear()
-            .Parameters.AddWithValue("@Payment_ID", 0)
-            .Parameters.AddWithValue("@Order_ID", orderID)
-            .Parameters.AddWithValue("@Payment_Method", frmPayment.cmbMethod.Text)
-            .Parameters.AddWithValue("@Payment_Amount", frmPayment.txtCash.Text)
-            .Parameters.AddWithValue("@Payment_Date", currdatetime)
-            .Parameters.AddWithValue("@Amount_Due", CInt(frmPayment.txtAmtDue.Text))
-        End With
-        'conn.Open()
+        Try
 
-        If command.ExecuteNonQuery() = 1 Then
-            MsgBox("Success")
-        Else
-            MessageBox.Show("Record not Inserted")
+            ''PAYMENT
+            If frmPayment.payment = "Visa" Or frmPayment.payment = "Mastercard" Or frmPayment.payment = "American Express" Then
+                Dim command As New MySqlCommand("INSERT INTO payment VALUES(@Payment_ID,@Order_ID,@Payment_Method,@Payment_Amount,@Payment_Date,@Amount_Due,@Account_Details)", conn)
+                With command
+                    .Parameters.Clear()
+                    .Parameters.AddWithValue("@Payment_ID", 0)
+                    .Parameters.AddWithValue("@Order_ID", orderID)
+                    .Parameters.AddWithValue("@Payment_Method", frmPayment.cmbMethod.Text & " - " & frmPayment.payment)
+                    .Parameters.AddWithValue("@Payment_Amount", frmPayment.txtCash.Text)
+                    .Parameters.AddWithValue("@Payment_Date", currdatetime)
+                    .Parameters.AddWithValue("@Amount_Due", CInt(frmPayment.txtAmtDue.Text))
+                    .Parameters.AddWithValue("@Account_Details", frmPayment.accdetails)
+                End With
+                conn.Open()
+                If command.ExecuteNonQuery() = 1 Then
+                    MessageBox.Show("Payment Details Added", "DELAROTA PAYMENT", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Record not Inserted")
 
-        End If
-        conn.Close()
+                End If
+                conn.Close()
 
-        Dim cm2 As New MySqlCommand
-        cm2 = New MySqlCommand("UPDATE orderDetails SET Status=@Status where Order_ID='" & orderID & "'", conn)
+            ElseIf frmPayment.payment = "G-cash" Or frmPayment.payment = "Paymaya" Or frmPayment.payment = "Coins.ph" Or frmPayment.payment = "Paypal" Then
+                Dim command As New MySqlCommand("INSERT INTO payment VALUES(@Payment_ID,@Order_ID,@Payment_Method,@Payment_Amount,@Payment_Date,@Amount_Due,@Account_Details)", conn)
+                With command
+                    .Parameters.Clear()
+                    .Parameters.AddWithValue("@Payment_ID", 0)
+                    .Parameters.AddWithValue("@Order_ID", orderID)
+                    .Parameters.AddWithValue("@Payment_Method", frmPayment.cmbMethod.Text & " - " & frmPayment.payment)
+                    .Parameters.AddWithValue("@Payment_Amount", frmPayment.txtCash.Text)
+                    .Parameters.AddWithValue("@Payment_Date", currdatetime)
+                    .Parameters.AddWithValue("@Amount_Due", CInt(frmPayment.txtAmtDue.Text))
+                    .Parameters.AddWithValue("@Account_Details", frmPayment.email)
+                End With
+                conn.Open()
+                If command.ExecuteNonQuery() = 1 Then
+                    MessageBox.Show("Payment Details Added", "DELAROTA PAYMENT", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Record not Inserted")
+                End If
+                conn.Close()
 
-        With cm2
-            .Parameters.Clear()
-            .Parameters.AddWithValue("@Status", "Shipped")
-        End With
-        conn.Open()
-        If cm2.ExecuteNonQuery() = 1 Then
-            MessageBox.Show("Order Status Changed. Please check your order history..", "ORDER STATUS MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            'frmManage.loadRecord()
+            Else
+                Dim command As New MySqlCommand("INSERT INTO payment VALUES(@Payment_ID,@Order_ID,@Payment_Method,@Payment_Amount,@Payment_Date,@Amount_Due,@Account_Details)", conn)
+                With command
+                    .Parameters.Clear()
+                    .Parameters.AddWithValue("@Payment_ID", 0)
+                    .Parameters.AddWithValue("@Order_ID", orderID)
+                    .Parameters.AddWithValue("@Payment_Method", frmPayment.cmbMethod.Text & " - " & frmPayment.payment)
+                    .Parameters.AddWithValue("@Payment_Amount", frmPayment.txtCash.Text)
+                    .Parameters.AddWithValue("@Payment_Date", currdatetime)
+                    .Parameters.AddWithValue("@Amount_Due", CInt(frmPayment.txtAmtDue.Text))
+                    .Parameters.AddWithValue("@Account_Details", customID)
+                End With
+                conn.Open()
+                If command.ExecuteNonQuery() = 1 Then
+                    MessageBox.Show("Payment Details Added", "DELAROTA PAYMENT", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                Else
+                    MessageBox.Show("Record not Inserted")
+                End If
+                conn.Close()
+
+            End If
+
+
+            ''CART
+            Dim cartcom As New MySqlCommand
+            conn.Close()
+            cartcom = New MySqlCommand("truncate table cart", conn)
+            conn.Open()
+            cartcom.ExecuteNonQuery()
+            conn.Close()
+            MessageBox.Show("Previous Cart Items Deleted", "DELAROTA CART", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
             Me.Hide()
-        Else
-            MessageBox.Show("Record not Updated")
-        End If
+
+            conn.Close()
+            conn.Open()
+            frmCustomMenu.Show()
+            frmShop.loadRecord()
+            frmShop.loadcartcount()
+
+        Catch ex As Exception
+            MessageBox.Show("RECEIPT LOAD ERROR: " & ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
+
+    Private Sub Guna2ControlBox3_Click(sender As Object, e As EventArgs) Handles Guna2ControlBox3.Click
+
+        Dim query2 As String
+        Dim payID
+        Dim Reader2 As MySqlDataReader
+        query2 = "SELECT * FROM payment WHERE Order_ID = @OrderID"
+        Dim cm2 As New MySqlCommand(query2, conn)
+        cm2.Parameters.AddWithValue("@OrderID", frmSummary.lblOrder.Text)
+        conn.Open()
+        Reader2 = cm2.ExecuteReader()
+        While Reader2.Read
+            payID = Reader2("Payment_ID")
+        End While
+        Reader2.Close()
+        conn.Close()
+        Dim command2 As New MySqlCommand("UPDATE product_history SET Payment_ID=@PayID WHERE Order_ID = @OrderID", conn)
+        With command2
+            .Parameters.AddWithValue("@PayID", payID)
+            .Parameters.AddWithValue("@OrderID", frmSummary.lblOrder.Text)
+        End With
+        conn.Open()
+        command2.ExecuteNonQuery()
         conn.Close()
 
-        Dim cartcom As New MySqlCommand
-        conn.Close()
-        cartcom = New MySqlCommand("truncate table cart", conn)
-        conn.Open()
-        cartcom.ExecuteNonQuery()
-        conn.Close()
-        MessageBox.Show("Previous cart records deleted")
 
     End Sub
 End Class

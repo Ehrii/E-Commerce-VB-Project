@@ -32,7 +32,6 @@ Partial Class frmDelivery
         Me.Guna2CircleProgressBar2 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
         Me.Guna2CircleProgressBar3 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
         Me.Guna2CircleProgressBar4 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
-        Me.Guna2Shapes1 = New Guna.UI2.WinForms.Guna2Shapes()
         Me.Guna2Shapes2 = New Guna.UI2.WinForms.Guna2Shapes()
         Me.Guna2Shapes3 = New Guna.UI2.WinForms.Guna2Shapes()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -43,7 +42,7 @@ Partial Class frmDelivery
         Me.Guna2Shapes5 = New Guna.UI2.WinForms.Guna2Shapes()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnPayment = New Guna.UI2.WinForms.Guna2Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GunaLabel15 = New Guna.UI.WinForms.GunaLabel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
@@ -71,7 +70,7 @@ Partial Class frmDelivery
         Me.txtAddress = New Guna.UI2.WinForms.Guna2TextBox()
         Me.GunaLabel5 = New Guna.UI.WinForms.GunaLabel()
         Me.txtDate = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.GunaLabel3 = New Guna.UI.WinForms.GunaLabel()
+        Me.lblDelivDate = New Guna.UI.WinForms.GunaLabel()
         Me.txtTracking = New Guna.UI2.WinForms.Guna2TextBox()
         Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel2 = New Guna.UI.WinForms.GunaLabel()
@@ -91,6 +90,7 @@ Partial Class frmDelivery
         Me.GunaLabel10 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel12 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel18 = New Guna.UI.WinForms.GunaLabel()
+        Me.Guna2ProgressBar1 = New Guna.UI2.WinForms.Guna2ProgressBar()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvCart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -107,16 +107,21 @@ Partial Class frmDelivery
         '
         'Guna2CircleProgressBar1
         '
-        Me.Guna2CircleProgressBar1.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.Guna2CircleProgressBar1.Animated = True
+        Me.Guna2CircleProgressBar1.FillColor = System.Drawing.Color.Gray
         Me.Guna2CircleProgressBar1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Guna2CircleProgressBar1.ForeColor = System.Drawing.Color.White
         Me.Guna2CircleProgressBar1.Location = New System.Drawing.Point(274, 103)
         Me.Guna2CircleProgressBar1.Minimum = 0
         Me.Guna2CircleProgressBar1.Name = "Guna2CircleProgressBar1"
+        Me.Guna2CircleProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.Guna2CircleProgressBar1.ProgressColor2 = System.Drawing.Color.Yellow
+        Me.Guna2CircleProgressBar1.ProgressThickness = 7
         Me.Guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CircleProgressBar1.Size = New System.Drawing.Size(32, 32)
         Me.Guna2CircleProgressBar1.TabIndex = 0
         Me.Guna2CircleProgressBar1.Text = "Guna2CircleProgressBar1"
+        Me.Guna2CircleProgressBar1.Value = 40
         '
         'Guna2CircleProgressBar2
         '
@@ -156,21 +161,6 @@ Partial Class frmDelivery
         Me.Guna2CircleProgressBar4.Size = New System.Drawing.Size(32, 32)
         Me.Guna2CircleProgressBar4.TabIndex = 3
         Me.Guna2CircleProgressBar4.Text = "Guna2CircleProgressBar4"
-        '
-        'Guna2Shapes1
-        '
-        Me.Guna2Shapes1.BorderThickness = 1
-        Me.Guna2Shapes1.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2Shapes1.LineThickness = 7
-        Me.Guna2Shapes1.Location = New System.Drawing.Point(275, 106)
-        Me.Guna2Shapes1.Name = "Guna2Shapes1"
-        Me.Guna2Shapes1.PolygonSkip = 1
-        Me.Guna2Shapes1.Rotate = 0!
-        Me.Guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line
-        Me.Guna2Shapes1.Size = New System.Drawing.Size(282, 23)
-        Me.Guna2Shapes1.TabIndex = 37
-        Me.Guna2Shapes1.Text = "Guna2Shapes1"
-        Me.Guna2Shapes1.Zoom = 80
         '
         'Guna2Shapes2
         '
@@ -250,11 +240,11 @@ Partial Class frmDelivery
         '
         Me.GunaLabel4.AutoSize = True
         Me.GunaLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel4.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel4.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.GunaLabel4.Location = New System.Drawing.Point(59, 7)
+        Me.GunaLabel4.Location = New System.Drawing.Point(61, 11)
         Me.GunaLabel4.Name = "GunaLabel4"
-        Me.GunaLabel4.Size = New System.Drawing.Size(164, 27)
+        Me.GunaLabel4.Size = New System.Drawing.Size(150, 21)
         Me.GunaLabel4.TabIndex = 74
         Me.GunaLabel4.Text = "ORDER DETAILS"
         '
@@ -286,43 +276,43 @@ Partial Class frmDelivery
         Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2Button1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button1.Font = New System.Drawing.Font("Yu Gothic Medium", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button1.ForeColor = System.Drawing.Color.Black
         Me.Guna2Button1.HoverState.FillColor = System.Drawing.Color.Black
         Me.Guna2Button1.HoverState.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(14, 745)
+        Me.Guna2Button1.Location = New System.Drawing.Point(14, 749)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(131, 35)
+        Me.Guna2Button1.Size = New System.Drawing.Size(142, 35)
         Me.Guna2Button1.TabIndex = 100
         Me.Guna2Button1.Text = "Cancel Order"
         '
-        'Guna2Button2
+        'btnPayment
         '
-        Me.Guna2Button2.AutoRoundedCorners = True
-        Me.Guna2Button2.BorderRadius = 16
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2Button2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button2.HoverState.FillColor = System.Drawing.Color.Black
-        Me.Guna2Button2.HoverState.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(1039, 745)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(163, 35)
-        Me.Guna2Button2.TabIndex = 101
-        Me.Guna2Button2.Text = "Proceed to Payment"
+        Me.btnPayment.AutoRoundedCorners = True
+        Me.btnPayment.BorderRadius = 16
+        Me.btnPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnPayment.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.btnPayment.Font = New System.Drawing.Font("Yu Gothic Medium", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPayment.ForeColor = System.Drawing.Color.Black
+        Me.btnPayment.HoverState.FillColor = System.Drawing.Color.Black
+        Me.btnPayment.HoverState.ForeColor = System.Drawing.Color.White
+        Me.btnPayment.Location = New System.Drawing.Point(990, 745)
+        Me.btnPayment.Name = "btnPayment"
+        Me.btnPayment.Size = New System.Drawing.Size(212, 35)
+        Me.btnPayment.TabIndex = 101
+        Me.btnPayment.Text = "Proceed to Payment"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(60, 40)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(73, 20)
+        Me.Label11.Size = New System.Drawing.Size(96, 21)
         Me.Label11.TabIndex = 102
         Me.Label11.Text = "DELIVERY"
         '
@@ -330,11 +320,11 @@ Partial Class frmDelivery
         '
         Me.GunaLabel15.AutoSize = True
         Me.GunaLabel15.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel15.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel15.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.GunaLabel15.Location = New System.Drawing.Point(939, 7)
+        Me.GunaLabel15.Location = New System.Drawing.Point(909, 7)
         Me.GunaLabel15.Name = "GunaLabel15"
-        Me.GunaLabel15.Size = New System.Drawing.Size(85, 22)
+        Me.GunaLabel15.Size = New System.Drawing.Size(102, 21)
         Me.GunaLabel15.TabIndex = 117
         Me.GunaLabel15.Text = "ORDER ID:"
         '
@@ -357,7 +347,7 @@ Partial Class frmDelivery
         Me.dgvCart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop
@@ -368,7 +358,7 @@ Partial Class frmDelivery
         Me.dgvCart.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column3, Me.Column4, Me.Column5})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Moccasin
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
@@ -440,11 +430,11 @@ Partial Class frmDelivery
         '
         Me.lblOrderID.AutoSize = True
         Me.lblOrderID.BackColor = System.Drawing.Color.Transparent
-        Me.lblOrderID.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOrderID.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblOrderID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.lblOrderID.Location = New System.Drawing.Point(1017, 7)
         Me.lblOrderID.Name = "lblOrderID"
-        Me.lblOrderID.Size = New System.Drawing.Size(17, 22)
+        Me.lblOrderID.Size = New System.Drawing.Size(19, 21)
         Me.lblOrderID.TabIndex = 118
         Me.lblOrderID.Text = "*"
         '
@@ -468,7 +458,7 @@ Partial Class frmDelivery
         Me.Guna2GradientPanel3.Controls.Add(Me.txtAddress)
         Me.Guna2GradientPanel3.Controls.Add(Me.GunaLabel5)
         Me.Guna2GradientPanel3.Controls.Add(Me.txtDate)
-        Me.Guna2GradientPanel3.Controls.Add(Me.GunaLabel3)
+        Me.Guna2GradientPanel3.Controls.Add(Me.lblDelivDate)
         Me.Guna2GradientPanel3.Controls.Add(Me.txtTracking)
         Me.Guna2GradientPanel3.Controls.Add(Me.GunaLabel1)
         Me.Guna2GradientPanel3.Controls.Add(Me.GunaLabel2)
@@ -551,11 +541,11 @@ Partial Class frmDelivery
         '
         Me.GunaLabel14.AutoSize = True
         Me.GunaLabel14.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel14.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel14.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel14.Location = New System.Drawing.Point(286, 33)
         Me.GunaLabel14.Name = "GunaLabel14"
-        Me.GunaLabel14.Size = New System.Drawing.Size(53, 17)
+        Me.GunaLabel14.Size = New System.Drawing.Size(67, 19)
         Me.GunaLabel14.TabIndex = 155
         Me.GunaLabel14.Text = "Region:"
         '
@@ -590,11 +580,11 @@ Partial Class frmDelivery
         '
         Me.GunaLabel13.AutoSize = True
         Me.GunaLabel13.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel13.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel13.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel13.Location = New System.Drawing.Point(21, 100)
         Me.GunaLabel13.Name = "GunaLabel13"
-        Me.GunaLabel13.Size = New System.Drawing.Size(101, 17)
+        Me.GunaLabel13.Size = New System.Drawing.Size(130, 19)
         Me.GunaLabel13.TabIndex = 153
         Me.GunaLabel13.Text = "Phone Number:"
         '
@@ -618,7 +608,7 @@ Partial Class frmDelivery
         Me.txtZip.Name = "txtZip"
         Me.txtZip.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtZip.PlaceholderForeColor = System.Drawing.Color.DimGray
-        Me.txtZip.PlaceholderText = ""
+        Me.txtZip.PlaceholderText = "Optional"
         Me.txtZip.SelectedText = ""
         Me.txtZip.Size = New System.Drawing.Size(212, 33)
         Me.txtZip.TabIndex = 152
@@ -628,11 +618,11 @@ Partial Class frmDelivery
         '
         Me.GunaLabel8.AutoSize = True
         Me.GunaLabel8.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel8.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel8.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel8.Location = New System.Drawing.Point(290, 302)
         Me.GunaLabel8.Name = "GunaLabel8"
-        Me.GunaLabel8.Size = New System.Drawing.Size(67, 17)
+        Me.GunaLabel8.Size = New System.Drawing.Size(83, 19)
         Me.GunaLabel8.TabIndex = 151
         Me.GunaLabel8.Text = "Zip Code:"
         '
@@ -666,11 +656,11 @@ Partial Class frmDelivery
         '
         Me.GunaLabel7.AutoSize = True
         Me.GunaLabel7.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel7.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel7.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel7.Location = New System.Drawing.Point(290, 95)
         Me.GunaLabel7.Name = "GunaLabel7"
-        Me.GunaLabel7.Size = New System.Drawing.Size(35, 17)
+        Me.GunaLabel7.Size = New System.Drawing.Size(44, 19)
         Me.GunaLabel7.TabIndex = 147
         Me.GunaLabel7.Text = "City:"
         '
@@ -678,11 +668,11 @@ Partial Class frmDelivery
         '
         Me.GunaLabel6.AutoSize = True
         Me.GunaLabel6.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel6.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel6.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel6.Location = New System.Drawing.Point(284, 230)
         Me.GunaLabel6.Name = "GunaLabel6"
-        Me.GunaLabel6.Size = New System.Drawing.Size(71, 17)
+        Me.GunaLabel6.Size = New System.Drawing.Size(86, 19)
         Me.GunaLabel6.TabIndex = 146
         Me.GunaLabel6.Text = "Barangay:"
         '
@@ -716,11 +706,11 @@ Partial Class frmDelivery
         '
         Me.GunaLabel5.AutoSize = True
         Me.GunaLabel5.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel5.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel5.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel5.Location = New System.Drawing.Point(283, 165)
         Me.GunaLabel5.Name = "GunaLabel5"
-        Me.GunaLabel5.Size = New System.Drawing.Size(59, 17)
+        Me.GunaLabel5.Size = New System.Drawing.Size(79, 19)
         Me.GunaLabel5.TabIndex = 144
         Me.GunaLabel5.Text = "Address:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -750,17 +740,17 @@ Partial Class frmDelivery
         Me.txtDate.TabIndex = 143
         Me.txtDate.TextOffset = New System.Drawing.Point(0, -2)
         '
-        'GunaLabel3
+        'lblDelivDate
         '
-        Me.GunaLabel3.AutoSize = True
-        Me.GunaLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel3.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.GunaLabel3.Location = New System.Drawing.Point(27, 228)
-        Me.GunaLabel3.Name = "GunaLabel3"
-        Me.GunaLabel3.Size = New System.Drawing.Size(95, 17)
-        Me.GunaLabel3.TabIndex = 142
-        Me.GunaLabel3.Text = "Delivery Date:"
+        Me.lblDelivDate.AutoSize = True
+        Me.lblDelivDate.BackColor = System.Drawing.Color.Transparent
+        Me.lblDelivDate.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDelivDate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.lblDelivDate.Location = New System.Drawing.Point(27, 228)
+        Me.lblDelivDate.Name = "lblDelivDate"
+        Me.lblDelivDate.Size = New System.Drawing.Size(118, 19)
+        Me.lblDelivDate.TabIndex = 142
+        Me.lblDelivDate.Text = "Delivery Date:"
         '
         'txtTracking
         '
@@ -793,11 +783,11 @@ Partial Class frmDelivery
         '
         Me.GunaLabel1.AutoSize = True
         Me.GunaLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel1.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel1.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel1.Location = New System.Drawing.Point(25, 161)
         Me.GunaLabel1.Name = "GunaLabel1"
-        Me.GunaLabel1.Size = New System.Drawing.Size(114, 17)
+        Me.GunaLabel1.Size = New System.Drawing.Size(147, 19)
         Me.GunaLabel1.TabIndex = 140
         Me.GunaLabel1.Text = "Tracking Number:"
         '
@@ -805,11 +795,11 @@ Partial Class frmDelivery
         '
         Me.GunaLabel2.AutoSize = True
         Me.GunaLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel2.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel2.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel2.Location = New System.Drawing.Point(22, 32)
         Me.GunaLabel2.Name = "GunaLabel2"
-        Me.GunaLabel2.Size = New System.Drawing.Size(113, 17)
+        Me.GunaLabel2.Size = New System.Drawing.Size(141, 19)
         Me.GunaLabel2.TabIndex = 139
         Me.GunaLabel2.Text = "Delivery Method:"
         '
@@ -846,7 +836,7 @@ Partial Class frmDelivery
         Me.Guna2GroupBox1.Controls.Add(Me.GunaLabel18)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(574, 453)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
@@ -1045,16 +1035,32 @@ Partial Class frmDelivery
         Me.GunaLabel18.TabIndex = 150
         Me.GunaLabel18.Text = "Discount:"
         '
+        'Guna2ProgressBar1
+        '
+        Me.Guna2ProgressBar1.FillColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Guna2ProgressBar1.Location = New System.Drawing.Point(305, 115)
+        Me.Guna2ProgressBar1.Minimum = 20
+        Me.Guna2ProgressBar1.Name = "Guna2ProgressBar1"
+        Me.Guna2ProgressBar1.ProgressColor = System.Drawing.Color.Goldenrod
+        Me.Guna2ProgressBar1.ProgressColor2 = System.Drawing.Color.Gold
+        Me.Guna2ProgressBar1.Size = New System.Drawing.Size(224, 7)
+        Me.Guna2ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+        Me.Guna2ProgressBar1.TabIndex = 201
+        Me.Guna2ProgressBar1.Text = "Guna2ProgressBar1"
+        Me.Guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.Guna2ProgressBar1.Value = 20
+        '
         'frmDelivery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1214, 792)
+        Me.ClientSize = New System.Drawing.Size(1216, 796)
+        Me.Controls.Add(Me.Guna2ProgressBar1)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.Controls.Add(Me.Guna2PictureBox1)
         Me.Controls.Add(Me.dgvCart)
-        Me.Controls.Add(Me.Guna2Button2)
+        Me.Controls.Add(Me.btnPayment)
         Me.Controls.Add(Me.Guna2Button1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -1064,13 +1070,13 @@ Partial Class frmDelivery
         Me.Controls.Add(Me.Guna2CircleProgressBar3)
         Me.Controls.Add(Me.Guna2CircleProgressBar2)
         Me.Controls.Add(Me.Guna2CircleProgressBar1)
-        Me.Controls.Add(Me.Guna2Shapes1)
         Me.Controls.Add(Me.Guna2Shapes2)
         Me.Controls.Add(Me.Guna2Shapes3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Guna2GradientPanel3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmDelivery"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmDelivery"
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvCart, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1091,7 +1097,6 @@ Partial Class frmDelivery
     Friend WithEvents Guna2CircleProgressBar4 As Guna.UI2.WinForms.Guna2CircleProgressBar
     Friend WithEvents Guna2CircleProgressBar3 As Guna.UI2.WinForms.Guna2CircleProgressBar
     Friend WithEvents Guna2CircleProgressBar2 As Guna.UI2.WinForms.Guna2CircleProgressBar
-    Friend WithEvents Guna2Shapes1 As Guna.UI2.WinForms.Guna2Shapes
     Friend WithEvents Guna2Shapes2 As Guna.UI2.WinForms.Guna2Shapes
     Friend WithEvents Guna2Shapes3 As Guna.UI2.WinForms.Guna2Shapes
     Friend WithEvents Label3 As Label
@@ -1102,7 +1107,7 @@ Partial Class frmDelivery
     Friend WithEvents GunaLabel4 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents Guna2Shapes5 As Guna.UI2.WinForms.Guna2Shapes
     Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnPayment As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label11 As Label
     Friend WithEvents GunaLabel15 As Guna.UI.WinForms.GunaLabel
@@ -1120,7 +1125,7 @@ Partial Class frmDelivery
     Friend WithEvents txtAddress As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents GunaLabel5 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents txtDate As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents GunaLabel3 As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents lblDelivDate As Guna.UI.WinForms.GunaLabel
     Friend WithEvents txtTracking As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents GunaLabel1 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaLabel2 As Guna.UI.WinForms.GunaLabel
@@ -1150,4 +1155,5 @@ Partial Class frmDelivery
     Friend WithEvents GunaLabel10 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaLabel12 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaLabel18 As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents Guna2ProgressBar1 As Guna.UI2.WinForms.Guna2ProgressBar
 End Class

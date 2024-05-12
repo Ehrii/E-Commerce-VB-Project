@@ -45,7 +45,7 @@ Partial Class frmProduct
         Me.Guna2Shapes3 = New Guna.UI2.WinForms.Guna2Shapes()
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.t = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtDesc = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -335,7 +335,7 @@ Partial Class frmProduct
         '
         Me.Guna2GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2GroupBox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2GroupBox2.Controls.Add(Me.t)
+        Me.Guna2GroupBox2.Controls.Add(Me.txtDesc)
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox2.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -347,28 +347,28 @@ Partial Class frmProduct
         Me.Guna2GroupBox2.Text = "Product Description"
         Me.Guna2GroupBox2.UseTransparentBackground = True
         '
-        't
+        'txtDesc
         '
-        Me.t.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.t.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.t.DefaultText = ""
-        Me.t.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.t.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.t.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.t.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.t.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.t.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.t.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.t.ForeColor = System.Drawing.Color.White
-        Me.t.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.t.Location = New System.Drawing.Point(3, 42)
-        Me.t.Multiline = True
-        Me.t.Name = "t"
-        Me.t.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.t.PlaceholderText = ""
-        Me.t.SelectedText = ""
-        Me.t.Size = New System.Drawing.Size(440, 191)
-        Me.t.TabIndex = 63
+        Me.txtDesc.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.txtDesc.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDesc.DefaultText = ""
+        Me.txtDesc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtDesc.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtDesc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDesc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDesc.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.txtDesc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDesc.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDesc.ForeColor = System.Drawing.Color.White
+        Me.txtDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDesc.Location = New System.Drawing.Point(3, 42)
+        Me.txtDesc.Multiline = True
+        Me.txtDesc.Name = "txtDesc"
+        Me.txtDesc.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtDesc.PlaceholderText = ""
+        Me.txtDesc.SelectedText = ""
+        Me.txtDesc.Size = New System.Drawing.Size(440, 191)
+        Me.txtDesc.TabIndex = 63
         '
         'Label6
         '
@@ -692,7 +692,7 @@ Partial Class frmProduct
     Friend WithEvents Label6 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents t As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtDesc As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2GroupBox2 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents btnBack As Guna.UI2.WinForms.Guna2Button
 End Class

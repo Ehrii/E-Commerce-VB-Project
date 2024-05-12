@@ -23,19 +23,19 @@ Partial Class frmAudit
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAudit))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAudit))
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
-        Me.DgvAudit = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.Guna2DateTimePicker2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.Guna2DateTimePicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.dtp2 = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.dtp1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.grpAuditinfo = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.picAvatar = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.txtRole = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtTime = New Guna.UI2.WinForms.Guna2TextBox()
@@ -51,16 +51,24 @@ Partial Class frmAudit
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.grpPerio = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        CType(Me.DgvAudit, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.toggleOrd = New Guna.UI2.WinForms.Guna2ToggleSwitch()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.togglePay = New Guna.UI2.WinForms.Guna2ToggleSwitch()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.toggleTime = New Guna.UI2.WinForms.Guna2ToggleSwitch()
+        Me.DgvAudit = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Guna2GroupBox1.SuspendLayout()
-        Me.Guna2GroupBox2.SuspendLayout()
+        Me.grpAuditinfo.SuspendLayout()
+        CType(Me.picAvatar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Guna2GroupBox3.SuspendLayout()
+        Me.grpPerio.SuspendLayout()
+        CType(Me.DgvAudit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2BorderlessForm1
@@ -69,63 +77,12 @@ Partial Class frmAudit
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
-        'DgvAudit
-        '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.DgvAudit.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.DgvAudit.BackgroundColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvAudit.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DgvAudit.ColumnHeadersHeight = 40
-        Me.DgvAudit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Yellow
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvAudit.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DgvAudit.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgvAudit.Location = New System.Drawing.Point(23, 103)
-        Me.DgvAudit.Name = "DgvAudit"
-        Me.DgvAudit.RowHeadersVisible = False
-        Me.DgvAudit.Size = New System.Drawing.Size(1155, 417)
-        Me.DgvAudit.TabIndex = 83
-        Me.DgvAudit.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.DgvAudit.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.DgvAudit.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.DgvAudit.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.DgvAudit.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.DgvAudit.ThemeStyle.BackColor = System.Drawing.Color.DimGray
-        Me.DgvAudit.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgvAudit.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgvAudit.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.DgvAudit.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DgvAudit.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.DgvAudit.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.DgvAudit.ThemeStyle.HeaderStyle.Height = 40
-        Me.DgvAudit.ThemeStyle.ReadOnly = False
-        Me.DgvAudit.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.DgvAudit.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DgvAudit.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DgvAudit.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.DgvAudit.ThemeStyle.RowsStyle.Height = 22
-        Me.DgvAudit.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgvAudit.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
         'Guna2GroupBox1
         '
         Me.Guna2GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2GroupBox1.Controls.Add(Me.Guna2DateTimePicker2)
-        Me.Guna2GroupBox1.Controls.Add(Me.Guna2DateTimePicker1)
+        Me.Guna2GroupBox1.Controls.Add(Me.dtp2)
+        Me.Guna2GroupBox1.Controls.Add(Me.dtp1)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button2)
         Me.Guna2GroupBox1.Controls.Add(Me.Label4)
         Me.Guna2GroupBox1.Controls.Add(Me.Label5)
@@ -135,38 +92,38 @@ Partial Class frmAudit
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(23, 526)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(283, 213)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(234, 213)
         Me.Guna2GroupBox1.TabIndex = 188
         Me.Guna2GroupBox1.Text = "Date Information"
         Me.Guna2GroupBox1.UseTransparentBackground = True
         '
-        'Guna2DateTimePicker2
+        'dtp2
         '
-        Me.Guna2DateTimePicker2.Checked = True
-        Me.Guna2DateTimePicker2.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2DateTimePicker2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Guna2DateTimePicker2.Location = New System.Drawing.Point(21, 121)
-        Me.Guna2DateTimePicker2.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Guna2DateTimePicker2.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Guna2DateTimePicker2.Name = "Guna2DateTimePicker2"
-        Me.Guna2DateTimePicker2.Size = New System.Drawing.Size(200, 27)
-        Me.Guna2DateTimePicker2.TabIndex = 179
-        Me.Guna2DateTimePicker2.Value = New Date(2023, 4, 25, 14, 34, 18, 207)
+        Me.dtp2.Checked = True
+        Me.dtp2.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.dtp2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.dtp2.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.dtp2.Location = New System.Drawing.Point(21, 121)
+        Me.dtp2.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.dtp2.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.dtp2.Name = "dtp2"
+        Me.dtp2.Size = New System.Drawing.Size(200, 27)
+        Me.dtp2.TabIndex = 179
+        Me.dtp2.Value = New Date(2023, 4, 25, 14, 34, 18, 207)
         '
-        'Guna2DateTimePicker1
+        'dtp1
         '
-        Me.Guna2DateTimePicker1.Checked = True
-        Me.Guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2DateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Guna2DateTimePicker1.Location = New System.Drawing.Point(21, 69)
-        Me.Guna2DateTimePicker1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Guna2DateTimePicker1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Guna2DateTimePicker1.Name = "Guna2DateTimePicker1"
-        Me.Guna2DateTimePicker1.Size = New System.Drawing.Size(200, 27)
-        Me.Guna2DateTimePicker1.TabIndex = 178
-        Me.Guna2DateTimePicker1.Value = New Date(2023, 4, 25, 14, 34, 18, 207)
+        Me.dtp1.Checked = True
+        Me.dtp1.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.dtp1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.dtp1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.dtp1.Location = New System.Drawing.Point(21, 69)
+        Me.dtp1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.dtp1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.dtp1.Name = "dtp1"
+        Me.dtp1.Size = New System.Drawing.Size(200, 27)
+        Me.dtp1.TabIndex = 178
+        Me.dtp1.Value = New Date(2023, 4, 25, 14, 34, 18, 207)
         '
         'Guna2Button2
         '
@@ -206,32 +163,46 @@ Partial Class frmAudit
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "From:"
         '
-        'Guna2GroupBox2
+        'grpAuditinfo
         '
-        Me.Guna2GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2GroupBox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2GroupBox2.Controls.Add(Me.txtRole)
-        Me.Guna2GroupBox2.Controls.Add(Me.Label6)
-        Me.Guna2GroupBox2.Controls.Add(Me.txtTime)
-        Me.Guna2GroupBox2.Controls.Add(Me.Label8)
-        Me.Guna2GroupBox2.Controls.Add(Me.txtActionDate)
-        Me.Guna2GroupBox2.Controls.Add(Me.Label2)
-        Me.Guna2GroupBox2.Controls.Add(Me.txtAction)
-        Me.Guna2GroupBox2.Controls.Add(Me.Label3)
-        Me.Guna2GroupBox2.Controls.Add(Me.txtUsername)
-        Me.Guna2GroupBox2.Controls.Add(Me.Label1)
-        Me.Guna2GroupBox2.Controls.Add(Me.txtNo)
-        Me.Guna2GroupBox2.Controls.Add(Me.Label7)
-        Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2GroupBox2.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(312, 526)
-        Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(666, 211)
-        Me.Guna2GroupBox2.TabIndex = 189
-        Me.Guna2GroupBox2.Text = "Audit Information"
-        Me.Guna2GroupBox2.UseTransparentBackground = True
+        Me.grpAuditinfo.BackColor = System.Drawing.Color.Transparent
+        Me.grpAuditinfo.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.grpAuditinfo.Controls.Add(Me.picAvatar)
+        Me.grpAuditinfo.Controls.Add(Me.txtRole)
+        Me.grpAuditinfo.Controls.Add(Me.Label6)
+        Me.grpAuditinfo.Controls.Add(Me.txtTime)
+        Me.grpAuditinfo.Controls.Add(Me.Label8)
+        Me.grpAuditinfo.Controls.Add(Me.txtActionDate)
+        Me.grpAuditinfo.Controls.Add(Me.Label2)
+        Me.grpAuditinfo.Controls.Add(Me.txtAction)
+        Me.grpAuditinfo.Controls.Add(Me.Label3)
+        Me.grpAuditinfo.Controls.Add(Me.txtUsername)
+        Me.grpAuditinfo.Controls.Add(Me.Label1)
+        Me.grpAuditinfo.Controls.Add(Me.txtNo)
+        Me.grpAuditinfo.Controls.Add(Me.Label7)
+        Me.grpAuditinfo.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.grpAuditinfo.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.grpAuditinfo.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grpAuditinfo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.grpAuditinfo.Location = New System.Drawing.Point(263, 526)
+        Me.grpAuditinfo.Name = "grpAuditinfo"
+        Me.grpAuditinfo.Size = New System.Drawing.Size(762, 211)
+        Me.grpAuditinfo.TabIndex = 189
+        Me.grpAuditinfo.Text = "Audit Information"
+        Me.grpAuditinfo.UseTransparentBackground = True
+        '
+        'picAvatar
+        '
+        Me.picAvatar.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.picAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picAvatar.ImageRotate = 0!
+        Me.picAvatar.Location = New System.Drawing.Point(615, 57)
+        Me.picAvatar.Name = "picAvatar"
+        Me.picAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.picAvatar.Size = New System.Drawing.Size(139, 139)
+        Me.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picAvatar.TabIndex = 199
+        Me.picAvatar.TabStop = False
         '
         'txtRole
         '
@@ -244,10 +215,11 @@ Partial Class frmAudit
         Me.txtRole.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtRole.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.txtRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtRole.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtRole.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRole.ForeColor = System.Drawing.Color.White
         Me.txtRole.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtRole.Location = New System.Drawing.Point(441, 145)
+        Me.txtRole.Location = New System.Drawing.Point(408, 150)
+        Me.txtRole.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtRole.Multiline = True
         Me.txtRole.Name = "txtRole"
         Me.txtRole.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -261,7 +233,7 @@ Partial Class frmAudit
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(437, 120)
+        Me.Label6.Location = New System.Drawing.Point(404, 125)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(48, 22)
         Me.Label6.TabIndex = 197
@@ -278,10 +250,11 @@ Partial Class frmAudit
         Me.txtTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtTime.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.txtTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTime.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtTime.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTime.ForeColor = System.Drawing.Color.White
         Me.txtTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTime.Location = New System.Drawing.Point(441, 77)
+        Me.txtTime.Location = New System.Drawing.Point(408, 82)
+        Me.txtTime.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtTime.Multiline = True
         Me.txtTime.Name = "txtTime"
         Me.txtTime.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -295,7 +268,7 @@ Partial Class frmAudit
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(437, 52)
+        Me.Label8.Location = New System.Drawing.Point(404, 57)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(99, 22)
         Me.Label8.TabIndex = 195
@@ -312,10 +285,11 @@ Partial Class frmAudit
         Me.txtActionDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtActionDate.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.txtActionDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtActionDate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtActionDate.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtActionDate.ForeColor = System.Drawing.Color.White
         Me.txtActionDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtActionDate.Location = New System.Drawing.Point(225, 145)
+        Me.txtActionDate.Location = New System.Drawing.Point(209, 150)
+        Me.txtActionDate.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtActionDate.Multiline = True
         Me.txtActionDate.Name = "txtActionDate"
         Me.txtActionDate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -329,7 +303,7 @@ Partial Class frmAudit
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(221, 120)
+        Me.Label2.Location = New System.Drawing.Point(205, 125)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(105, 22)
         Me.Label2.TabIndex = 193
@@ -346,16 +320,17 @@ Partial Class frmAudit
         Me.txtAction.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtAction.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.txtAction.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAction.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtAction.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAction.ForeColor = System.Drawing.Color.White
         Me.txtAction.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAction.Location = New System.Drawing.Point(225, 77)
+        Me.txtAction.Location = New System.Drawing.Point(209, 82)
+        Me.txtAction.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtAction.Multiline = True
         Me.txtAction.Name = "txtAction"
         Me.txtAction.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtAction.PlaceholderText = ""
         Me.txtAction.SelectedText = ""
-        Me.txtAction.Size = New System.Drawing.Size(193, 33)
+        Me.txtAction.Size = New System.Drawing.Size(193, 41)
         Me.txtAction.TabIndex = 192
         '
         'Label3
@@ -363,7 +338,7 @@ Partial Class frmAudit
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(221, 52)
+        Me.Label3.Location = New System.Drawing.Point(205, 57)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(102, 22)
         Me.Label3.TabIndex = 191
@@ -380,10 +355,11 @@ Partial Class frmAudit
         Me.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtUsername.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUsername.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtUsername.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.ForeColor = System.Drawing.Color.White
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUsername.Location = New System.Drawing.Point(12, 145)
+        Me.txtUsername.Location = New System.Drawing.Point(10, 150)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtUsername.Multiline = True
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -397,7 +373,7 @@ Partial Class frmAudit
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(8, 120)
+        Me.Label1.Location = New System.Drawing.Point(6, 125)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(93, 22)
         Me.Label1.TabIndex = 189
@@ -414,10 +390,11 @@ Partial Class frmAudit
         Me.txtNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtNo.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.txtNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtNo.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtNo.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNo.ForeColor = System.Drawing.Color.White
         Me.txtNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtNo.Location = New System.Drawing.Point(12, 77)
+        Me.txtNo.Location = New System.Drawing.Point(10, 82)
+        Me.txtNo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNo.Multiline = True
         Me.txtNo.Name = "txtNo"
         Me.txtNo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -431,7 +408,7 @@ Partial Class frmAudit
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(8, 52)
+        Me.Label7.Location = New System.Drawing.Point(6, 57)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(80, 22)
         Me.Label7.TabIndex = 183
@@ -444,7 +421,7 @@ Partial Class frmAudit
         Me.TextBox1.ForeColor = System.Drawing.SystemColors.Window
         Me.TextBox1.Location = New System.Drawing.Point(215, 62)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(279, 26)
+        Me.TextBox1.Size = New System.Drawing.Size(284, 26)
         Me.TextBox1.TabIndex = 192
         '
         'PictureBox8
@@ -468,24 +445,24 @@ Partial Class frmAudit
         Me.Label9.TabIndex = 190
         Me.Label9.Text = "Search Username:"
         '
-        'Guna2GroupBox3
+        'grpPerio
         '
-        Me.Guna2GroupBox3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2GroupBox3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2GroupBox3.Controls.Add(Me.RadioButton4)
-        Me.Guna2GroupBox3.Controls.Add(Me.RadioButton3)
-        Me.Guna2GroupBox3.Controls.Add(Me.RadioButton2)
-        Me.Guna2GroupBox3.Controls.Add(Me.RadioButton1)
-        Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Guna2GroupBox3.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox3.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox3.Location = New System.Drawing.Point(984, 526)
-        Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
-        Me.Guna2GroupBox3.Size = New System.Drawing.Size(194, 211)
-        Me.Guna2GroupBox3.TabIndex = 193
-        Me.Guna2GroupBox3.Text = " Periodicals Information"
-        Me.Guna2GroupBox3.UseTransparentBackground = True
+        Me.grpPerio.BackColor = System.Drawing.Color.Transparent
+        Me.grpPerio.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.grpPerio.Controls.Add(Me.RadioButton4)
+        Me.grpPerio.Controls.Add(Me.RadioButton3)
+        Me.grpPerio.Controls.Add(Me.RadioButton2)
+        Me.grpPerio.Controls.Add(Me.RadioButton1)
+        Me.grpPerio.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.grpPerio.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.grpPerio.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grpPerio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.grpPerio.Location = New System.Drawing.Point(1031, 526)
+        Me.grpPerio.Name = "grpPerio"
+        Me.grpPerio.Size = New System.Drawing.Size(147, 211)
+        Me.grpPerio.TabIndex = 193
+        Me.grpPerio.Text = " Periodicals "
+        Me.grpPerio.UseTransparentBackground = True
         '
         'RadioButton4
         '
@@ -539,44 +516,179 @@ Partial Class frmAudit
         Me.RadioButton1.Text = "Daily"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
+        'toggleOrd
+        '
+        Me.toggleOrd.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.toggleOrd.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.toggleOrd.CheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.toggleOrd.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.toggleOrd.Location = New System.Drawing.Point(748, 62)
+        Me.toggleOrd.Name = "toggleOrd"
+        Me.toggleOrd.Size = New System.Drawing.Size(69, 29)
+        Me.toggleOrd.TabIndex = 194
+        Me.toggleOrd.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.toggleOrd.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.toggleOrd.UncheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.toggleOrd.UncheckedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.Label10.Location = New System.Drawing.Point(683, 66)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(61, 22)
+        Me.Label10.TabIndex = 195
+        Me.Label10.Text = "Order:"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(520, 66)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(80, 22)
+        Me.Label11.TabIndex = 197
+        Me.Label11.Text = "Payment:"
+        '
+        'togglePay
+        '
+        Me.togglePay.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.togglePay.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.togglePay.CheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.togglePay.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.togglePay.Location = New System.Drawing.Point(605, 62)
+        Me.togglePay.Name = "togglePay"
+        Me.togglePay.Size = New System.Drawing.Size(69, 29)
+        Me.togglePay.TabIndex = 196
+        Me.togglePay.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.togglePay.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.togglePay.UncheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.togglePay.UncheckedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.Label13.Location = New System.Drawing.Point(830, 64)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(81, 22)
+        Me.Label13.TabIndex = 201
+        Me.Label13.Text = "Time Log:"
+        '
+        'toggleTime
+        '
+        Me.toggleTime.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.toggleTime.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.toggleTime.CheckedState.InnerBorderColor = System.Drawing.Color.White
+        Me.toggleTime.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.toggleTime.Location = New System.Drawing.Point(917, 61)
+        Me.toggleTime.Name = "toggleTime"
+        Me.toggleTime.Size = New System.Drawing.Size(69, 29)
+        Me.toggleTime.TabIndex = 200
+        Me.toggleTime.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.toggleTime.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.toggleTime.UncheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.toggleTime.UncheckedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        '
+        'DgvAudit
+        '
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.DgvAudit.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgvAudit.BackgroundColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvAudit.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DgvAudit.ColumnHeadersHeight = 40
+        Me.DgvAudit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Yellow
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvAudit.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DgvAudit.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvAudit.Location = New System.Drawing.Point(23, 103)
+        Me.DgvAudit.Name = "DgvAudit"
+        Me.DgvAudit.RowHeadersVisible = False
+        Me.DgvAudit.Size = New System.Drawing.Size(1155, 417)
+        Me.DgvAudit.TabIndex = 83
+        Me.DgvAudit.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgvAudit.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.DgvAudit.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.DgvAudit.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.DgvAudit.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.DgvAudit.ThemeStyle.BackColor = System.Drawing.Color.DimGray
+        Me.DgvAudit.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvAudit.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvAudit.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgvAudit.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvAudit.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DgvAudit.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DgvAudit.ThemeStyle.HeaderStyle.Height = 40
+        Me.DgvAudit.ThemeStyle.ReadOnly = False
+        Me.DgvAudit.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgvAudit.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DgvAudit.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgvAudit.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.DgvAudit.ThemeStyle.RowsStyle.Height = 22
+        Me.DgvAudit.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgvAudit.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
         'frmAudit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1202, 746)
-        Me.Controls.Add(Me.Guna2GroupBox3)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.toggleTime)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.togglePay)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.toggleOrd)
+        Me.Controls.Add(Me.grpPerio)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.PictureBox8)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Guna2GroupBox2)
+        Me.Controls.Add(Me.grpAuditinfo)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.Controls.Add(Me.DgvAudit)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmAudit"
         Me.Text = "frmAudit"
-        CType(Me.DgvAudit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()
-        Me.Guna2GroupBox2.ResumeLayout(False)
-        Me.Guna2GroupBox2.PerformLayout()
+        Me.grpAuditinfo.ResumeLayout(False)
+        Me.grpAuditinfo.PerformLayout()
+        CType(Me.picAvatar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Guna2GroupBox3.ResumeLayout(False)
-        Me.Guna2GroupBox3.PerformLayout()
+        Me.grpPerio.ResumeLayout(False)
+        Me.grpPerio.PerformLayout()
+        CType(Me.DgvAudit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
-    Friend WithEvents DgvAudit As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
-    Friend WithEvents Guna2DateTimePicker2 As Guna.UI2.WinForms.Guna2DateTimePicker
-    Friend WithEvents Guna2DateTimePicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents dtp2 As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents dtp1 As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Guna2GroupBox2 As Guna.UI2.WinForms.Guna2GroupBox
+    Friend WithEvents grpAuditinfo As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents txtRole As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtTime As Guna.UI2.WinForms.Guna2TextBox
@@ -592,9 +704,17 @@ Partial Class frmAudit
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents Guna2GroupBox3 As Guna.UI2.WinForms.Guna2GroupBox
+    Friend WithEvents grpPerio As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents RadioButton3 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents toggleOrd As Guna.UI2.WinForms.Guna2ToggleSwitch
+    Friend WithEvents Label13 As Label
+    Friend WithEvents toggleTime As Guna.UI2.WinForms.Guna2ToggleSwitch
+    Friend WithEvents Label11 As Label
+    Friend WithEvents togglePay As Guna.UI2.WinForms.Guna2ToggleSwitch
+    Friend WithEvents Label10 As Label
+    Friend WithEvents DgvAudit As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents picAvatar As Guna.UI2.WinForms.Guna2CirclePictureBox
 End Class

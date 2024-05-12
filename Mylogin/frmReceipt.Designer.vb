@@ -31,9 +31,11 @@ Partial Class frmReceipt
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Guna2ControlBox3 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
+        Me.Guna2CircleProgressBar3 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Guna2CircleProgressBar3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,7 +58,7 @@ Partial Class frmReceipt
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(256, 238)
+        Me.Button1.Location = New System.Drawing.Point(256, 266)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(146, 33)
         Me.Button1.TabIndex = 1
@@ -74,7 +76,7 @@ Partial Class frmReceipt
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tw Cen MT", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(103, 166)
+        Me.Label1.Location = New System.Drawing.Point(97, 196)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(474, 43)
         Me.Label1.TabIndex = 2
@@ -85,21 +87,11 @@ Partial Class frmReceipt
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(150, 209)
+        Me.Label2.Location = New System.Drawing.Point(147, 233)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(373, 17)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "MONITOR YOUR ORDER HISTORY FOR DELIVERY UPDATES"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(268, 58)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(118, 101)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
         '
         'Guna2ControlBox3
         '
@@ -126,15 +118,46 @@ Partial Class frmReceipt
         Me.Guna2ControlBox1.Size = New System.Drawing.Size(32, 23)
         Me.Guna2ControlBox1.TabIndex = 72
         '
+        'Guna2CircleProgressBar3
+        '
+        Me.Guna2CircleProgressBar3.Animated = True
+        Me.Guna2CircleProgressBar3.Controls.Add(Me.PictureBox1)
+        Me.Guna2CircleProgressBar3.FillColor = System.Drawing.Color.Gray
+        Me.Guna2CircleProgressBar3.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.Guna2CircleProgressBar3.ForeColor = System.Drawing.Color.White
+        Me.Guna2CircleProgressBar3.Location = New System.Drawing.Point(266, 46)
+        Me.Guna2CircleProgressBar3.Minimum = 0
+        Me.Guna2CircleProgressBar3.Name = "Guna2CircleProgressBar3"
+        Me.Guna2CircleProgressBar3.ProgressColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.Guna2CircleProgressBar3.ProgressColor2 = System.Drawing.Color.Yellow
+        Me.Guna2CircleProgressBar3.ProgressThickness = 7
+        Me.Guna2CircleProgressBar3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CircleProgressBar3.Size = New System.Drawing.Size(127, 127)
+        Me.Guna2CircleProgressBar3.TabIndex = 201
+        Me.Guna2CircleProgressBar3.Text = "Guna2CircleProgressBar3"
+        Me.Guna2CircleProgressBar3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.Guna2CircleProgressBar3.Value = 99
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(27, 30)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(75, 67)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
+        '
         'frmReceipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(663, 366)
+        Me.Controls.Add(Me.Guna2CircleProgressBar3)
         Me.Controls.Add(Me.Guna2ControlBox3)
         Me.Controls.Add(Me.Guna2ControlBox1)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
@@ -142,6 +165,7 @@ Partial Class frmReceipt
         Me.Name = "frmReceipt"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmReceipt"
+        Me.Guna2CircleProgressBar3.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -157,4 +181,5 @@ Partial Class frmReceipt
     Friend WithEvents Label1 As Label
     Friend WithEvents Guna2ControlBox3 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
+    Friend WithEvents Guna2CircleProgressBar3 As Guna.UI2.WinForms.Guna2CircleProgressBar
 End Class

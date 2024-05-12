@@ -124,6 +124,30 @@
     <value>25</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Guna2GradientButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAABBdJREFUaEPtmU9oXEUcxxep4qEHEXHnLSW5i1RrEfoH9KSXUgVRUWlPotDQeG57
+        aqGkNw96UNR48uDFP+BBhUpwZ5+kYYO1SdqmJJi2SdrSljQx1u57b2b8/Wa+76VmX9vs7nubJ+QDPwj7
+        Zn7f729m583MprTBBgUkrIqlqOaZ/4ZYxOPi02zeBR4Xn9hwzP+mAHPyya2RFD/fqwB+xm3QvBgYU9oU
+        +N6hUIrZqFZJzKqx12Df2L+TIqhNKL1ryveOm3rpYaTpPqbuPUEj+n1Q88LEnN9j1Ll3jV4YYtvOvUXZ
+        z/gZt4nb275SfGd+2/I40naHyBf7aRSDxHh9h9GXPzKmcQ2G7wO14bbcJylEiqBRFfuQPl9o1PrJvBMf
+        3W30jR/J1d2jvVZoVqgv5+BcIRdSrfRBJh+M37stkJ5mQXX+fWN0ADMdQDnUuffiIlSui5xE/rTmx98k
+        4RAOMoByqbE33Kz63hTkssWMbHneCfQYc3sayhlyeypZ4DzTkM0OOh58bUd/Yj8Us0dN7LMFKCm+gmx2
+        hDUxycn13OeQyx499xnWgpiEbHbQm+eWLeCWhFz26AUZr4MFyGYHjUrEyc2dS5DLgX8uuhmQIoJsNpih
+        3sfcyNAC1hHUcoByJws5y93ZyPJeW8DoLijlR1Tf6QoYLu+BfOcoWT7GSdXEO5DJDzX+tvsa+eWjkO+c
+        qCq+tQVMH4FMfqjpw24h17xvIN85tAec5qR67lPI5Iee/cTNgBS/Q75z+PxuC7j5E2Tywx7w3AxchXzn
+        0HG3YQv4+yxk8kMvn41n4A7kO4NuXA9hROgVsQyZHCGN+GbHtz3YaJ/kEDfyjBPoAtGpra6A4Z7tsNE+
+        UdX7gJOpM68gff6oP/baAvjyBBvto6T3pS3gQj/S54+aPGgLoAvOIGy0T/wKTYu0WYlHL4tgbdhoj8Cv
+        9LkFtfJzyd2hzrwK2ytwUWltWw+nG9BXGHZaw/jlp+MTqJo5AXvdQ80M2EJoD1ItL2YzVHo0Pv+rsdfz
+        PYHeE0XnorfcbEixZMaf2gx7D4Y2kVHbceRZYxpXkXAdCK6Th+fimajD3v0Ja5UBa57O5XrxFDKtH3pp
+        NLkjhL+WP4TNdEzNezmUFfu7j54fRIr1R89/4QqoVTTfTWC3GWq0zA3V5AF0LQ7sib2xR9htBg26c+Zp
+        FXtGcv5gt5m4QRG++6vRi8NrL6DoAbvN0MY1n9ahSEGv+DnYbYYKOJHWqdXQlz/GxK9g/yeQ0rbVII8D
+        sNsM7XaPcBFcZVrnNQfvIVwEb4KNK8483uXtBnmaZfPsEXazh4SGVgunxA9oXjxCv7yHtny7EaYFP6N4
+        Cc2LCRk9stp4EtI7hGbFJqiKF8nsL3Sj+ouDTpMnA1+8gMcbrFAq/QvyYt7A6Q+FDAAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
   <data name="Guna2GradientButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL

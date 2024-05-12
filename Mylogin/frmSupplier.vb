@@ -1,8 +1,5 @@
 ﻿Public Class frmSupplier
 
-    Private Sub btnManage_Click(sender As Object, e As EventArgs)
-    End Sub
-
 
 
     Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
@@ -13,9 +10,6 @@
         Me.Size = New Size(1379, 739)
     End Sub
 
-    Private Sub Guna2PictureBox1_Click(sender As Object, e As EventArgs) Handles Guna2PictureBox1.Click
-
-    End Sub
 
     Private Sub Guna2GradientButton2_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton2.Click
 
@@ -61,7 +55,23 @@
         Me.Size = New Size(1410, 739)
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    Private Sub Guna2GradientButton3_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton3.Click
+        frmLowStock.Show()
+        frmLowStock.BringToFront()
+    End Sub
+
+    Private Sub frmSupplier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        frmLowStock.BringToFront()
+        frmLowStock.TopMost = True
+        frmLowStock.Show()
+        lblCount.Text = frmLowStock.dgvStock.RowCount
+        If frmLowStock.dgvStock.RowCount = 0 Then
+            frmLowStock.btnResolve.Enabled = False
+        End If
+    End Sub
+    Private Sub Guna2GradientButton1_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton1.Click
+        Me.Hide()
 
     End Sub
 End Class

@@ -25,7 +25,7 @@ Partial Class frmPayment
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPayment))
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
-        Me.btnDelivery = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnConfirmOrd = New Guna.UI2.WinForms.Guna2Button()
         Me.btnBack = New Guna.UI2.WinForms.Guna2Button()
         Me.GunaLabel4 = New Guna.UI.WinForms.GunaLabel()
         Me.Guna2Shapes4 = New Guna.UI2.WinForms.Guna2Shapes()
@@ -35,10 +35,8 @@ Partial Class frmPayment
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Guna2CircleProgressBar4 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
         Me.Guna2CircleProgressBar3 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
-        Me.Guna2CircleProgressBar2 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
         Me.Guna2CircleProgressBar1 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
         Me.Guna2Shapes1 = New Guna.UI2.WinForms.Guna2Shapes()
-        Me.Guna2Shapes2 = New Guna.UI2.WinForms.Guna2Shapes()
         Me.Guna2Shapes3 = New Guna.UI2.WinForms.Guna2Shapes()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2BorderlessForm2 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
@@ -59,6 +57,8 @@ Partial Class frmPayment
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblCredit = New Guna.UI.WinForms.GunaLabel()
         Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.Guna2ProgressBar1 = New Guna.UI2.WinForms.Guna2ProgressBar()
+        Me.Guna2CircleProgressBar2 = New Guna.UI2.WinForms.Guna2CircleProgressBar()
         Me.GunaLabel7 = New Guna.UI.WinForms.GunaLabel()
         Me.btnConfirmCash = New Guna.UI2.WinForms.Guna2Button()
         Me.txtAmtDue = New Guna.UI2.WinForms.Guna2TextBox()
@@ -73,7 +73,11 @@ Partial Class frmPayment
         Me.txtVat = New Guna.UI2.WinForms.Guna2TextBox()
         Me.lblOrder = New Guna.UI.WinForms.GunaLabel()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.pnlPaypal = New System.Windows.Forms.Panel()
+        Me.Guna2Shapes7 = New Guna.UI2.WinForms.Guna2Shapes()
+        Me.picPaypal = New System.Windows.Forms.PictureBox()
         Me.pnlCards = New System.Windows.Forms.Panel()
+        Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.Guna2Shapes8 = New Guna.UI2.WinForms.Guna2Shapes()
         Me.picAmerican = New System.Windows.Forms.PictureBox()
         Me.picMaster = New System.Windows.Forms.PictureBox()
@@ -83,9 +87,6 @@ Partial Class frmPayment
         Me.picCoins = New System.Windows.Forms.PictureBox()
         Me.picPayMaya = New System.Windows.Forms.PictureBox()
         Me.picGcash = New System.Windows.Forms.PictureBox()
-        Me.pnlPaypal = New System.Windows.Forms.Panel()
-        Me.Guna2Shapes7 = New Guna.UI2.WinForms.Guna2Shapes()
-        Me.picPaypal = New System.Windows.Forms.PictureBox()
         Me.pnlEwall = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.lblPin = New Guna.UI.WinForms.GunaLabel()
         Me.txtAccPin = New Guna.UI2.WinForms.Guna2TextBox()
@@ -100,12 +101,13 @@ Partial Class frmPayment
         Me.txtEmail = New Guna.UI2.WinForms.Guna2TextBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.GunaLabel14 = New Guna.UI.WinForms.GunaLabel()
-        Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.pnlCredit.SuspendLayout()
         CType(Me.picChosenCredit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GradientPanel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlPaypal.SuspendLayout()
+        CType(Me.picPaypal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlCards.SuspendLayout()
         CType(Me.picAmerican, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picMaster, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,8 +116,6 @@ Partial Class frmPayment
         CType(Me.picCoins, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picPayMaya, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picGcash, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlPaypal.SuspendLayout()
-        CType(Me.picPaypal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlEwall.SuspendLayout()
         CType(Me.picChosenEwall, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -127,24 +127,24 @@ Partial Class frmPayment
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
-        'btnDelivery
+        'btnConfirmOrd
         '
-        Me.btnDelivery.AutoRoundedCorners = True
-        Me.btnDelivery.BorderRadius = 16
-        Me.btnDelivery.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnDelivery.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnDelivery.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnDelivery.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDelivery.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.btnDelivery.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelivery.ForeColor = System.Drawing.Color.Black
-        Me.btnDelivery.HoverState.FillColor = System.Drawing.Color.Black
-        Me.btnDelivery.HoverState.ForeColor = System.Drawing.Color.White
-        Me.btnDelivery.Location = New System.Drawing.Point(787, 656)
-        Me.btnDelivery.Name = "btnDelivery"
-        Me.btnDelivery.Size = New System.Drawing.Size(230, 35)
-        Me.btnDelivery.TabIndex = 147
-        Me.btnDelivery.Text = "Proceed To Order Confirmation"
+        Me.btnConfirmOrd.AutoRoundedCorners = True
+        Me.btnConfirmOrd.BorderRadius = 16
+        Me.btnConfirmOrd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnConfirmOrd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnConfirmOrd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnConfirmOrd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnConfirmOrd.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.btnConfirmOrd.Font = New System.Drawing.Font("Yu Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConfirmOrd.ForeColor = System.Drawing.Color.Black
+        Me.btnConfirmOrd.HoverState.FillColor = System.Drawing.Color.Black
+        Me.btnConfirmOrd.HoverState.ForeColor = System.Drawing.Color.White
+        Me.btnConfirmOrd.Location = New System.Drawing.Point(787, 656)
+        Me.btnConfirmOrd.Name = "btnConfirmOrd"
+        Me.btnConfirmOrd.Size = New System.Drawing.Size(230, 35)
+        Me.btnConfirmOrd.TabIndex = 147
+        Me.btnConfirmOrd.Text = "Proceed To Order Confirmation"
         '
         'btnBack
         '
@@ -155,25 +155,26 @@ Partial Class frmPayment
         Me.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnBack.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.btnBack.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.Font = New System.Drawing.Font("Yu Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.Color.Black
         Me.btnBack.HoverState.FillColor = System.Drawing.Color.Black
         Me.btnBack.HoverState.ForeColor = System.Drawing.Color.White
-        Me.btnBack.Location = New System.Drawing.Point(20, 656)
+        Me.btnBack.Location = New System.Drawing.Point(16, 656)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(131, 35)
         Me.btnBack.TabIndex = 146
         Me.btnBack.Text = "Cancel Payment"
+        Me.btnBack.TextOffset = New System.Drawing.Point(0, 8)
         '
         'GunaLabel4
         '
         Me.GunaLabel4.AutoSize = True
         Me.GunaLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel4.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel4.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.GunaLabel4.Location = New System.Drawing.Point(50, 3)
+        Me.GunaLabel4.Location = New System.Drawing.Point(54, 6)
         Me.GunaLabel4.Name = "GunaLabel4"
-        Me.GunaLabel4.Size = New System.Drawing.Size(164, 27)
+        Me.GunaLabel4.Size = New System.Drawing.Size(150, 21)
         Me.GunaLabel4.TabIndex = 129
         Me.GunaLabel4.Text = "ORDER DETAILS"
         '
@@ -181,7 +182,8 @@ Partial Class frmPayment
         '
         Me.Guna2Shapes4.BorderThickness = 1
         Me.Guna2Shapes4.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2Shapes4.Location = New System.Drawing.Point(31, 24)
+        Me.Guna2Shapes4.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Shapes4.Location = New System.Drawing.Point(31, 21)
         Me.Guna2Shapes4.Name = "Guna2Shapes4"
         Me.Guna2Shapes4.PolygonSkip = 1
         Me.Guna2Shapes4.Rotate = 0!
@@ -245,7 +247,7 @@ Partial Class frmPayment
         Me.Guna2CircleProgressBar4.FillColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Guna2CircleProgressBar4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Guna2CircleProgressBar4.ForeColor = System.Drawing.Color.White
-        Me.Guna2CircleProgressBar4.Location = New System.Drawing.Point(884, 82)
+        Me.Guna2CircleProgressBar4.Location = New System.Drawing.Point(885, 82)
         Me.Guna2CircleProgressBar4.Minimum = 0
         Me.Guna2CircleProgressBar4.Name = "Guna2CircleProgressBar4"
         Me.Guna2CircleProgressBar4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
@@ -258,26 +260,13 @@ Partial Class frmPayment
         Me.Guna2CircleProgressBar3.FillColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Guna2CircleProgressBar3.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Guna2CircleProgressBar3.ForeColor = System.Drawing.Color.White
-        Me.Guna2CircleProgressBar3.Location = New System.Drawing.Point(649, 82)
+        Me.Guna2CircleProgressBar3.Location = New System.Drawing.Point(652, 82)
         Me.Guna2CircleProgressBar3.Minimum = 0
         Me.Guna2CircleProgressBar3.Name = "Guna2CircleProgressBar3"
         Me.Guna2CircleProgressBar3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CircleProgressBar3.Size = New System.Drawing.Size(32, 32)
         Me.Guna2CircleProgressBar3.TabIndex = 119
         Me.Guna2CircleProgressBar3.Text = "Guna2CircleProgressBar3"
-        '
-        'Guna2CircleProgressBar2
-        '
-        Me.Guna2CircleProgressBar2.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2CircleProgressBar2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.Guna2CircleProgressBar2.ForeColor = System.Drawing.Color.White
-        Me.Guna2CircleProgressBar2.Location = New System.Drawing.Point(421, 83)
-        Me.Guna2CircleProgressBar2.Minimum = 0
-        Me.Guna2CircleProgressBar2.Name = "Guna2CircleProgressBar2"
-        Me.Guna2CircleProgressBar2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CircleProgressBar2.Size = New System.Drawing.Size(32, 32)
-        Me.Guna2CircleProgressBar2.TabIndex = 118
-        Me.Guna2CircleProgressBar2.Text = "Guna2CircleProgressBar2"
         '
         'Guna2CircleProgressBar1
         '
@@ -308,29 +297,13 @@ Partial Class frmPayment
         Me.Guna2Shapes1.Text = "Guna2Shapes1"
         Me.Guna2Shapes1.Zoom = 80
         '
-        'Guna2Shapes2
-        '
-        Me.Guna2Shapes2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Shapes2.BorderThickness = 1
-        Me.Guna2Shapes2.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2Shapes2.LineThickness = 7
-        Me.Guna2Shapes2.Location = New System.Drawing.Point(427, 87)
-        Me.Guna2Shapes2.Name = "Guna2Shapes2"
-        Me.Guna2Shapes2.PolygonSkip = 1
-        Me.Guna2Shapes2.Rotate = 0!
-        Me.Guna2Shapes2.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line
-        Me.Guna2Shapes2.Size = New System.Drawing.Size(249, 23)
-        Me.Guna2Shapes2.TabIndex = 122
-        Me.Guna2Shapes2.Text = "Guna2Shapes2"
-        Me.Guna2Shapes2.Zoom = 80
-        '
         'Guna2Shapes3
         '
         Me.Guna2Shapes3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Shapes3.BorderThickness = 1
         Me.Guna2Shapes3.FillColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Guna2Shapes3.LineThickness = 7
-        Me.Guna2Shapes3.Location = New System.Drawing.Point(658, 87)
+        Me.Guna2Shapes3.Location = New System.Drawing.Point(660, 86)
         Me.Guna2Shapes3.Name = "Guna2Shapes3"
         Me.Guna2Shapes3.PolygonSkip = 1
         Me.Guna2Shapes3.Rotate = 0!
@@ -384,7 +357,7 @@ Partial Class frmPayment
         Me.lblCreditBalance.BackColor = System.Drawing.Color.Transparent
         Me.lblCreditBalance.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCreditBalance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.lblCreditBalance.Location = New System.Drawing.Point(142, 298)
+        Me.lblCreditBalance.Location = New System.Drawing.Point(177, 302)
         Me.lblCreditBalance.Name = "lblCreditBalance"
         Me.lblCreditBalance.Size = New System.Drawing.Size(0, 19)
         Me.lblCreditBalance.TabIndex = 181
@@ -393,11 +366,11 @@ Partial Class frmPayment
         '
         Me.lblCreditAccBalance.AutoSize = True
         Me.lblCreditAccBalance.BackColor = System.Drawing.Color.Transparent
-        Me.lblCreditAccBalance.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCreditAccBalance.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCreditAccBalance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.lblCreditAccBalance.Location = New System.Drawing.Point(30, 298)
+        Me.lblCreditAccBalance.Location = New System.Drawing.Point(24, 300)
         Me.lblCreditAccBalance.Name = "lblCreditAccBalance"
-        Me.lblCreditAccBalance.Size = New System.Drawing.Size(115, 19)
+        Me.lblCreditAccBalance.Size = New System.Drawing.Size(145, 19)
         Me.lblCreditAccBalance.TabIndex = 180
         Me.lblCreditAccBalance.Text = "Account Balance:"
         '
@@ -411,7 +384,7 @@ Partial Class frmPayment
         Me.btnConfirmCard.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnConfirmCard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnConfirmCard.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.btnConfirmCard.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConfirmCard.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfirmCard.ForeColor = System.Drawing.Color.Black
         Me.btnConfirmCard.HoverState.FillColor = System.Drawing.Color.Black
         Me.btnConfirmCard.HoverState.ForeColor = System.Drawing.Color.White
@@ -431,7 +404,7 @@ Partial Class frmPayment
         Me.btnVerifyCard.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnVerifyCard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnVerifyCard.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.btnVerifyCard.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVerifyCard.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVerifyCard.ForeColor = System.Drawing.Color.Black
         Me.btnVerifyCard.HoverState.FillColor = System.Drawing.Color.Black
         Me.btnVerifyCard.HoverState.ForeColor = System.Drawing.Color.White
@@ -440,6 +413,7 @@ Partial Class frmPayment
         Me.btnVerifyCard.Size = New System.Drawing.Size(150, 35)
         Me.btnVerifyCard.TabIndex = 169
         Me.btnVerifyCard.Text = "Verify Credit Card"
+        Me.btnVerifyCard.TextOffset = New System.Drawing.Point(0, 6)
         '
         'txtSecurity
         '
@@ -453,10 +427,11 @@ Partial Class frmPayment
         Me.txtSecurity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSecurity.FillColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtSecurity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSecurity.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSecurity.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSecurity.ForeColor = System.Drawing.Color.White
         Me.txtSecurity.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSecurity.Location = New System.Drawing.Point(239, 252)
+        Me.txtSecurity.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSecurity.Name = "txtSecurity"
         Me.txtSecurity.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSecurity.PlaceholderText = "Ex. 123"
@@ -469,11 +444,11 @@ Partial Class frmPayment
         '
         Me.GunaLabel10.AutoSize = True
         Me.GunaLabel10.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel10.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel10.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel10.Location = New System.Drawing.Point(235, 230)
         Me.GunaLabel10.Name = "GunaLabel10"
-        Me.GunaLabel10.Size = New System.Drawing.Size(147, 19)
+        Me.GunaLabel10.Size = New System.Drawing.Size(179, 19)
         Me.GunaLabel10.TabIndex = 177
         Me.GunaLabel10.Text = "Security Code (CVV) :"
         '
@@ -481,11 +456,11 @@ Partial Class frmPayment
         '
         Me.GunaLabel9.AutoSize = True
         Me.GunaLabel9.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel9.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel9.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel9.Location = New System.Drawing.Point(23, 230)
         Me.GunaLabel9.Name = "GunaLabel9"
-        Me.GunaLabel9.Size = New System.Drawing.Size(88, 19)
+        Me.GunaLabel9.Size = New System.Drawing.Size(103, 19)
         Me.GunaLabel9.TabIndex = 176
         Me.GunaLabel9.Text = "Expiry Date:"
         '
@@ -493,11 +468,11 @@ Partial Class frmPayment
         '
         Me.GunaLabel8.AutoSize = True
         Me.GunaLabel8.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel8.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel8.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel8.Location = New System.Drawing.Point(26, 152)
         Me.GunaLabel8.Name = "GunaLabel8"
-        Me.GunaLabel8.Size = New System.Drawing.Size(101, 19)
+        Me.GunaLabel8.Size = New System.Drawing.Size(118, 19)
         Me.GunaLabel8.TabIndex = 174
         Me.GunaLabel8.Text = "Card Number:"
         '
@@ -516,11 +491,11 @@ Partial Class frmPayment
         '
         Me.GunaLabel6.AutoSize = True
         Me.GunaLabel6.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel6.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel6.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel6.Location = New System.Drawing.Point(25, 78)
         Me.GunaLabel6.Name = "GunaLabel6"
-        Me.GunaLabel6.Size = New System.Drawing.Size(120, 19)
+        Me.GunaLabel6.Size = New System.Drawing.Size(140, 19)
         Me.GunaLabel6.TabIndex = 169
         Me.GunaLabel6.Text = "Carholder Name:"
         '
@@ -536,10 +511,11 @@ Partial Class frmPayment
         Me.txtExpiry.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtExpiry.FillColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtExpiry.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtExpiry.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtExpiry.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtExpiry.ForeColor = System.Drawing.Color.White
         Me.txtExpiry.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtExpiry.Location = New System.Drawing.Point(27, 252)
+        Me.txtExpiry.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtExpiry.Name = "txtExpiry"
         Me.txtExpiry.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtExpiry.PlaceholderText = "Ex. 01/19"
@@ -560,7 +536,7 @@ Partial Class frmPayment
         Me.txtCardNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtCardNumber.FillColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtCardNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCardNumber.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCardNumber.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCardNumber.ForeColor = System.Drawing.Color.White
         Me.txtCardNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtCardNumber.Location = New System.Drawing.Point(29, 175)
@@ -585,7 +561,7 @@ Partial Class frmPayment
         Me.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtName.FillColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtName.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtName.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtName.ForeColor = System.Drawing.Color.White
         Me.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtName.Location = New System.Drawing.Point(29, 111)
@@ -613,24 +589,26 @@ Partial Class frmPayment
         '
         Me.lblCredit.AutoSize = True
         Me.lblCredit.BackColor = System.Drawing.Color.Transparent
-        Me.lblCredit.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCredit.Font = New System.Drawing.Font("Yu Gothic Medium", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCredit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.lblCredit.Location = New System.Drawing.Point(56, 15)
         Me.lblCredit.Name = "lblCredit"
-        Me.lblCredit.Size = New System.Drawing.Size(153, 22)
+        Me.lblCredit.Size = New System.Drawing.Size(159, 19)
         Me.lblCredit.TabIndex = 106
         Me.lblCredit.Text = "Credit Card Details"
         '
         'Guna2GradientPanel1
         '
         Me.Guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2GradientPanel1.Controls.Add(Me.Guna2ProgressBar1)
+        Me.Guna2GradientPanel1.Controls.Add(Me.Guna2CircleProgressBar2)
         Me.Guna2GradientPanel1.Controls.Add(Me.GunaLabel7)
         Me.Guna2GradientPanel1.Controls.Add(Me.btnConfirmCash)
         Me.Guna2GradientPanel1.Controls.Add(Me.txtAmtDue)
         Me.Guna2GradientPanel1.Controls.Add(Me.cmbMethod)
         Me.Guna2GradientPanel1.Controls.Add(Me.Guna2CircleProgressBar4)
         Me.Guna2GradientPanel1.Controls.Add(Me.txtChange)
-        Me.Guna2GradientPanel1.Controls.Add(Me.btnDelivery)
+        Me.Guna2GradientPanel1.Controls.Add(Me.btnConfirmOrd)
         Me.Guna2GradientPanel1.Controls.Add(Me.GunaLabel3)
         Me.Guna2GradientPanel1.Controls.Add(Me.GunaLabel2)
         Me.Guna2GradientPanel1.Controls.Add(Me.txtCash)
@@ -640,40 +618,72 @@ Partial Class frmPayment
         Me.Guna2GradientPanel1.Controls.Add(Me.GunaLabel5)
         Me.Guna2GradientPanel1.Controls.Add(Me.PictureBox3)
         Me.Guna2GradientPanel1.Controls.Add(Me.txtVat)
-        Me.Guna2GradientPanel1.Controls.Add(Me.Guna2CircleProgressBar2)
         Me.Guna2GradientPanel1.Controls.Add(Me.Guna2CircleProgressBar1)
         Me.Guna2GradientPanel1.Controls.Add(Me.lblOrder)
         Me.Guna2GradientPanel1.Controls.Add(Me.GunaLabel4)
-        Me.Guna2GradientPanel1.Controls.Add(Me.Guna2Shapes4)
         Me.Guna2GradientPanel1.Controls.Add(Me.Label11)
         Me.Guna2GradientPanel1.Controls.Add(Me.Guna2Shapes1)
-        Me.Guna2GradientPanel1.Controls.Add(Me.Guna2Shapes2)
         Me.Guna2GradientPanel1.Controls.Add(Me.pnlPaypal)
         Me.Guna2GradientPanel1.Controls.Add(Me.Guna2Shapes3)
         Me.Guna2GradientPanel1.Controls.Add(Me.Label3)
         Me.Guna2GradientPanel1.Controls.Add(Me.Label5)
         Me.Guna2GradientPanel1.Controls.Add(Me.Label2)
         Me.Guna2GradientPanel1.Controls.Add(Me.Label1)
-        Me.Guna2GradientPanel1.Controls.Add(Me.pnlEwall)
         Me.Guna2GradientPanel1.Controls.Add(Me.pnlCards)
         Me.Guna2GradientPanel1.Controls.Add(Me.pnlEwallet)
+        Me.Guna2GradientPanel1.Controls.Add(Me.Guna2Shapes4)
+        Me.Guna2GradientPanel1.Controls.Add(Me.pnlEwall)
         Me.Guna2GradientPanel1.Controls.Add(Me.pnlCredit)
         Me.Guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(111, Byte), Integer))
         Me.Guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GradientPanel1.Location = New System.Drawing.Point(12, 12)
+        Me.Guna2GradientPanel1.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GradientPanel1.Location = New System.Drawing.Point(13, 12)
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
         Me.Guna2GradientPanel1.Size = New System.Drawing.Size(1039, 704)
         Me.Guna2GradientPanel1.TabIndex = 169
+        '
+        'Guna2ProgressBar1
+        '
+        Me.Guna2ProgressBar1.FillColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(142, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Guna2ProgressBar1.Location = New System.Drawing.Point(453, 94)
+        Me.Guna2ProgressBar1.Minimum = 20
+        Me.Guna2ProgressBar1.Name = "Guna2ProgressBar1"
+        Me.Guna2ProgressBar1.ProgressColor = System.Drawing.Color.Goldenrod
+        Me.Guna2ProgressBar1.ProgressColor2 = System.Drawing.Color.Gold
+        Me.Guna2ProgressBar1.Size = New System.Drawing.Size(198, 7)
+        Me.Guna2ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+        Me.Guna2ProgressBar1.TabIndex = 200
+        Me.Guna2ProgressBar1.Text = "Guna2ProgressBar1"
+        Me.Guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.Guna2ProgressBar1.Value = 20
+        '
+        'Guna2CircleProgressBar2
+        '
+        Me.Guna2CircleProgressBar2.Animated = True
+        Me.Guna2CircleProgressBar2.FillColor = System.Drawing.Color.Gray
+        Me.Guna2CircleProgressBar2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.Guna2CircleProgressBar2.ForeColor = System.Drawing.Color.White
+        Me.Guna2CircleProgressBar2.Location = New System.Drawing.Point(421, 82)
+        Me.Guna2CircleProgressBar2.Minimum = 0
+        Me.Guna2CircleProgressBar2.Name = "Guna2CircleProgressBar2"
+        Me.Guna2CircleProgressBar2.ProgressColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.Guna2CircleProgressBar2.ProgressColor2 = System.Drawing.Color.Yellow
+        Me.Guna2CircleProgressBar2.ProgressThickness = 7
+        Me.Guna2CircleProgressBar2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CircleProgressBar2.Size = New System.Drawing.Size(32, 32)
+        Me.Guna2CircleProgressBar2.TabIndex = 199
+        Me.Guna2CircleProgressBar2.Text = "Guna2CircleProgressBar2"
+        Me.Guna2CircleProgressBar2.Value = 60
         '
         'GunaLabel7
         '
         Me.GunaLabel7.AutoSize = True
         Me.GunaLabel7.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel7.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel7.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.GunaLabel7.Location = New System.Drawing.Point(119, 336)
+        Me.GunaLabel7.Location = New System.Drawing.Point(97, 336)
         Me.GunaLabel7.Name = "GunaLabel7"
-        Me.GunaLabel7.Size = New System.Drawing.Size(63, 19)
+        Me.GunaLabel7.Size = New System.Drawing.Size(78, 21)
         Me.GunaLabel7.TabIndex = 198
         Me.GunaLabel7.Text = "Change:"
         '
@@ -687,11 +697,11 @@ Partial Class frmPayment
         Me.btnConfirmCash.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnConfirmCash.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnConfirmCash.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.btnConfirmCash.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConfirmCash.Font = New System.Drawing.Font("Yu Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfirmCash.ForeColor = System.Drawing.Color.Black
         Me.btnConfirmCash.HoverState.FillColor = System.Drawing.Color.Black
         Me.btnConfirmCash.HoverState.ForeColor = System.Drawing.Color.White
-        Me.btnConfirmCash.Location = New System.Drawing.Point(435, 279)
+        Me.btnConfirmCash.Location = New System.Drawing.Point(416, 279)
         Me.btnConfirmCash.Name = "btnConfirmCash"
         Me.btnConfirmCash.Size = New System.Drawing.Size(115, 35)
         Me.btnConfirmCash.TabIndex = 196
@@ -711,7 +721,7 @@ Partial Class frmPayment
         Me.txtAmtDue.Enabled = False
         Me.txtAmtDue.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.txtAmtDue.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAmtDue.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAmtDue.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAmtDue.ForeColor = System.Drawing.Color.Black
         Me.txtAmtDue.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtAmtDue.Location = New System.Drawing.Point(189, 184)
@@ -723,7 +733,7 @@ Partial Class frmPayment
         Me.txtAmtDue.SelectedText = ""
         Me.txtAmtDue.Size = New System.Drawing.Size(212, 30)
         Me.txtAmtDue.TabIndex = 186
-        Me.txtAmtDue.TextOffset = New System.Drawing.Point(0, -2)
+        Me.txtAmtDue.TextOffset = New System.Drawing.Point(0, 3)
         '
         'cmbMethod
         '
@@ -735,7 +745,7 @@ Partial Class frmPayment
         Me.cmbMethod.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.cmbMethod.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmbMethod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbMethod.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbMethod.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbMethod.ForeColor = System.Drawing.Color.Black
         Me.cmbMethod.ItemHeight = 30
         Me.cmbMethod.Items.AddRange(New Object() {"Credit/Debit Card", "Paypal", "E-Wallets", "Cash on Delivery"})
@@ -743,6 +753,7 @@ Partial Class frmPayment
         Me.cmbMethod.Name = "cmbMethod"
         Me.cmbMethod.Size = New System.Drawing.Size(212, 36)
         Me.cmbMethod.TabIndex = 192
+        Me.cmbMethod.TextOffset = New System.Drawing.Point(0, 3)
         '
         'txtChange
         '
@@ -758,7 +769,7 @@ Partial Class frmPayment
         Me.txtChange.Enabled = False
         Me.txtChange.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.txtChange.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtChange.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtChange.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtChange.ForeColor = System.Drawing.Color.Black
         Me.txtChange.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtChange.Location = New System.Drawing.Point(189, 336)
@@ -770,17 +781,17 @@ Partial Class frmPayment
         Me.txtChange.SelectedText = ""
         Me.txtChange.Size = New System.Drawing.Size(212, 30)
         Me.txtChange.TabIndex = 197
-        Me.txtChange.TextOffset = New System.Drawing.Point(0, -2)
+        Me.txtChange.TextOffset = New System.Drawing.Point(0, 3)
         '
         'GunaLabel3
         '
         Me.GunaLabel3.AutoSize = True
         Me.GunaLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel3.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel3.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.GunaLabel3.Location = New System.Drawing.Point(93, 184)
+        Me.GunaLabel3.Location = New System.Drawing.Point(57, 184)
         Me.GunaLabel3.Name = "GunaLabel3"
-        Me.GunaLabel3.Size = New System.Drawing.Size(89, 19)
+        Me.GunaLabel3.Size = New System.Drawing.Size(118, 21)
         Me.GunaLabel3.TabIndex = 187
         Me.GunaLabel3.Text = "Amount Due:"
         '
@@ -788,11 +799,11 @@ Partial Class frmPayment
         '
         Me.GunaLabel2.AutoSize = True
         Me.GunaLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel2.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.GunaLabel2.Location = New System.Drawing.Point(61, 388)
+        Me.GunaLabel2.Location = New System.Drawing.Point(25, 388)
         Me.GunaLabel2.Name = "GunaLabel2"
-        Me.GunaLabel2.Size = New System.Drawing.Size(120, 19)
+        Me.GunaLabel2.Size = New System.Drawing.Size(158, 21)
         Me.GunaLabel2.TabIndex = 185
         Me.GunaLabel2.Text = "Payment Method:"
         '
@@ -810,7 +821,7 @@ Partial Class frmPayment
         Me.txtCash.Enabled = False
         Me.txtCash.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.txtCash.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCash.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCash.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCash.ForeColor = System.Drawing.Color.Black
         Me.txtCash.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtCash.Location = New System.Drawing.Point(189, 284)
@@ -822,17 +833,17 @@ Partial Class frmPayment
         Me.txtCash.SelectedText = ""
         Me.txtCash.Size = New System.Drawing.Size(212, 30)
         Me.txtCash.TabIndex = 188
-        Me.txtCash.TextOffset = New System.Drawing.Point(0, -2)
+        Me.txtCash.TextOffset = New System.Drawing.Point(0, 3)
         '
         'lblCash
         '
         Me.lblCash.AutoSize = True
         Me.lblCash.BackColor = System.Drawing.Color.Transparent
-        Me.lblCash.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCash.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCash.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.lblCash.Location = New System.Drawing.Point(137, 284)
+        Me.lblCash.Location = New System.Drawing.Point(118, 284)
         Me.lblCash.Name = "lblCash"
-        Me.lblCash.Size = New System.Drawing.Size(44, 19)
+        Me.lblCash.Size = New System.Drawing.Size(57, 21)
         Me.lblCash.TabIndex = 189
         Me.lblCash.Text = "Cash:"
         '
@@ -840,11 +851,11 @@ Partial Class frmPayment
         '
         Me.GunaLabel5.AutoSize = True
         Me.GunaLabel5.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel5.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel5.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.GunaLabel5.Location = New System.Drawing.Point(92, 240)
+        Me.GunaLabel5.Location = New System.Drawing.Point(68, 237)
         Me.GunaLabel5.Name = "GunaLabel5"
-        Me.GunaLabel5.Size = New System.Drawing.Size(87, 19)
+        Me.GunaLabel5.Size = New System.Drawing.Size(107, 21)
         Me.GunaLabel5.TabIndex = 191
         Me.GunaLabel5.Text = "VAT (12%) :"
         '
@@ -852,10 +863,10 @@ Partial Class frmPayment
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(3, 7)
+        Me.PictureBox3.Location = New System.Drawing.Point(7, 11)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(50, 40)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox3.TabIndex = 131
         Me.PictureBox3.TabStop = False
         '
@@ -873,7 +884,7 @@ Partial Class frmPayment
         Me.txtVat.Enabled = False
         Me.txtVat.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.txtVat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtVat.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtVat.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtVat.ForeColor = System.Drawing.Color.Black
         Me.txtVat.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtVat.Location = New System.Drawing.Point(189, 236)
@@ -885,30 +896,66 @@ Partial Class frmPayment
         Me.txtVat.SelectedText = ""
         Me.txtVat.Size = New System.Drawing.Size(212, 30)
         Me.txtVat.TabIndex = 190
-        Me.txtVat.TextOffset = New System.Drawing.Point(0, -2)
+        Me.txtVat.TextOffset = New System.Drawing.Point(0, 3)
         '
         'lblOrder
         '
         Me.lblOrder.AutoSize = True
         Me.lblOrder.BackColor = System.Drawing.Color.Transparent
-        Me.lblOrder.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOrder.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblOrder.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.lblOrder.Location = New System.Drawing.Point(762, 7)
+        Me.lblOrder.Location = New System.Drawing.Point(807, 11)
         Me.lblOrder.Name = "lblOrder"
-        Me.lblOrder.Size = New System.Drawing.Size(85, 22)
+        Me.lblOrder.Size = New System.Drawing.Size(102, 21)
         Me.lblOrder.TabIndex = 152
         Me.lblOrder.Text = "ORDER ID:"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(53, 39)
+        Me.Label11.Location = New System.Drawing.Point(53, 37)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(73, 20)
+        Me.Label11.Size = New System.Drawing.Size(94, 21)
         Me.Label11.TabIndex = 148
         Me.Label11.Text = "PAYMENT"
+        '
+        'pnlPaypal
+        '
+        Me.pnlPaypal.Controls.Add(Me.Guna2Shapes7)
+        Me.pnlPaypal.Controls.Add(Me.picPaypal)
+        Me.pnlPaypal.Location = New System.Drawing.Point(17, 430)
+        Me.pnlPaypal.Name = "pnlPaypal"
+        Me.pnlPaypal.Size = New System.Drawing.Size(511, 171)
+        Me.pnlPaypal.TabIndex = 195
+        '
+        'Guna2Shapes7
+        '
+        Me.Guna2Shapes7.BorderThickness = 1
+        Me.Guna2Shapes7.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.Guna2Shapes7.LineThickness = 3
+        Me.Guna2Shapes7.Location = New System.Drawing.Point(9, 142)
+        Me.Guna2Shapes7.Name = "Guna2Shapes7"
+        Me.Guna2Shapes7.PolygonSkip = 1
+        Me.Guna2Shapes7.Rotate = 0!
+        Me.Guna2Shapes7.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line
+        Me.Guna2Shapes7.Size = New System.Drawing.Size(183, 23)
+        Me.Guna2Shapes7.TabIndex = 168
+        Me.Guna2Shapes7.Text = "Guna2Shapes7"
+        Me.Guna2Shapes7.Zoom = 80
+        '
+        'picPaypal
+        '
+        Me.picPaypal.BackColor = System.Drawing.Color.White
+        Me.picPaypal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.picPaypal.Image = CType(resources.GetObject("picPaypal.Image"), System.Drawing.Image)
+        Me.picPaypal.Location = New System.Drawing.Point(27, 50)
+        Me.picPaypal.Name = "picPaypal"
+        Me.picPaypal.Size = New System.Drawing.Size(148, 95)
+        Me.picPaypal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picPaypal.TabIndex = 163
+        Me.picPaypal.TabStop = False
         '
         'pnlCards
         '
@@ -922,6 +969,18 @@ Partial Class frmPayment
         Me.pnlCards.Name = "pnlCards"
         Me.pnlCards.Size = New System.Drawing.Size(511, 167)
         Me.pnlCards.TabIndex = 193
+        '
+        'GunaLabel1
+        '
+        Me.GunaLabel1.AutoSize = True
+        Me.GunaLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaLabel1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.GunaLabel1.Location = New System.Drawing.Point(24, 25)
+        Me.GunaLabel1.Name = "GunaLabel1"
+        Me.GunaLabel1.Size = New System.Drawing.Size(159, 19)
+        Me.GunaLabel1.TabIndex = 199
+        Me.GunaLabel1.Text = "*Select a payment card"
         '
         'Guna2Shapes8
         '
@@ -1034,42 +1093,6 @@ Partial Class frmPayment
         Me.picGcash.TabIndex = 163
         Me.picGcash.TabStop = False
         '
-        'pnlPaypal
-        '
-        Me.pnlPaypal.Controls.Add(Me.Guna2Shapes7)
-        Me.pnlPaypal.Controls.Add(Me.picPaypal)
-        Me.pnlPaypal.Location = New System.Drawing.Point(17, 430)
-        Me.pnlPaypal.Name = "pnlPaypal"
-        Me.pnlPaypal.Size = New System.Drawing.Size(511, 171)
-        Me.pnlPaypal.TabIndex = 195
-        '
-        'Guna2Shapes7
-        '
-        Me.Guna2Shapes7.BorderThickness = 1
-        Me.Guna2Shapes7.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Guna2Shapes7.LineThickness = 3
-        Me.Guna2Shapes7.Location = New System.Drawing.Point(9, 142)
-        Me.Guna2Shapes7.Name = "Guna2Shapes7"
-        Me.Guna2Shapes7.PolygonSkip = 1
-        Me.Guna2Shapes7.Rotate = 0!
-        Me.Guna2Shapes7.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line
-        Me.Guna2Shapes7.Size = New System.Drawing.Size(183, 23)
-        Me.Guna2Shapes7.TabIndex = 168
-        Me.Guna2Shapes7.Text = "Guna2Shapes7"
-        Me.Guna2Shapes7.Zoom = 80
-        '
-        'picPaypal
-        '
-        Me.picPaypal.BackColor = System.Drawing.Color.White
-        Me.picPaypal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.picPaypal.Image = CType(resources.GetObject("picPaypal.Image"), System.Drawing.Image)
-        Me.picPaypal.Location = New System.Drawing.Point(27, 50)
-        Me.picPaypal.Name = "picPaypal"
-        Me.picPaypal.Size = New System.Drawing.Size(148, 95)
-        Me.picPaypal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picPaypal.TabIndex = 163
-        Me.picPaypal.TabStop = False
-        '
         'pnlEwall
         '
         Me.pnlEwall.BackColor = System.Drawing.Color.Transparent
@@ -1091,6 +1114,7 @@ Partial Class frmPayment
         Me.pnlEwall.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.pnlEwall.FillColor = System.Drawing.Color.FromArgb(CType(CType(87, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(111, Byte), Integer))
         Me.pnlEwall.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.pnlEwall.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnlEwall.Location = New System.Drawing.Point(569, 152)
         Me.pnlEwall.Name = "pnlEwall"
         Me.pnlEwall.Size = New System.Drawing.Size(447, 385)
@@ -1100,11 +1124,11 @@ Partial Class frmPayment
         '
         Me.lblPin.AutoSize = True
         Me.lblPin.BackColor = System.Drawing.Color.Transparent
-        Me.lblPin.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPin.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.lblPin.Location = New System.Drawing.Point(25, 220)
         Me.lblPin.Name = "lblPin"
-        Me.lblPin.Size = New System.Drawing.Size(83, 19)
+        Me.lblPin.Size = New System.Drawing.Size(115, 21)
         Me.lblPin.TabIndex = 180
         Me.lblPin.Text = "Account Pin:"
         '
@@ -1120,7 +1144,7 @@ Partial Class frmPayment
         Me.txtAccPin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtAccPin.FillColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtAccPin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtAccPin.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAccPin.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAccPin.ForeColor = System.Drawing.Color.White
         Me.txtAccPin.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtAccPin.Location = New System.Drawing.Point(29, 245)
@@ -1139,7 +1163,7 @@ Partial Class frmPayment
         Me.lblBalance.BackColor = System.Drawing.Color.Transparent
         Me.lblBalance.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBalance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.lblBalance.Location = New System.Drawing.Point(134, 286)
+        Me.lblBalance.Location = New System.Drawing.Point(183, 295)
         Me.lblBalance.Name = "lblBalance"
         Me.lblBalance.Size = New System.Drawing.Size(0, 19)
         Me.lblBalance.TabIndex = 178
@@ -1154,7 +1178,7 @@ Partial Class frmPayment
         Me.btnConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnConfirm.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.btnConfirm.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConfirm.Font = New System.Drawing.Font("Yu Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfirm.ForeColor = System.Drawing.Color.Black
         Me.btnConfirm.HoverState.FillColor = System.Drawing.Color.Black
         Me.btnConfirm.HoverState.ForeColor = System.Drawing.Color.White
@@ -1174,7 +1198,7 @@ Partial Class frmPayment
         Me.btnVerifyWall.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnVerifyWall.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnVerifyWall.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.btnVerifyWall.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVerifyWall.Font = New System.Drawing.Font("Yu Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVerifyWall.ForeColor = System.Drawing.Color.Black
         Me.btnVerifyWall.HoverState.FillColor = System.Drawing.Color.Black
         Me.btnVerifyWall.HoverState.ForeColor = System.Drawing.Color.White
@@ -1188,11 +1212,11 @@ Partial Class frmPayment
         '
         Me.lblAccBalance.AutoSize = True
         Me.lblAccBalance.BackColor = System.Drawing.Color.Transparent
-        Me.lblAccBalance.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAccBalance.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAccBalance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.lblAccBalance.Location = New System.Drawing.Point(22, 286)
+        Me.lblAccBalance.Location = New System.Drawing.Point(26, 295)
         Me.lblAccBalance.Name = "lblAccBalance"
-        Me.lblAccBalance.Size = New System.Drawing.Size(115, 19)
+        Me.lblAccBalance.Size = New System.Drawing.Size(154, 21)
         Me.lblAccBalance.TabIndex = 176
         Me.lblAccBalance.Text = "Account Balance:"
         '
@@ -1200,11 +1224,11 @@ Partial Class frmPayment
         '
         Me.lblPassword.AutoSize = True
         Me.lblPassword.BackColor = System.Drawing.Color.Transparent
-        Me.lblPassword.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPassword.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.lblPassword.Location = New System.Drawing.Point(26, 152)
         Me.lblPassword.Name = "lblPassword"
-        Me.lblPassword.Size = New System.Drawing.Size(73, 19)
+        Me.lblPassword.Size = New System.Drawing.Size(96, 21)
         Me.lblPassword.TabIndex = 174
         Me.lblPassword.Text = "Password:"
         '
@@ -1223,11 +1247,11 @@ Partial Class frmPayment
         '
         Me.lblEmail.AutoSize = True
         Me.lblEmail.BackColor = System.Drawing.Color.Transparent
-        Me.lblEmail.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmail.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.lblEmail.Location = New System.Drawing.Point(26, 85)
         Me.lblEmail.Name = "lblEmail"
-        Me.lblEmail.Size = New System.Drawing.Size(46, 19)
+        Me.lblEmail.Size = New System.Drawing.Size(62, 21)
         Me.lblEmail.TabIndex = 169
         Me.lblEmail.Text = "Email:"
         '
@@ -1243,7 +1267,7 @@ Partial Class frmPayment
         Me.txtPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtPass.FillColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPass.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPass.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.ForeColor = System.Drawing.Color.White
         Me.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPass.Location = New System.Drawing.Point(29, 175)
@@ -1268,7 +1292,7 @@ Partial Class frmPayment
         Me.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtEmail.FillColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEmail.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmail.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEmail.ForeColor = System.Drawing.Color.White
         Me.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtEmail.Location = New System.Drawing.Point(29, 111)
@@ -1296,25 +1320,13 @@ Partial Class frmPayment
         '
         Me.GunaLabel14.AutoSize = True
         Me.GunaLabel14.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel14.Font = New System.Drawing.Font("Tw Cen MT", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel14.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.GunaLabel14.Location = New System.Drawing.Point(56, 15)
         Me.GunaLabel14.Name = "GunaLabel14"
-        Me.GunaLabel14.Size = New System.Drawing.Size(131, 22)
+        Me.GunaLabel14.Size = New System.Drawing.Size(145, 21)
         Me.GunaLabel14.TabIndex = 106
         Me.GunaLabel14.Text = "E-Wallet Details"
-        '
-        'GunaLabel1
-        '
-        Me.GunaLabel1.AutoSize = True
-        Me.GunaLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.GunaLabel1.Location = New System.Drawing.Point(24, 25)
-        Me.GunaLabel1.Name = "GunaLabel1"
-        Me.GunaLabel1.Size = New System.Drawing.Size(159, 19)
-        Me.GunaLabel1.TabIndex = 199
-        Me.GunaLabel1.Text = "*Select a payment card"
         '
         'frmPayment
         '
@@ -1326,7 +1338,7 @@ Partial Class frmPayment
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmPayment"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmPayment"
+        Me.Text = "k"
         Me.pnlCredit.ResumeLayout(False)
         Me.pnlCredit.PerformLayout()
         CType(Me.picChosenCredit, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1334,6 +1346,8 @@ Partial Class frmPayment
         Me.Guna2GradientPanel1.ResumeLayout(False)
         Me.Guna2GradientPanel1.PerformLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlPaypal.ResumeLayout(False)
+        CType(Me.picPaypal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlCards.ResumeLayout(False)
         Me.pnlCards.PerformLayout()
         CType(Me.picAmerican, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1343,8 +1357,6 @@ Partial Class frmPayment
         CType(Me.picCoins, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picPayMaya, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picGcash, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlPaypal.ResumeLayout(False)
-        CType(Me.picPaypal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlEwall.ResumeLayout(False)
         Me.pnlEwall.PerformLayout()
         CType(Me.picChosenEwall, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1354,7 +1366,7 @@ Partial Class frmPayment
     End Sub
 
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
-    Friend WithEvents btnDelivery As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnConfirmOrd As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnBack As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents GunaLabel4 As Guna.UI.WinForms.GunaLabel
@@ -1365,10 +1377,8 @@ Partial Class frmPayment
     Friend WithEvents Label5 As Label
     Friend WithEvents Guna2CircleProgressBar4 As Guna.UI2.WinForms.Guna2CircleProgressBar
     Friend WithEvents Guna2CircleProgressBar3 As Guna.UI2.WinForms.Guna2CircleProgressBar
-    Friend WithEvents Guna2CircleProgressBar2 As Guna.UI2.WinForms.Guna2CircleProgressBar
     Friend WithEvents Guna2CircleProgressBar1 As Guna.UI2.WinForms.Guna2CircleProgressBar
     Friend WithEvents Guna2Shapes1 As Guna.UI2.WinForms.Guna2Shapes
-    Friend WithEvents Guna2Shapes2 As Guna.UI2.WinForms.Guna2Shapes
     Friend WithEvents Guna2Shapes3 As Guna.UI2.WinForms.Guna2Shapes
     Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
     Friend WithEvents Guna2BorderlessForm2 As Guna.UI2.WinForms.Guna2BorderlessForm
@@ -1430,4 +1440,6 @@ Partial Class frmPayment
     Friend WithEvents picPaypal As PictureBox
     Friend WithEvents btnConfirmCash As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents GunaLabel1 As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents Guna2CircleProgressBar2 As Guna.UI2.WinForms.Guna2CircleProgressBar
+    Friend WithEvents Guna2ProgressBar1 As Guna.UI2.WinForms.Guna2ProgressBar
 End Class

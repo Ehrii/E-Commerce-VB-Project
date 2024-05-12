@@ -29,7 +29,7 @@ Partial Class frmLogin
         Me.btnLogin = New Guna.UI.WinForms.GunaButton()
         Me.chkPass = New Guna.UI.WinForms.GunaCheckBox()
         Me.p2 = New Guna.UI.WinForms.GunaPanel()
-        Me.txtID = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtEmail = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtPass = New Guna.UI2.WinForms.Guna2TextBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -84,11 +84,11 @@ Partial Class frmLogin
         Me.anima1.SetDecoration(Me.btnLogin, Guna.UI.Animation.DecorationType.None)
         Me.btnLogin.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btnLogin.FocusedColor = System.Drawing.Color.Empty
-        Me.btnLogin.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnLogin.Font = New System.Drawing.Font("Yu Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.Black
         Me.btnLogin.Image = Nothing
         Me.btnLogin.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btnLogin.Location = New System.Drawing.Point(95, 350)
+        Me.btnLogin.Location = New System.Drawing.Point(92, 385)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.OnHoverBaseColor = System.Drawing.Color.Black
         Me.btnLogin.OnHoverBorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
@@ -108,18 +108,19 @@ Partial Class frmLogin
         Me.chkPass.Cursor = System.Windows.Forms.Cursors.Cross
         Me.anima1.SetDecoration(Me.chkPass, Guna.UI.Animation.DecorationType.None)
         Me.chkPass.FillColor = System.Drawing.Color.White
+        Me.chkPass.Font = New System.Drawing.Font("Yu Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkPass.ForeColor = System.Drawing.Color.Silver
-        Me.chkPass.Location = New System.Drawing.Point(109, 290)
+        Me.chkPass.Location = New System.Drawing.Point(106, 325)
         Me.chkPass.Name = "chkPass"
-        Me.chkPass.Size = New System.Drawing.Size(111, 20)
+        Me.chkPass.Size = New System.Drawing.Size(134, 20)
         Me.chkPass.TabIndex = 4
         Me.chkPass.Text = "Show Password"
         '
         'p2
         '
         Me.p2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.p2.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.p2.Controls.Add(Me.txtID)
+        Me.p2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.p2.Controls.Add(Me.txtEmail)
         Me.p2.Controls.Add(Me.txtPass)
         Me.p2.Controls.Add(Me.PictureBox2)
         Me.p2.Controls.Add(Me.PictureBox1)
@@ -128,37 +129,37 @@ Partial Class frmLogin
         Me.p2.Controls.Add(Me.btnLogin)
         Me.p2.Controls.Add(Me.Guna2PictureBox1)
         Me.anima1.SetDecoration(Me.p2, Guna.UI.Animation.DecorationType.None)
-        Me.p2.Location = New System.Drawing.Point(374, 10)
+        Me.p2.Location = New System.Drawing.Point(537, 12)
         Me.p2.Name = "p2"
-        Me.p2.Size = New System.Drawing.Size(407, 567)
+        Me.p2.Size = New System.Drawing.Size(407, 558)
         Me.p2.TabIndex = 1
         Me.p2.Visible = False
         '
-        'txtID
+        'txtEmail
         '
-        Me.txtID.AutoRoundedCorners = True
-        Me.txtID.BorderColor = System.Drawing.Color.Transparent
-        Me.txtID.BorderRadius = 20
-        Me.txtID.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.anima1.SetDecoration(Me.txtID, Guna.UI.Animation.DecorationType.None)
-        Me.txtID.DefaultText = ""
-        Me.txtID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtID.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.txtID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtID.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.ForeColor = System.Drawing.Color.Black
-        Me.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtID.Location = New System.Drawing.Point(111, 184)
-        Me.txtID.Name = "txtID"
-        Me.txtID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtID.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtID.PlaceholderText = "User-ID"
-        Me.txtID.SelectedText = ""
-        Me.txtID.Size = New System.Drawing.Size(238, 43)
-        Me.txtID.TabIndex = 10
+        Me.txtEmail.AutoRoundedCorners = True
+        Me.txtEmail.BorderColor = System.Drawing.Color.Transparent
+        Me.txtEmail.BorderRadius = 20
+        Me.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.anima1.SetDecoration(Me.txtEmail, Guna.UI.Animation.DecorationType.None)
+        Me.txtEmail.DefaultText = ""
+        Me.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmail.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmail.Font = New System.Drawing.Font("Yu Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmail.ForeColor = System.Drawing.Color.Black
+        Me.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmail.Location = New System.Drawing.Point(108, 219)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtEmail.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txtEmail.PlaceholderText = "Email"
+        Me.txtEmail.SelectedText = ""
+        Me.txtEmail.Size = New System.Drawing.Size(238, 43)
+        Me.txtEmail.TabIndex = 10
         '
         'txtPass
         '
@@ -174,10 +175,10 @@ Partial Class frmLogin
         Me.txtPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtPass.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPass.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPass.Font = New System.Drawing.Font("Yu Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.ForeColor = System.Drawing.Color.Black
         Me.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPass.Location = New System.Drawing.Point(110, 241)
+        Me.txtPass.Location = New System.Drawing.Point(108, 276)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPass.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
@@ -190,7 +191,7 @@ Partial Class frmLogin
         '
         Me.anima1.SetDecoration(Me.PictureBox2, Guna.UI.Animation.DecorationType.None)
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(50, 241)
+        Me.PictureBox2.Location = New System.Drawing.Point(47, 276)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(46, 51)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -201,7 +202,7 @@ Partial Class frmLogin
         '
         Me.anima1.SetDecoration(Me.PictureBox1, Guna.UI.Animation.DecorationType.None)
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(49, 184)
+        Me.PictureBox1.Location = New System.Drawing.Point(46, 219)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(46, 51)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -213,25 +214,26 @@ Partial Class frmLogin
         Me.linkaccnt.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.linkaccnt.AutoSize = True
         Me.anima1.SetDecoration(Me.linkaccnt, Guna.UI.Animation.DecorationType.None)
-        Me.linkaccnt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.linkaccnt.Font = New System.Drawing.Font("Yu Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.linkaccnt.LinkColor = System.Drawing.Color.Silver
-        Me.linkaccnt.Location = New System.Drawing.Point(166, 408)
+        Me.linkaccnt.Location = New System.Drawing.Point(157, 443)
         Me.linkaccnt.Name = "linkaccnt"
-        Me.linkaccnt.Size = New System.Drawing.Size(100, 15)
+        Me.linkaccnt.Size = New System.Drawing.Size(123, 17)
         Me.linkaccnt.TabIndex = 3
         Me.linkaccnt.TabStop = True
         Me.linkaccnt.Text = "Forgot Password?"
         '
         'Guna2PictureBox1
         '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.BorderRadius = 50
         Me.anima1.SetDecoration(Me.Guna2PictureBox1, Guna.UI.Animation.DecorationType.None)
         Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(12, -19)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(47, 11)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(300, 208)
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(316, 186)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2PictureBox1.TabIndex = 0
         Me.Guna2PictureBox1.TabStop = False
@@ -260,7 +262,7 @@ Partial Class frmLogin
         Me.Guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
         Me.Guna2GradientPanel1.Location = New System.Drawing.Point(-11, 1)
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
-        Me.Guna2GradientPanel1.Size = New System.Drawing.Size(391, 593)
+        Me.Guna2GradientPanel1.Size = New System.Drawing.Size(540, 593)
         Me.Guna2GradientPanel1.TabIndex = 3
         Me.Guna2GradientPanel1.UseTransparentBackground = True
         '
@@ -275,12 +277,12 @@ Partial Class frmLogin
         Me.btnCreateAcc.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnCreateAcc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnCreateAcc.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.btnCreateAcc.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCreateAcc.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCreateAcc.ForeColor = System.Drawing.Color.Black
-        Me.btnCreateAcc.Location = New System.Drawing.Point(93, 488)
+        Me.btnCreateAcc.Location = New System.Drawing.Point(155, 509)
         Me.btnCreateAcc.Name = "btnCreateAcc"
         Me.btnCreateAcc.PressedColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.btnCreateAcc.Size = New System.Drawing.Size(247, 36)
+        Me.btnCreateAcc.Size = New System.Drawing.Size(280, 36)
         Me.btnCreateAcc.TabIndex = 4
         Me.btnCreateAcc.Text = "Register"
         '
@@ -291,7 +293,7 @@ Partial Class frmLogin
         Me.anima1.SetDecoration(Me.Label1, Guna.UI.Animation.DecorationType.None)
         Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(116, 101)
+        Me.Label1.Location = New System.Drawing.Point(193, 48)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(194, 76)
         Me.Label1.TabIndex = 3
@@ -303,11 +305,11 @@ Partial Class frmLogin
         Me.lblLogin.AutoSize = True
         Me.lblLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.anima1.SetDecoration(Me.lblLogin, Guna.UI.Animation.DecorationType.None)
-        Me.lblLogin.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLogin.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLogin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.lblLogin.Location = New System.Drawing.Point(93, 417)
+        Me.lblLogin.Location = New System.Drawing.Point(160, 425)
         Me.lblLogin.Name = "lblLogin"
-        Me.lblLogin.Size = New System.Drawing.Size(248, 68)
+        Me.lblLogin.Size = New System.Drawing.Size(275, 80)
         Me.lblLogin.TabIndex = 2
         Me.lblLogin.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  Unlock your potential. Sign in to your  " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  account and let's get moving!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
     ""
@@ -317,9 +319,9 @@ Partial Class frmLogin
         '
         Me.anima1.SetDecoration(Me.PictureBox4, Guna.UI.Animation.DecorationType.None)
         Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(66, 101)
+        Me.PictureBox4.Location = New System.Drawing.Point(84, 99)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(294, 373)
+        Me.PictureBox4.Size = New System.Drawing.Size(408, 349)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox4.TabIndex = 1
         Me.PictureBox4.TabStop = False
@@ -330,7 +332,7 @@ Partial Class frmLogin
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(-78, -10)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(506, 603)
+        Me.PictureBox3.Size = New System.Drawing.Size(620, 603)
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = False
         '
@@ -351,8 +353,8 @@ Partial Class frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(793, 592)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(954, 582)
         Me.Controls.Add(Me.Guna2GradientPanel2)
         Me.Controls.Add(Me.Guna2GradientPanel1)
         Me.Controls.Add(Me.p2)
@@ -394,7 +396,7 @@ Partial Class frmLogin
     Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
     Friend WithEvents Label1 As Label
     Friend WithEvents btnCreateAcc As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents txtID As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtEmail As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtPass As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents linkaccnt As Guna.UI.WinForms.GunaLinkLabel
 End Class

@@ -117,4 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="Guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAUpJREFUWEftks1KxTAQhfsCKve6aCLiC6kgiE/k1ldy00RxcX0B93fnxh/weqcQ
+        MzoVJk2QkDSKzQdn0ZMzmUPb5l/Qa2l+Q7T+Z6LCmagFU6kFU6kFU8lSEH33bPBiRKOMkO8lKpyJWjCV
+        eRRE3z0bvBjRKCPke4kKZ6IWTGUeBdF3zwYvRjTKCPleosKZqAVTmUdB9N2zwYsRjTJCvpeocCZqwVRq
+        wVTYTnwoLVodhGXc4RKi1UFYxh0uIVodhGXc4RKi1UFYBrTcuBdMKVByY/T+Dq0fYVaLPZt5pkdsK+59
+        F00l6MQTdPKM1o8ALc57Ja/p0Rrq4HSr5KvvsqkESqyNOlpQhW/M7eHSFnyAm/aYrC9At1dbJd58l00h
+        +1u92yKPvRIX5m65i8I391lOy0uqxYGuPbHDq9L/JMrufMHPOnpzf5um+QB468SFiI5e+wAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
 </root>

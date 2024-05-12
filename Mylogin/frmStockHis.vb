@@ -23,8 +23,8 @@ Public Class frmStockHis
         Dim table As New DataTable()
         Dim command As New MySqlCommand("Select Inventory_ID as'Inventory ID', Product_Name as 'Product Name', Total_Stocks as'Total Stocks' , Stock_Adjustments as'Stock Adjustments', Action_Type as'Action Type', Inventory_Date as'Inventory Date' from stockhistory  where Inventory_Date Between @d1 AND @d2", conn)
         ' conn.Open()
-        command.Parameters.Add("@d1", MySqlDbType.DateTime).Value = dtp1.Value
-        command.Parameters.Add("@d2", MySqlDbType.DateTime).Value = dtp2.Value
+        command.Parameters.Add("@d1", MySqlDbType.Date).Value = dtp1.Value
+        command.Parameters.Add("@d2", MySqlDbType.Date).Value = dtp2.Value
         Dim da As New MySqlDataAdapter
         da.SelectCommand = command
         table.Clear()

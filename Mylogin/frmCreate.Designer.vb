@@ -51,13 +51,13 @@ Partial Class frmCreate
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtLName = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.cmbCity = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.cmbRegion = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtBarangay = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2GradientPanel2 = New Guna.UI2.WinForms.Guna2GradientPanel()
+        Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.txtConfirmPass = New Guna.UI2.WinForms.Guna2TextBox()
@@ -70,8 +70,8 @@ Partial Class frmCreate
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.btnRegis = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnUpdate = New Guna.UI2.WinForms.Guna2Button()
+        Me.cmbRegion = New System.Windows.Forms.ComboBox()
+        Me.cmbCity = New System.Windows.Forms.ComboBox()
         Me.Guna2GradientPanel1.SuspendLayout()
         Me.Guna2GroupBox4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -189,7 +189,7 @@ Partial Class frmCreate
         Me.Guna2GroupBox4.Controls.Add(Me.Label5)
         Me.Guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox4.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox4.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox4.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2GroupBox4.Location = New System.Drawing.Point(3, 521)
         Me.Guna2GroupBox4.Name = "Guna2GroupBox4"
@@ -225,64 +225,64 @@ Partial Class frmCreate
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(22, 113)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(111, 20)
+        Me.Label3.Size = New System.Drawing.Size(116, 20)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Phone Number:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(25, 164)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(108, 20)
+        Me.Label6.Size = New System.Drawing.Size(114, 20)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Street Address:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(79, 61)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(49, 20)
+        Me.Label5.Size = New System.Drawing.Size(51, 20)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Email:"
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(16, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(10, 6)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 57)
+        Me.PictureBox1.Size = New System.Drawing.Size(58, 60)
         Me.PictureBox1.TabIndex = 21
         Me.PictureBox1.TabStop = False
         '
         'lblRole
         '
         Me.lblRole.AutoSize = True
-        Me.lblRole.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRole.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRole.ForeColor = System.Drawing.Color.White
-        Me.lblRole.Location = New System.Drawing.Point(67, 41)
+        Me.lblRole.Location = New System.Drawing.Point(70, 42)
         Me.lblRole.Name = "lblRole"
-        Me.lblRole.Size = New System.Drawing.Size(84, 20)
+        Me.lblRole.Size = New System.Drawing.Size(103, 21)
         Me.lblRole.TabIndex = 20
         Me.lblRole.Text = "CUSTOMER"
         '
         'lblAction
         '
         Me.lblAction.AutoSize = True
-        Me.lblAction.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAction.Font = New System.Drawing.Font("Yu Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAction.ForeColor = System.Drawing.Color.White
-        Me.lblAction.Location = New System.Drawing.Point(64, 5)
+        Me.lblAction.Location = New System.Drawing.Point(67, 6)
         Me.lblAction.Name = "lblAction"
-        Me.lblAction.Size = New System.Drawing.Size(190, 30)
+        Me.lblAction.Size = New System.Drawing.Size(192, 25)
         Me.lblAction.TabIndex = 18
         Me.lblAction.Text = "CREATE ACCOUNT"
         '
@@ -290,6 +290,7 @@ Partial Class frmCreate
         '
         Me.Guna2Shapes1.BorderThickness = 1
         Me.Guna2Shapes1.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.Guna2Shapes1.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Shapes1.Location = New System.Drawing.Point(48, 25)
         Me.Guna2Shapes1.Name = "Guna2Shapes1"
         Me.Guna2Shapes1.PolygonSkip = 1
@@ -318,11 +319,11 @@ Partial Class frmCreate
         Me.Guna2GroupBox1.Controls.Add(Me.txtFName)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(3, 90)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(3, 76)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(521, 439)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(521, 453)
         Me.Guna2GroupBox1.TabIndex = 22
         Me.Guna2GroupBox1.Text = "Customer Personal Information"
         '
@@ -344,7 +345,7 @@ Partial Class frmCreate
         Me.dtpDOB.BorderRadius = 16
         Me.dtpDOB.Checked = True
         Me.dtpDOB.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.dtpDOB.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpDOB.Font = New System.Drawing.Font("Yu Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.dtpDOB.Location = New System.Drawing.Point(139, 264)
         Me.dtpDOB.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
@@ -357,11 +358,11 @@ Partial Class frmCreate
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.White
         Me.Label16.Location = New System.Drawing.Point(81, 264)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(43, 20)
+        Me.Label16.Size = New System.Drawing.Size(45, 20)
         Me.Label16.TabIndex = 4
         Me.Label16.Text = "DOB:"
         '
@@ -378,22 +379,22 @@ Partial Class frmCreate
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.White
         Me.Label15.Location = New System.Drawing.Point(64, 206)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(60, 20)
+        Me.Label15.Size = New System.Drawing.Size(63, 20)
         Me.Label15.TabIndex = 5
         Me.Label15.Text = "Gender:"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(22, 309)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(104, 40)
+        Me.Label11.Size = New System.Drawing.Size(110, 40)
         Me.Label11.TabIndex = 56
         Me.Label11.Text = "Profile Picture:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -419,11 +420,11 @@ Partial Class frmCreate
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(54, 155)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(78, 20)
+        Me.Label1.Size = New System.Drawing.Size(83, 20)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Username:"
         '
@@ -455,22 +456,22 @@ Partial Class frmCreate
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(45, 107)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(82, 20)
+        Me.Label4.Size = New System.Drawing.Size(87, 20)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Last Name:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(50, 55)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(83, 20)
+        Me.Label2.Size = New System.Drawing.Size(88, 20)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "First Name:"
         '
@@ -499,72 +500,36 @@ Partial Class frmCreate
         Me.txtLName.TabIndex = 1
         Me.txtLName.TextOffset = New System.Drawing.Point(0, -2)
         '
-        'cmbCity
-        '
-        Me.cmbCity.AutoRoundedCorners = True
-        Me.cmbCity.BackColor = System.Drawing.Color.Transparent
-        Me.cmbCity.BorderRadius = 17
-        Me.cmbCity.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbCity.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.cmbCity.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbCity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbCity.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbCity.ForeColor = System.Drawing.Color.Black
-        Me.cmbCity.ItemHeight = 30
-        Me.cmbCity.Location = New System.Drawing.Point(150, 155)
-        Me.cmbCity.Name = "cmbCity"
-        Me.cmbCity.Size = New System.Drawing.Size(273, 36)
-        Me.cmbCity.TabIndex = 22
-        '
-        'cmbRegion
-        '
-        Me.cmbRegion.AutoRoundedCorners = True
-        Me.cmbRegion.BackColor = System.Drawing.Color.Transparent
-        Me.cmbRegion.BorderRadius = 17
-        Me.cmbRegion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRegion.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.cmbRegion.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbRegion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmbRegion.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbRegion.ForeColor = System.Drawing.Color.Black
-        Me.cmbRegion.ItemHeight = 30
-        Me.cmbRegion.Location = New System.Drawing.Point(150, 103)
-        Me.cmbRegion.Name = "cmbRegion"
-        Me.cmbRegion.Size = New System.Drawing.Size(273, 36)
-        Me.cmbRegion.TabIndex = 17
-        '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(72, 103)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(59, 20)
+        Me.Label9.Size = New System.Drawing.Size(60, 20)
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "Region:"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
         Me.Label8.Location = New System.Drawing.Point(95, 155)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(37, 20)
+        Me.Label8.Size = New System.Drawing.Size(39, 20)
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "City:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(58, 55)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(74, 20)
+        Me.Label7.Size = New System.Drawing.Size(76, 20)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Barangay:"
         '
@@ -609,6 +574,50 @@ Partial Class frmCreate
         Me.Guna2GradientPanel2.Size = New System.Drawing.Size(535, 786)
         Me.Guna2GradientPanel2.TabIndex = 16
         '
+        'btnUpdate
+        '
+        Me.btnUpdate.AutoRoundedCorners = True
+        Me.btnUpdate.BorderRadius = 16
+        Me.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnUpdate.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.btnUpdate.ForeColor = System.Drawing.Color.Black
+        Me.btnUpdate.HoverState.FillColor = System.Drawing.Color.Black
+        Me.btnUpdate.HoverState.ForeColor = System.Drawing.Color.White
+        Me.btnUpdate.Image = CType(resources.GetObject("btnUpdate.Image"), System.Drawing.Image)
+        Me.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnUpdate.ImageSize = New System.Drawing.Size(25, 25)
+        Me.btnUpdate.Location = New System.Drawing.Point(376, 703)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(152, 35)
+        Me.btnUpdate.TabIndex = 29
+        Me.btnUpdate.Text = "Update"
+        '
+        'btnEdit
+        '
+        Me.btnEdit.AutoRoundedCorners = True
+        Me.btnEdit.BorderRadius = 16
+        Me.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEdit.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
+        Me.btnEdit.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.btnEdit.ForeColor = System.Drawing.Color.Black
+        Me.btnEdit.HoverState.FillColor = System.Drawing.Color.Black
+        Me.btnEdit.HoverState.ForeColor = System.Drawing.Color.White
+        Me.btnEdit.Image = CType(resources.GetObject("btnEdit.Image"), System.Drawing.Image)
+        Me.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnEdit.ImageSize = New System.Drawing.Size(25, 25)
+        Me.btnEdit.Location = New System.Drawing.Point(10, 702)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(152, 35)
+        Me.btnEdit.TabIndex = 28
+        Me.btnEdit.Text = "Edit"
+        '
         'btnCancel
         '
         Me.btnCancel.AutoRoundedCorners = True
@@ -625,7 +634,7 @@ Partial Class frmCreate
         Me.btnCancel.Image = CType(resources.GetObject("btnCancel.Image"), System.Drawing.Image)
         Me.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnCancel.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnCancel.Location = New System.Drawing.Point(7, 748)
+        Me.btnCancel.Location = New System.Drawing.Point(10, 743)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(152, 35)
         Me.btnCancel.TabIndex = 26
@@ -641,11 +650,11 @@ Partial Class frmCreate
         Me.Guna2GroupBox3.Controls.Add(Me.txtPass)
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox3.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox3.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox3.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.Guna2GroupBox3.Location = New System.Drawing.Point(0, 307)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
-        Me.Guna2GroupBox3.Size = New System.Drawing.Size(535, 191)
+        Me.Guna2GroupBox3.Size = New System.Drawing.Size(535, 190)
         Me.Guna2GroupBox3.TabIndex = 24
         Me.Guna2GroupBox3.Text = "Customer Password Information"
         '
@@ -689,22 +698,22 @@ Partial Class frmCreate
         'lblConfirm
         '
         Me.lblConfirm.AutoSize = True
-        Me.lblConfirm.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblConfirm.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblConfirm.ForeColor = System.Drawing.Color.White
         Me.lblConfirm.Location = New System.Drawing.Point(15, 112)
         Me.lblConfirm.Name = "lblConfirm"
-        Me.lblConfirm.Size = New System.Drawing.Size(130, 20)
+        Me.lblConfirm.Size = New System.Drawing.Size(139, 20)
         Me.lblConfirm.TabIndex = 6
         Me.lblConfirm.Text = "Confirm Password:"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
         Me.Label12.Location = New System.Drawing.Point(72, 54)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(73, 20)
+        Me.Label12.Size = New System.Drawing.Size(81, 20)
         Me.Label12.TabIndex = 9
         Me.Label12.Text = "Password:"
         '
@@ -738,18 +747,18 @@ Partial Class frmCreate
         '
         Me.Guna2GroupBox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox2.Controls.Add(Me.cmbCity)
+        Me.Guna2GroupBox2.Controls.Add(Me.cmbRegion)
         Me.Guna2GroupBox2.Controls.Add(Me.txtBarangay)
         Me.Guna2GroupBox2.Controls.Add(Me.Label7)
-        Me.Guna2GroupBox2.Controls.Add(Me.cmbRegion)
         Me.Guna2GroupBox2.Controls.Add(Me.Label8)
         Me.Guna2GroupBox2.Controls.Add(Me.Label9)
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GroupBox2.FillColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox2.Font = New System.Drawing.Font("Yu Gothic Medium", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(0, 90)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(0, 76)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(535, 214)
+        Me.Guna2GroupBox2.Size = New System.Drawing.Size(535, 228)
         Me.Guna2GroupBox2.TabIndex = 23
         Me.Guna2GroupBox2.Text = "Customer Location Information"
         '
@@ -760,7 +769,7 @@ Partial Class frmCreate
         Me.Guna2ControlBox3.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom
         Me.Guna2ControlBox3.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2ControlBox3.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox3.Location = New System.Drawing.Point(500, 0)
+        Me.Guna2ControlBox3.Location = New System.Drawing.Point(500, 6)
         Me.Guna2ControlBox3.Name = "Guna2ControlBox3"
         Me.Guna2ControlBox3.Size = New System.Drawing.Size(32, 23)
         Me.Guna2ControlBox3.TabIndex = 25
@@ -773,7 +782,7 @@ Partial Class frmCreate
         Me.Guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
         Me.Guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2ControlBox1.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox1.Location = New System.Drawing.Point(462, 0)
+        Me.Guna2ControlBox1.Location = New System.Drawing.Point(462, 6)
         Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
         Me.Guna2ControlBox1.Size = New System.Drawing.Size(32, 23)
         Me.Guna2ControlBox1.TabIndex = 23
@@ -794,7 +803,7 @@ Partial Class frmCreate
         Me.btnRegis.Image = CType(resources.GetObject("btnRegis.Image"), System.Drawing.Image)
         Me.btnRegis.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnRegis.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnRegis.Location = New System.Drawing.Point(380, 748)
+        Me.btnRegis.Location = New System.Drawing.Point(376, 744)
         Me.btnRegis.Name = "btnRegis"
         Me.btnRegis.Size = New System.Drawing.Size(152, 35)
         Me.btnRegis.TabIndex = 12
@@ -813,55 +822,31 @@ Partial Class frmCreate
         Me.Guna2PictureBox1.TabIndex = 27
         Me.Guna2PictureBox1.TabStop = False
         '
-        'btnEdit
+        'cmbRegion
         '
-        Me.btnEdit.AutoRoundedCorners = True
-        Me.btnEdit.BorderRadius = 16
-        Me.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnEdit.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.btnEdit.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.btnEdit.ForeColor = System.Drawing.Color.Black
-        Me.btnEdit.HoverState.FillColor = System.Drawing.Color.Black
-        Me.btnEdit.HoverState.ForeColor = System.Drawing.Color.White
-        Me.btnEdit.Image = CType(resources.GetObject("btnEdit.Image"), System.Drawing.Image)
-        Me.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnEdit.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnEdit.Location = New System.Drawing.Point(7, 707)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(152, 35)
-        Me.btnEdit.TabIndex = 28
-        Me.btnEdit.Text = "Edit"
+        Me.cmbRegion.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.cmbRegion.FormattingEnabled = True
+        Me.cmbRegion.Location = New System.Drawing.Point(150, 108)
+        Me.cmbRegion.Name = "cmbRegion"
+        Me.cmbRegion.Size = New System.Drawing.Size(273, 29)
+        Me.cmbRegion.TabIndex = 17
         '
-        'btnUpdate
+        'cmbCity
         '
-        Me.btnUpdate.AutoRoundedCorners = True
-        Me.btnUpdate.BorderRadius = 16
-        Me.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnUpdate.FillColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.btnUpdate.ForeColor = System.Drawing.Color.Black
-        Me.btnUpdate.HoverState.FillColor = System.Drawing.Color.Black
-        Me.btnUpdate.HoverState.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.Image = CType(resources.GetObject("btnUpdate.Image"), System.Drawing.Image)
-        Me.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnUpdate.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnUpdate.Location = New System.Drawing.Point(380, 707)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(152, 35)
-        Me.btnUpdate.TabIndex = 29
-        Me.btnUpdate.Text = "Update"
+        Me.cmbCity.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.cmbCity.FormattingEnabled = True
+        Me.cmbCity.Location = New System.Drawing.Point(150, 156)
+        Me.cmbCity.Name = "cmbCity"
+        Me.cmbCity.Size = New System.Drawing.Size(273, 29)
+        Me.cmbCity.TabIndex = 18
         '
         'frmCreate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1094, 810)
         Me.Controls.Add(Me.Guna2GradientPanel2)
         Me.Controls.Add(Me.Guna2GradientPanel1)
@@ -906,7 +891,6 @@ Partial Class frmCreate
     Friend WithEvents Label16 As Label
     Friend WithEvents Guna2Shapes1 As Guna.UI2.WinForms.Guna2Shapes
     Friend WithEvents lblAction As Label
-    Friend WithEvents cmbRegion As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
@@ -923,7 +907,6 @@ Partial Class frmCreate
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Guna2ControlBox3 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
-    Friend WithEvents cmbCity As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents lblPass As Label
     Friend WithEvents Guna2GroupBox3 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents Guna2GroupBox2 As Guna.UI2.WinForms.Guna2GroupBox
@@ -936,4 +919,6 @@ Partial Class frmCreate
     Friend WithEvents Label11 As Label
     Friend WithEvents btnUpdate As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents cmbRegion As ComboBox
+    Friend WithEvents cmbCity As ComboBox
 End Class

@@ -272,11 +272,5 @@ Public Class frmSuppDetails
         End If
     End Sub
 
-    Private Sub cmbGender_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbGender.SelectedIndexChanged
 
-    End Sub
-
-    Private Sub Guna2GradientPanel2_Paint(sender As Object, e As PaintEventArgs) Handles Guna2GradientPanel2.Paint
-
-    End Sub
 End Class

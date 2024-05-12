@@ -120,4 +120,56 @@
   <metadata name="Guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="Order_Date.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Category_ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Quantity.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Amount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="SalesDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="OrderID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Icon.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Icon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
 </root>

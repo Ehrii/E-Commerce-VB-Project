@@ -26,6 +26,8 @@ Partial Class frmSupplier
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSupplier))
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblCount = New System.Windows.Forms.Label()
+        Me.Guna2GradientButton3 = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.Guna2GradientButton2 = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.Guna2GradientButton1 = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnSupplier = New Guna.UI2.WinForms.Guna2GradientButton()
@@ -47,6 +49,8 @@ Partial Class frmSupplier
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.lblCount)
+        Me.Panel1.Controls.Add(Me.Guna2GradientButton3)
         Me.Panel1.Controls.Add(Me.Guna2GradientButton2)
         Me.Panel1.Controls.Add(Me.Guna2GradientButton1)
         Me.Panel1.Controls.Add(Me.btnSupplier)
@@ -60,6 +64,41 @@ Partial Class frmSupplier
         Me.Panel1.Size = New System.Drawing.Size(211, 739)
         Me.Panel1.TabIndex = 0
         '
+        'lblCount
+        '
+        Me.lblCount.AutoSize = True
+        Me.lblCount.Font = New System.Drawing.Font("Yu Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.lblCount.Location = New System.Drawing.Point(24, 627)
+        Me.lblCount.Name = "lblCount"
+        Me.lblCount.Size = New System.Drawing.Size(17, 19)
+        Me.lblCount.TabIndex = 12
+        Me.lblCount.Text = "*"
+        '
+        'Guna2GradientButton3
+        '
+        Me.Guna2GradientButton3.AutoRoundedCorners = True
+        Me.Guna2GradientButton3.BorderRadius = 18
+        Me.Guna2GradientButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2GradientButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2GradientButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2GradientButton3.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2GradientButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2GradientButton3.FillColor = System.Drawing.Color.Empty
+        Me.Guna2GradientButton3.FillColor2 = System.Drawing.Color.Empty
+        Me.Guna2GradientButton3.Font = New System.Drawing.Font("Yu Gothic Medium", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GradientButton3.ForeColor = System.Drawing.Color.White
+        Me.Guna2GradientButton3.HoverState.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2GradientButton3.HoverState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.Guna2GradientButton3.Image = CType(resources.GetObject("Guna2GradientButton3.Image"), System.Drawing.Image)
+        Me.Guna2GradientButton3.ImageOffset = New System.Drawing.Point(-6, 0)
+        Me.Guna2GradientButton3.ImageSize = New System.Drawing.Size(25, 25)
+        Me.Guna2GradientButton3.Location = New System.Drawing.Point(0, 627)
+        Me.Guna2GradientButton3.Name = "Guna2GradientButton3"
+        Me.Guna2GradientButton3.Size = New System.Drawing.Size(211, 38)
+        Me.Guna2GradientButton3.TabIndex = 11
+        Me.Guna2GradientButton3.Text = "Notifications"
+        '
         'Guna2GradientButton2
         '
         Me.Guna2GradientButton2.AutoRoundedCorners = True
@@ -71,13 +110,14 @@ Partial Class frmSupplier
         Me.Guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2GradientButton2.FillColor = System.Drawing.Color.Empty
         Me.Guna2GradientButton2.FillColor2 = System.Drawing.Color.Empty
-        Me.Guna2GradientButton2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GradientButton2.Font = New System.Drawing.Font("Yu Gothic Medium", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GradientButton2.ForeColor = System.Drawing.Color.White
         Me.Guna2GradientButton2.HoverState.FillColor = System.Drawing.Color.Transparent
         Me.Guna2GradientButton2.HoverState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2GradientButton2.Image = CType(resources.GetObject("Guna2GradientButton2.Image"), System.Drawing.Image)
+        Me.Guna2GradientButton2.ImageOffset = New System.Drawing.Point(-6, 0)
         Me.Guna2GradientButton2.ImageSize = New System.Drawing.Size(25, 25)
-        Me.Guna2GradientButton2.Location = New System.Drawing.Point(-62, 288)
+        Me.Guna2GradientButton2.Location = New System.Drawing.Point(-66, 264)
         Me.Guna2GradientButton2.Name = "Guna2GradientButton2"
         Me.Guna2GradientButton2.Size = New System.Drawing.Size(307, 45)
         Me.Guna2GradientButton2.TabIndex = 10
@@ -117,13 +157,14 @@ Partial Class frmSupplier
         Me.btnSupplier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnSupplier.FillColor = System.Drawing.Color.Empty
         Me.btnSupplier.FillColor2 = System.Drawing.Color.Empty
-        Me.btnSupplier.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSupplier.Font = New System.Drawing.Font("Yu Gothic Medium", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSupplier.ForeColor = System.Drawing.Color.White
         Me.btnSupplier.HoverState.FillColor = System.Drawing.Color.Transparent
         Me.btnSupplier.HoverState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.btnSupplier.Image = CType(resources.GetObject("btnSupplier.Image"), System.Drawing.Image)
+        Me.btnSupplier.ImageOffset = New System.Drawing.Point(-6, 0)
         Me.btnSupplier.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnSupplier.Location = New System.Drawing.Point(-26, 485)
+        Me.btnSupplier.Location = New System.Drawing.Point(-30, 461)
         Me.btnSupplier.Name = "btnSupplier"
         Me.btnSupplier.Size = New System.Drawing.Size(271, 45)
         Me.btnSupplier.TabIndex = 8
@@ -140,13 +181,14 @@ Partial Class frmSupplier
         Me.btnHistory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnHistory.FillColor = System.Drawing.Color.Empty
         Me.btnHistory.FillColor2 = System.Drawing.Color.Empty
-        Me.btnHistory.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHistory.Font = New System.Drawing.Font("Yu Gothic Medium", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnHistory.ForeColor = System.Drawing.Color.White
         Me.btnHistory.HoverState.FillColor = System.Drawing.Color.Transparent
         Me.btnHistory.HoverState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.btnHistory.Image = CType(resources.GetObject("btnHistory.Image"), System.Drawing.Image)
+        Me.btnHistory.ImageOffset = New System.Drawing.Point(-6, 0)
         Me.btnHistory.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnHistory.Location = New System.Drawing.Point(-51, 420)
+        Me.btnHistory.Location = New System.Drawing.Point(-55, 396)
         Me.btnHistory.Name = "btnHistory"
         Me.btnHistory.Size = New System.Drawing.Size(294, 45)
         Me.btnHistory.TabIndex = 7
@@ -163,13 +205,14 @@ Partial Class frmSupplier
         Me.btnStockAdj.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnStockAdj.FillColor = System.Drawing.Color.Empty
         Me.btnStockAdj.FillColor2 = System.Drawing.Color.Empty
-        Me.btnStockAdj.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStockAdj.Font = New System.Drawing.Font("Yu Gothic Medium", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStockAdj.ForeColor = System.Drawing.Color.White
         Me.btnStockAdj.HoverState.FillColor = System.Drawing.Color.Transparent
         Me.btnStockAdj.HoverState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.btnStockAdj.Image = CType(resources.GetObject("btnStockAdj.Image"), System.Drawing.Image)
+        Me.btnStockAdj.ImageOffset = New System.Drawing.Point(-6, 0)
         Me.btnStockAdj.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnStockAdj.Location = New System.Drawing.Point(-20, 354)
+        Me.btnStockAdj.Location = New System.Drawing.Point(-24, 330)
         Me.btnStockAdj.Name = "btnStockAdj"
         Me.btnStockAdj.Size = New System.Drawing.Size(265, 45)
         Me.btnStockAdj.TabIndex = 6
@@ -186,13 +229,14 @@ Partial Class frmSupplier
         Me.btnInventory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnInventory.FillColor = System.Drawing.Color.Empty
         Me.btnInventory.FillColor2 = System.Drawing.Color.Empty
-        Me.btnInventory.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInventory.Font = New System.Drawing.Font("Yu Gothic Medium", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInventory.ForeColor = System.Drawing.Color.White
         Me.btnInventory.HoverState.FillColor = System.Drawing.Color.Transparent
         Me.btnInventory.HoverState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.btnInventory.Image = CType(resources.GetObject("btnInventory.Image"), System.Drawing.Image)
+        Me.btnInventory.ImageOffset = New System.Drawing.Point(-6, 0)
         Me.btnInventory.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnInventory.Location = New System.Drawing.Point(-20, 224)
+        Me.btnInventory.Location = New System.Drawing.Point(-24, 200)
         Me.btnInventory.Name = "btnInventory"
         Me.btnInventory.Size = New System.Drawing.Size(265, 45)
         Me.btnInventory.TabIndex = 3
@@ -204,7 +248,7 @@ Partial Class frmSupplier
         Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(3, 7)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(3, 12)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(204, 166)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -235,6 +279,7 @@ Partial Class frmSupplier
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmSupplier"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -251,4 +296,6 @@ Partial Class frmSupplier
     Friend WithEvents pnlform As Panel
     Friend WithEvents Guna2GradientButton1 As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents Guna2GradientButton2 As Guna.UI2.WinForms.Guna2GradientButton
+    Friend WithEvents Guna2GradientButton3 As Guna.UI2.WinForms.Guna2GradientButton
+    Friend WithEvents lblCount As Label
 End Class

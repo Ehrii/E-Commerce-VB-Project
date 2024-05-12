@@ -39,102 +39,134 @@ Public Class frmInventory
 
 
     Private Sub DgvInventory_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DgvInventory.CellMouseClick
-        txtID.Text = DgvInventory.CurrentRow.Cells(0).Value.ToString()
-        txtCode.Text = DgvInventory.CurrentRow.Cells(1).Value.ToString()
-        txtName.Text = DgvInventory.CurrentRow.Cells(2).Value.ToString()
-        txtStockQty.Text = DgvInventory.CurrentRow.Cells(3).Value.ToString()
+        txtID.Text = DgvInventory.CurrentRow.Cells(1).Value.ToString()
+        txtCode.Text = DgvInventory.CurrentRow.Cells(2).Value.ToString()
+        txtName.Text = DgvInventory.CurrentRow.Cells(3).Value.ToString()
+        txtStockQty.Text = DgvInventory.CurrentRow.Cells(4).Value.ToString()
     End Sub
 
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        Try
+            Dim stockQty = InputBox("Enter a stock quantity to increase...", "DELAROTA - ADMINISTRATION")
+            Dim command As New MySqlCommand("Update product set Stock=@stk where Inventory_ID=@InvID", conn)
+            With command
+                .Parameters.Clear()
+                .Parameters.AddWithValue("@InvID", txtID.Text)
+                .Parameters.AddWithValue("@stk", stockQty + Val(txtStockQty.Text))
+            End With
+            conn.Open()
 
-        Dim stockQty = InputBox("Enter a stock quantity to increase...", "DELAROTA - ADMINISTRATION")
-        Dim command As New MySqlCommand("Update product set Stock=@stk where Inventory_ID=@InvID", conn)
-        With command
-            .Parameters.Clear()
-            .Parameters.AddWithValue("@InvID", txtID.Text)
-            .Parameters.AddWithValue("@stk", stockQty + Val(txtStockQty.Text))
-        End With
-        conn.Open()
+            Dim command1 As New MySqlCommand("Update inventory set Stock=@stk where Inventory_ID=@InvID", conn)
+            With command1
+                .Parameters.Clear()
+                .Parameters.AddWithValue("@InvID", txtID.Text)
+                .Parameters.AddWithValue("@stk", stockQty + Val(txtStockQty.Text))
+            End With
 
-        If command.ExecuteNonQuery() = 1 Then
-            MessageBox.Show("Stock Qty Inserted..")
+
+            If command.ExecuteNonQuery() = 1 Then
+                MessageBox.Show("Stock Qty Inserted..")
+                loadrecord()
+            Else
+                MessageBox.Show("Record not Inserted")
+            End If
+            conn.Close()
+
+            conn.Open()
+            command1.ExecuteNonQuery()
             loadrecord()
-        Else
-            MessageBox.Show("Record not Inserted")
-        End If
-        conn.Close()
+            conn.Close()
 
 
-        Dim command2 As New MySqlCommand("INSERT INTO stockhistory VALUES(@History_ID,@Inventory_ID,@Product_Name,@Stock,
+            Dim command2 As New MySqlCommand("INSERT INTO stockhistory VALUES(@History_ID,@Inventory_ID,@Product_Name,@Stock,
         @Quantity,@Action_Type,@Inventory_Date)", conn)
-        With command2
-            .Parameters.Clear()
-            .Parameters.AddWithValue("@History_ID", 0)
-            .Parameters.AddWithValue("@Inventory_ID", txtID.Text)
-            .Parameters.AddWithValue("@Product_Name", txtName.Text)
-            .Parameters.AddWithValue("@Stock", Val(txtStockQty.Text))
-            .Parameters.AddWithValue("@Quantity", stockQty)
-            .Parameters.AddWithValue("@Action_Type", "ADDED STOCKS +(" & stockQty & ")")
-            .Parameters.AddWithValue("@Inventory_Date", currdatetime)
-        End With
-        conn.Open()
+            With command2
+                .Parameters.Clear()
+                .Parameters.AddWithValue("@History_ID", 0)
+                .Parameters.AddWithValue("@Inventory_ID", txtID.Text)
+                .Parameters.AddWithValue("@Product_Name", txtName.Text)
+                .Parameters.AddWithValue("@Stock", Val(txtStockQty.Text))
+                .Parameters.AddWithValue("@Quantity", stockQty)
+                .Parameters.AddWithValue("@Action_Type", "ADDED STOCKS +(" & stockQty & ")")
+                .Parameters.AddWithValue("@Inventory_Date", currdatetime)
+            End With
+            conn.Open()
 
-        If command2.ExecuteNonQuery() = 1 Then
-            MessageBox.Show("Stock history record Inserted")
-            frmStockHis.loadrecord()
-        Else
-            MessageBox.Show("Record not Inserted")
-        End If
-        conn.Close()
+            If command2.ExecuteNonQuery() = 1 Then
+                MessageBox.Show("Stock history record Inserted")
+                frmStockHis.loadrecord()
+            Else
+                MessageBox.Show("Record not Inserted")
+            End If
+            conn.Close()
 
+
+        Catch ex As Exception
+            MessageBox.Show("NO STOCK INSERTED: " & ex.Message, "INPUT ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
 
 
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        Dim stockQty = InputBox("Enter a stock quantity to decrease...", "DELAROTA - Administration")
-        Dim command As New MySqlCommand("Update product set Stock=@stk where Inventory_ID=@InvID", conn)
-        With command
-            .Parameters.Clear()
-            .Parameters.AddWithValue("@InvID", txtID.Text)
-            .Parameters.AddWithValue("@stk", Val(txtStockQty.Text) - stockQty)
+        Try
+            Dim stockQty = InputBox("Enter a stock quantity to decrease...", "DELAROTA - Administration")
+            Dim command As New MySqlCommand("Update product set Stock=@stk where Inventory_ID=@InvID", conn)
+            With command
+                .Parameters.Clear()
+                .Parameters.AddWithValue("@InvID", txtID.Text)
+                .Parameters.AddWithValue("@stk", Val(txtStockQty.Text) - stockQty)
 
-        End With
-        conn.Open()
+            End With
+            conn.Open()
 
-        If command.ExecuteNonQuery() = 1 Then
-            MessageBox.Show("Stock Qty Inserted..")
-            loadrecord()
-        Else
-            MessageBox.Show("Record not Inserted")
-        End If
-        conn.Close()
+            Dim command1 As New MySqlCommand("Update inventory set Stock=@stk where Inventory_ID=@InvID", conn)
+            With command1
+                .Parameters.Clear()
+                .Parameters.AddWithValue("@InvID", txtID.Text)
+                .Parameters.AddWithValue("@stk", Val(txtStockQty.Text) - stockQty)
 
+            End With
 
-        Dim command2 As New MySqlCommand("INSERT INTO stockhistory VALUES(@History_ID,@Inventory_ID,@Product_Name,@Stock,
+            If command.ExecuteNonQuery() = 1 Then
+                MessageBox.Show("Stock Qty Inserted..")
+                loadrecord()
+            Else
+                MessageBox.Show("Record not Inserted")
+            End If
+            conn.Close()
+            conn.Open()
+            command1.ExecuteNonQuery()
+            conn.Close()
+
+            Dim command2 As New MySqlCommand("INSERT INTO stockhistory VALUES(@History_ID,@Inventory_ID,@Product_Name,@Stock,
         @Quantity,@Action_Type,@Inventory_Date)", conn)
-        With command2
-            .Parameters.Clear()
-            .Parameters.AddWithValue("@History_ID", 0)
-            .Parameters.AddWithValue("@Inventory_ID", txtID.Text)
-            .Parameters.AddWithValue("@Product_Name", txtName.Text)
-            .Parameters.AddWithValue("@Stock", Val(txtStockQty.Text))
-            .Parameters.AddWithValue("@Quantity", stockQty)
-            .Parameters.AddWithValue("@Action_Type", "REMOVED STOCKS -(" & stockQty & ")")
-            .Parameters.AddWithValue("@Inventory_Date", currdatetime)
+            With command2
+                .Parameters.Clear()
+                .Parameters.AddWithValue("@History_ID", 0)
+                .Parameters.AddWithValue("@Inventory_ID", txtID.Text)
+                .Parameters.AddWithValue("@Product_Name", txtName.Text)
+                .Parameters.AddWithValue("@Stock", Val(txtStockQty.Text))
+                .Parameters.AddWithValue("@Quantity", stockQty)
+                .Parameters.AddWithValue("@Action_Type", "REMOVED STOCKS -(" & stockQty & ")")
+                .Parameters.AddWithValue("@Inventory_Date", currdatetime)
 
-        End With
-        conn.Open()
+            End With
+            conn.Open()
 
-        If command2.ExecuteNonQuery() = 1 Then
-            MessageBox.Show("Stock history record Inserted")
-            frmStockHis.loadrecord()
-        Else
-            MessageBox.Show("Record not Inserted")
-        End If
-        conn.Close()
+            If command2.ExecuteNonQuery() = 1 Then
+                MessageBox.Show("Stock history record Inserted")
+                frmStockHis.loadrecord()
+            Else
+                MessageBox.Show("Record not Inserted")
+            End If
+            conn.Close()
+        Catch ex As Exception
+            MessageBox.Show("NO STOCK DELETED: " & ex.Message, "INPUT ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
 
     End Sub
 
